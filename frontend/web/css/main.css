@@ -17,11 +17,12 @@
 
 body{
 	margin-top: 122px;
-	background-color: #fffffc !important;
+	background-color: #fff !important;
 	font-family: 'Noto Sans', sans-serif !important;
 }
 
 nav{
+	background-color: #fff;
 	border-bottom: 1px solid #558B2F;
 }
 
@@ -65,7 +66,7 @@ nav h1{
 }
 
 #headline{
-	color: #fffffc;
+	color: #fff;
 	background-color: #558B2F;
 }
 
@@ -79,4 +80,58 @@ nav h1{
 
 #headline h6{
 	align-self: flex-end;
+}
+
+#content{
+	margin-top: 1em;
+}
+
+#news h1{
+	font-weight: bold;
+}
+
+#news li{
+	display: flex;
+	border-right: none;
+	border-left: none;
+}
+
+#news li:first-child{
+	border-top: none;
+}
+
+#news li:last-child{
+	border-bottom: none;
+}
+
+#news img{
+	width: 35%;
+}
+
+#news .n-content{
+	width: 65%;
+}
+
+#news h3{
+	font-weight: bold;
+}
+
+#news a{
+	color: #558B2F;
+}
+
+#news .fa-facebook,
+#news .fa-twitter{
+	margin: 0 .2em;
+	cursor: pointer;
+	color: #9CCC65;
+}
+
+#news .fa-facebook:hover,
+#news .fa-twitter:hover{
+	color: #558B2F;
+}
+
+#news .fa-clock-o{
+	color: #558B2F;
 }

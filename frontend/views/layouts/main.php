@@ -28,7 +28,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
 		<div class="container">
 			<a class="navbar-brand" href="#">
 				<h1>PPEI</h1>
@@ -73,7 +73,7 @@ AppAsset::register($this);
         <div class="container">
 			<div class="row">
 				<div class="col-md-3">
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus sed culpa fuga praesentium eum repellendus suscipit consequuntur cupiditate, quasi, ipsam nihil, nam aliquam inventore recusandae quas earum at architecto cum!</p>
+				
 				</div>
 				<div class="col-md-3">
 				
@@ -87,6 +87,9 @@ AppAsset::register($this);
 			</div>
 		</div>
 	</footer>
+
+
+	<div style="height:500px;"></div>
 
 <?php $this->endBody() ?>
 </body>
