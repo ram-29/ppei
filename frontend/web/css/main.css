@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-/* White: #fffffc */
+/* White: #f8f9fa */
 /* Black: #08090A */
 
 /* 
@@ -17,7 +17,7 @@
 
 body{
 	margin-top: 122px;
-	background-color: #fff !important;
+	background-color: #f8f9fa;
 	font-family: 'Noto Sans', sans-serif !important;
 }
 
@@ -60,7 +60,7 @@ nav h1{
 	font-weight: bold;
 }
 
-#banner button{
+#banner a{
 	width: 50%;
 	align-self: flex-end;
 }
@@ -83,7 +83,8 @@ nav h1{
 }
 
 #content{
-	margin-top: 1em;
+	padding-top: 1em;
+	background-color: #fff;
 }
 
 #news h1{
@@ -134,4 +135,8 @@ nav h1{
 
 #news .fa-clock-o{
 	color: #558B2F;
+}
+
+#calendar{
+
 }

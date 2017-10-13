@@ -2,31 +2,33 @@
     $('.fa').tooltip()
 
     $('.list-group').on('click', function (e) {
-        let isFB = true;
-        if (e.target.className.includes('facebook')) {
-            determineSocialMedia(isFB, e.target)
-        } else if (e.target.className.includes('twitter')){
-            determineSocialMedia(!isFB, e.target)
+        
+        const li = e.target;
+        let title, summary;
+       
+        if (li.className.includes('facebook')) {
+            getNewsTitleAndContent()
+            share(title, summary)
+        } else if (li.className.includes('twitter')){
+            getNewsTitleAndContent()
+            tweet(title, summary)
+        }
+
+        function getNewsTitleAndContent() {
+            const p = $(li).parent().prev()
+            const h3 = $(p).prev()
+
+            title = h3.text()
+            summary = p.text()
+        }
+
+        function share(title, summary) {
+            console.log(`SHARE\nTitle: ${title}\nContent: ${summary}`)
+        }
+
+        function tweet(title, summary) {
+            console.log(`TWEET\nTitle: ${title}\nContent: ${summary}`)
         }
     })
-
-    function determineSocialMedia(socialMedia, target) {
-        const p = $(target).parent().prev()
-        const h3 = $(p).prev()
-
-        if (socialMedia) {
-            share(h3.text(), p.text())
-            return
-        }
-        tweet(h3.text(), p.text())
-    }
-
-    function share(title, content) {
-        console.log(`SHARE==Title: ${title}\nContent: ${content}`)
-    }
-
-    function tweet(title, content) {
-        console.log(`TWEET==Title: ${title}: Content: ${content}`)
-    }
 })(jQuery)
 

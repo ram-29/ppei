@@ -12,7 +12,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
                 <div class="col-md-7">
                     <h1>Philippine Poverty-Environment Initiative</h1>
                     <p>PPEI is a five-year (2011-2015) collaborative program of the Government of the Philippines and United Nations Development Programme-United Nations Environment Programme (UNDP-UNEP), through the Department of the Interior and Local Government (DILG).</p>
-                    <button type="button" class="btn btn-primary btn-lg">Learn more</button>		
+                    <a href="#" class="btn btn-primary btn-lg">Learn more</a>		
                 </div>
                 <div class="col-md-5">
                     
@@ -79,16 +79,12 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
                             </h6>
                         </div>
                     </li>
-                    
-
-                    
-                    
-                    
-                    
                 </ul>
             </div>
             <div class="col-md-4">
-
+                <div id="calendar">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officia, qui eligendi impedit quasi culpa porro modi, unde, saepe optio atque excepturi! Deleniti perferendis veniam sint vero dicta tenetur possimus.</p>
+                </div>
             </div>
         </div>
     </section><!-- Content -->
