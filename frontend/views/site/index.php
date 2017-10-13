@@ -10,7 +10,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1>Philippine Poverty-Environment Initiative-1</h1>
+                    <h1>Philippine Poverty-Environment Initiative</h1>
                     <p>PPEI is a five-year (2011-2015) collaborative program of the Government of the Philippines and United Nations Development Programme-United Nations Environment Programme (UNDP-UNEP), through the Department of the Interior and Local Government (DILG).</p>
                     <button type="button" class="btn btn-primary btn-lg">Learn more</button>		
                 </div>
