@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+/* White: #fffffc */
+/* Black: #08090A */
+
+/* 
+ * Main Color: Light Green
+ *  L: #9CCC65
+ *  D: #558B2F 
+*/
+
+/*
+ * Accent Color: Bootstrap Blue
+ *  L: #007BFF
+ *  D: ???
+*/
+
+body{
+	margin-top: 122px;
+	background-color: #fffffc !important;
+	font-family: 'Noto Sans', sans-serif !important;
+}
+
+nav{
+	border-bottom: 1px solid #558B2F;
+}
+
+.navbar-nav a{
+	color: #6E6F70 !important;
+	transition: color 250ms ease-in-out;
+}
+
+.navbar-nav a:hover{
+	color: #558B2F !important;
+}
+
+nav h1{
+	color: #558B2F;
+	font-weight: bold;
+}
+
+#banner{
+	background-color: #9CCC65;
+}
+
+#banner .col-md-7,
+#banner .col-md-5{
+	height: 500px; /* Change On Mobile View */
+}
+
+#banner .col-md-7{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#banner h1{
+	font-size: 4em;
+	font-weight: bold;
+}
+
+#banner button{
+	width: 50%;
+	align-self: flex-end;
+}
+
+#headline{
+	color: #fffffc;
+	background-color: #558B2F;
+}
+
+#headline .col-md-8,
+#headline .col-md-4{
+	height: 80px; /* Change On Mobile View */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#headline h6{
+	align-self: flex-end;
+}
