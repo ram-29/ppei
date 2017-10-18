@@ -41,7 +41,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
             <h1>News & Updates</h1>            
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <img src="http://lorempixel.com/400/400/cats/" alt="...">
+                        <img src="http://lorempixel.com/400/300/cats/" alt="...">
                         <div class="n-content p-3">
                             <h3><a href="#">Lorem ipsum dolor sit.</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum rerum voluptatem expedita voluptatum tenetur earum aperiam quas esse! Harum, ad dolores nobis nesciunt esse alias debitis. Atque iste molestiae hic.</p>
@@ -54,7 +54,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
                         </div>
                     </li>
                     <li class="list-group-item">
-                        <img src="http://lorempixel.com/400/400/cats/" alt="...">
+                        <img src="http://lorempixel.com/400/300/cats/" alt="...">
                         <div class="n-content p-3">
                             <h3><a href="#">Quas accusamus optio doloribus!</a></h3>
                             <p>Reprehenderit explicabo perferendis a ad quo, reiciendis nisi modi. Exercitationem, saepe odio? Voluptatem possimus omnis, labore illo eligendi saepe dolorum nesciunt, esse hic unde necessitatibus, molestiae sit praesentium magnam nisi.</p>
@@ -67,7 +67,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
                         </div>
                     </li>
                     <li class="list-group-item">
-                        <img src="http://lorempixel.com/400/400/cats/" alt="...">
+                        <img src="http://lorempixel.com/400/300/cats/" alt="...">
                         <div class="n-content p-3">
                             <h3><a href="#">Eius sapiente sit eligendi?</a></h3>
                             <p>Cumque reprehenderit laudantium repellendus tempora non cum est molestiae doloribus facere dolorum magni amet officia similique esse voluptates consequatur, delectus nemo quisquam. Consequatur modi aliquam odio optio saepe perferendis maiores!</p>
@@ -84,6 +84,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
             <div class="col-md-4">
                 <div id="calendar">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officia, qui eligendi impedit quasi culpa porro modi, unde, saepe optio atque excepturi! Deleniti perferendis veniam sint vero dicta tenetur possimus.</p>
+                    <div id="mCalendar"></div>
                 </div>
             </div>
         </div>

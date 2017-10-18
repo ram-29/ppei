@@ -3,13 +3,13 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use yii\helpers\Html;
-use frontend\assets\AppAsset;
-
 // use yii\bootstrap\Nav;
 // use common\widgets\Alert;
 // use yii\bootstrap\NavBar;
 // use yii\widgets\Breadcrumbs;
+
+use yii\helpers\Html;
+use frontend\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
@@ -87,7 +87,6 @@ AppAsset::register($this);
 			</div>
 		</div>
 	</footer>
-
 
 	<div style="height:500px;"></div>
 

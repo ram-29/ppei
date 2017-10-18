@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f112c482c9d05dcc5afba56029302f0a",
+    "content-hash": "b1fd74ec6e948b3a6067dd2e73950e96",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -149,6 +149,50 @@
             "time": "2017-10-10T12:47:01+00:00"
         },
         {
+            "name": "bower-asset/moment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "29afed6631e596fe9b3ff6c61ddc55eee18810e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/29afed6631e596fe9b3ff6c61ddc55eee18810e6",
+                "reference": "29afed6631e596fe9b3ff6c61ddc55eee18810e6",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json",
+                    "ISSUE_TEMPLATE.md",
+                    "typing-tests",
+                    "min/tests.js"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-10-11T20:55:53+00:00"
+        },
+        {
             "name": "bower-asset/punycode",
             "version": "v1.3.2",
             "source": {
@@ -176,6 +220,46 @@
                 ]
             },
             "time": "2014-10-22T12:02:42+00:00"
+        },
+        {
+            "name": "bower-asset/underscore",
+            "version": "1.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jashkenas/underscore.git",
+                "reference": "e4743ab712b8ab42ad4ccb48b155034d02394e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jashkenas/underscore/zipball/e4743ab712b8ab42ad4ccb48b155034d02394e4d",
+                "reference": "e4743ab712b8ab42ad4ccb48b155034d02394e4d",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "underscore.js",
+                "bower-asset-ignore": [
+                    "docs",
+                    "test",
+                    "*.yml",
+                    "CNAME",
+                    "index.html",
+                    "favicon.ico",
+                    "CONTRIBUTING.md",
+                    ".*",
+                    "component.json",
+                    "package.json",
+                    "karma.*"
+                ]
+            },
+            "keywords": [
+                "browser",
+                "client",
+                "functional",
+                "server",
+                "util"
+            ],
+            "time": "2015-04-02T15:32:01+00:00"
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -320,6 +404,111 @@
             "time": "2017-06-03T02:28:16+00:00"
         },
         {
+            "name": "madand/yii2-momentjs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MadAnd/yii2-momentjs.git",
+                "reference": "658e8ff5a4e3cdeaaf7aaaeb151430e09093ca2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MadAnd/yii2-momentjs/zipball/658e8ff5a4e3cdeaaf7aaaeb151430e09093ca2c",
+                "reference": "658e8ff5a4e3cdeaaf7aaaeb151430e09093ca2c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/moment": "*",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "madand\\momentjs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andriy Kmit'",
+                    "email": "dev@madand.net",
+                    "homepage": "https://github.com/MadAnd",
+                    "role": "Developer"
+                }
+            ],
+            "description": "moment asset for Yii2",
+            "homepage": "https://github.com/MadAnd/yii2-momentjs",
+            "keywords": [
+                "moment",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-11-19T11:54:15+00:00"
+        },
+        {
+            "name": "madand/yii2-underscore",
+            "version": "1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MadAnd/yii2-underscore.git",
+                "reference": "f7e13e86dba749c005f360dc498956af7c971e65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MadAnd/yii2-underscore/zipball/f7e13e86dba749c005f360dc498956af7c971e65",
+                "reference": "f7e13e86dba749c005f360dc498956af7c971e65",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/underscore": "1.8.*",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "madand\\underscore\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "MadAnd",
+                    "email": "dev@madand.net",
+                    "homepage": "https://github.com/MadAnd",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Underscore.js asset for Yii2",
+            "homepage": "https://github.com/MadAnd/yii2-underscore",
+            "keywords": [
+                "underscore",
+                "underscore js",
+                "underscorejs",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2015-04-15T19:33:29+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.8",
             "source": {
@@ -372,57 +561,6 @@
                 "mailer"
             ],
             "time": "2017-05-01T15:54:03+00:00"
-        },
-        {
-            "name": "twbs/bootstrap",
-            "version": "v4.0.0-beta",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "35f80bb12e4e71fd777ee60ffa43711d8f84b1a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/35f80bb12e4e71fd777ee60ffa43711d8f84b1a6",
-                "reference": "35f80bb12e4e71fd777ee60ffa43711d8f84b1a6",
-                "shasum": ""
-            },
-            "replace": {
-                "twitter/bootstrap": "self.version"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                },
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                }
-            ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "homepage": "https://getbootstrap.com",
-            "keywords": [
-                "JS",
-                "css",
-                "framework",
-                "front-end",
-                "mobile-first",
-                "responsive",
-                "sass",
-                "web"
-            ],
-            "time": "2017-08-11T03:56:35+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -3296,10 +3434,8 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {
-        "twbs/bootstrap": 10
-    },
+    "minimum-stability": "dev",
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

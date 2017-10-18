@@ -1,4 +1,5 @@
 (function ($) {
+    $('#mCalendar').clndr()
     $('.fa').tooltip()
 
     $('.list-group').on('click', function (e) {
@@ -30,5 +31,5 @@
             console.log(`TWEET\nTitle: ${title}\nContent: ${summary}`)
         }
     })
-})(jQuery)
+})(window.jQuery)
 

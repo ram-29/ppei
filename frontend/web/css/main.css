@@ -15,6 +15,18 @@
  *  D: ???
 */
 
+/**
+ *	Other Shades:
+ *	Green:
+ *	 L: #97ce7f;
+ *	 D: #69a776;
+ *
+ *	Black: #414141;
+ * 
+ *	Text Shadow:
+ *	 text-shadow: 1px 1px 1px #212121;
+*/
+
 body{
 	margin-top: 122px;
 	background-color: #f8f9fa;
@@ -137,6 +149,7 @@ nav h1{
 	color: #558B2F;
 }
 
-#calendar{
-
+#calendar p{
+	border:1px solid black !important;
+	color:blue;
 }

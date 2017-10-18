@@ -31,9 +31,12 @@ class AppAsset extends AssetBundle
         'https://code.jquery.com/jquery-3.2.1.slim.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js',
         'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/clndr/1.4.7/clndr.min.js',
         'js/main.js'
     ];
     public $depends = [
-
+        
     ];
 }
