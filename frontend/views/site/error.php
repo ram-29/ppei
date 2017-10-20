@@ -11,6 +11,8 @@ $this->title = $name;
 ?>
 <div class="site-error">
 
+    <div class="error" style="height:500px; border: 1px solid black;"></div>
+
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
