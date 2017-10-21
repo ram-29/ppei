@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+/**
+ *	Other Shades:
+ *	Main Color:
+ *   D: #69a776;
+ *	 L: #97ce7f;
+ *
+ *	Black: #414141;
+ *
+*/
+
+//Variables
+$main-font: 'Noto Sans';
+$bg-color: #f8f9fa;
+
+$primary: #558B2F;
+$secondary: #9CCC65;
+
+$accent-secondary: #007BFF;
+
+$white: #ffffff;
+$black: #08090A;
+
+$text-shadow: 1px 1px 1px #212121;
+
+body{
+    margin-top: 122px;
+    background-color: $bg-color;
+    font-family: $main-font;
+}
+
+nav{
+    background-color: $white;
+    border-bottom: 1px solid $primary;
+}
+
+.navbar-nav a{
+    color: lighten($black, 60%) !important;
+    transition: color 250ms ease-in-out;
+}
+
+.navbar-nav a:hover{
+    color: $primary !important;
+}
+
+nav h1{
+    color: $primary;
+    font-weight: bold;
+}
+
+#banner{
+    background-color: $secondary;
+}
+
+/* Change On Mobile View */
+#banner .col-md-7,
+#banner .col-md-5{
+    height: 500px; 
+}
+
+#banner .col-md-7{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#banner h1{
+	font-size: 4em;
+	font-weight: bold;
+}
+
+#banner a{
+	width: 50%;
+	align-self: flex-end;
+}
+
+#headline{
+	color: $white;
+	background-color: $primary;
+}
+
+/* Change On Mobile View */
+#headline .col-md-8,
+#headline .col-md-4{
+	height: 80px; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#headline h4{
+    text-shadow: $text-shadow;
+}
+
+#headline h6{
+	align-self: flex-end;
+}
+
+#content{
+	padding-top: 1em;
+	background-color: $white;
+}
+
+#news h1{
+	font-weight: bold;
+}
+
+#news li{
+	display: flex;
+	border-right: none;
+	border-left: none;
+}
+
+#news li:first-child{
+	border-top: none;
+}
+
+#news li:last-child{
+	border-bottom: none;
+}
+
+/* Change On Mobile View */
+#news img{
+	width: 35%;
+}
+
+#news .n-content{
+	width: 65%;
+}
+
+#news h3{
+	font-weight: bold;
+}
+
+#news a{
+	color: $primary;
+}
+
+#news .fa-facebook,
+#news .fa-twitter{
+	margin: 0 .2em;
+	cursor: pointer;
+	color: $secondary;
+}
+
+#news .fa-facebook:hover,
+#news .fa-twitter:hover{
+	color: $primary;
+}
+
+#news .fa-clock-o{
+	color: $primary;
+}
+
+#partners{
+    padding-top: 1em;
+    height: 500px;
+    background-color: $primary;
+    color: $white;
+    text-align: center;
+}
+
+#partners h1{
+    font-weight: bold;
+    text-shadow: $text-shadow;
+}
+
+footer{
+    color: $white;
+    background-color: $black;
+}

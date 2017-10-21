@@ -9,31 +9,22 @@ use yii\web\AssetBundle;
  *  
  */
 
-/** 
- * Removed Stylesheets & Scripts
- * 'css/site.css'
- * 
- * $depends:
- *  'yii\web\YiiAsset',
- *  'yii\bootstrap\BootstrapAsset',
- */
-
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css',
-        'css/main.css'
+        'assets/components-font-awesome/css/font-awesome.min.css',
+        'assets/twbs/bootstrap/dist/css/bootstrap.min.css',
+        'css/style.css'
     ];
     public $js = [
-        'https://code.jquery.com/jquery-3.2.1.slim.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/clndr/1.4.7/clndr.min.js',
+        'assets/jQuery/dist/jquery.slim.min.js',
+        'assets/popperJs/dist/umd/popper.min.js',
+        'assets/twbs/bootstrap/dist/js/bootstrap.min.js',
+        'assets/moment/min/moment.min.js',
+        'assets/underscore/underscore-min.js',
+        'assets/clndr/clndr.min.js',
         'js/main.js'
     ];
     public $depends = [

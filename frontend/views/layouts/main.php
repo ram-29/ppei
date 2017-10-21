@@ -73,16 +73,19 @@ AppAsset::register($this);
         <div class="container">
 			<div class="row">
 				<div class="col-md-3">
-				
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, quia enim culpa vero nobis ipsam temporibus dicta commodi voluptas corporis veritatis unde provident quidem quo suscipit excepturi, officia eum rerum.</p>
+					
 				</div>
 				<div class="col-md-3">
-				
+					<p>Harum placeat dolore ea, doloribus quo numquam ipsam ipsum accusantium praesentium unde nemo minima sit vero, magni corporis quam iusto quibusdam nam rerum. Placeat ipsum, ea voluptatum ex quia nulla!</p>
+					
 				</div>
 				<div class="col-md-3">
-				
+					<p>Velit odio sed aspernatur quisquam asperiores sint quibusdam voluptatum mollitia ab. Fugit ea obcaecati error ipsa? Id accusamus culpa ratione, nisi assumenda ab enim consectetur porro itaque voluptatibus ducimus mollitia.</p>
+					
 				</div>
 				<div class="col-md-3">
-				
+					<p>Iure omnis ducimus praesentium veniam. Minima sed ut impedit quisquam amet consectetur totam, consequatur ad corporis natus optio omnis veritatis cumque corrupti et sit necessitatibus neque voluptates expedita id iusto.</p>
 				</div>
 			</div>
 		</div>

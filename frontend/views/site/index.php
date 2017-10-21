@@ -90,8 +90,10 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
         </div>
     </section><!-- Content -->
 
-    <section id="partners">
-
+    <section id="partners" class="container-fluid">
+        <div class="container">
+            <h1><i class="fa fa-handshake-o" aria-hidden="true"></i> Our partners</h1>
+        </div>
     </section><!-- Partners -->
 
 </div>
