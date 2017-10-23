@@ -3,11 +3,6 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-// use yii\bootstrap\Nav;
-// use common\widgets\Alert;
-// use yii\bootstrap\NavBar;
-// use yii\widgets\Breadcrumbs;
-
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
 

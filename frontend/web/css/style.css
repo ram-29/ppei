@@ -1,13 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
-/**
- *	Other Shades:
- *	Main Color:
- *   D: #69a776;
- *	 L: #97ce7f;
- *
- *	Black: #414141;
- *
-*/
 body {
   margin-top: 122px;
   background-color: #f8f9fa;
@@ -16,20 +7,14 @@ body {
 nav {
   background-color: #ffffff;
   border-bottom: 1px solid #558B2F; }
-
-.navbar-nav a {
-  color: #98a2ac !important;
-  transition: color 250ms ease-in-out; }
-
-.navbar-nav a:hover {
-  color: #558B2F !important; }
-
-nav h1 {
-  color: #558B2F;
-  font-weight: bold; }
-
-#banner {
-  background-color: #9CCC65; }
+  nav h1 {
+    color: #558B2F;
+    font-weight: bold; }
+  nav .navbar-nav a {
+    color: #98a2ac !important;
+    transition: color 250ms ease-in-out; }
+    nav .navbar-nav a:hover {
+      color: #558B2F !important; }
 
 /* Change On Mobile View */
 #banner .col-md-7,
@@ -41,17 +26,14 @@ nav h1 {
   flex-direction: column;
   justify-content: center; }
 
-#banner h1 {
-  font-size: 4em;
-  font-weight: bold; }
-
-#banner a {
-  width: 50%;
-  align-self: flex-end; }
-
-#headline {
-  color: #ffffff;
-  background-color: #558B2F; }
+#banner {
+  background-color: #9CCC65; }
+  #banner h1 {
+    font-size: 4em;
+    font-weight: bold; }
+  #banner a {
+    width: 50%;
+    align-self: flex-end; }
 
 /* Change On Mobile View */
 #headline .col-md-8,
@@ -61,11 +43,13 @@ nav h1 {
   flex-direction: column;
   justify-content: center; }
 
-#headline h4 {
-  text-shadow: 1px 1px 1px #212121; }
-
-#headline h6 {
-  align-self: flex-end; }
+#headline {
+  color: #ffffff;
+  background-color: #558B2F; }
+  #headline h4 {
+    text-shadow: 1px 1px 1px #212121; }
+  #headline h6 {
+    align-self: flex-end; }
 
 #content {
   padding-top: 1em;
@@ -77,39 +61,59 @@ nav h1 {
 #news li {
   display: flex;
   border-right: none;
-  border-left: none; }
+  border-left: none;
+  /* Change On Mobile View */ }
+  #news li:first-child {
+    border-top: none; }
+  #news li:last-child {
+    border-bottom: none; }
+  #news li img {
+    width: 35%; }
+  #news li .n-content {
+    width: 65%; }
+    #news li .n-content h3 {
+      font-weight: bold; }
+      #news li .n-content h3 a {
+        color: #558B2F; }
+    #news li .n-content h6 .fa-facebook,
+    #news li .n-content h6 .fa-twitter {
+      cursor: pointer;
+      margin: 0 .2em;
+      color: #9CCC65; }
+      #news li .n-content h6 .fa-facebook:hover,
+      #news li .n-content h6 .fa-twitter:hover {
+        color: #558B2F; }
+    #news li .n-content h6 .fa-clock-o {
+      color: #558B2F; }
 
-#news li:first-child {
-  border-top: none; }
-
-#news li:last-child {
-  border-bottom: none; }
-
-/* Change On Mobile View */
-#news img {
-  width: 35%; }
-
-#news .n-content {
-  width: 65%; }
-
-#news h3 {
-  font-weight: bold; }
-
-#news a {
-  color: #558B2F; }
-
-#news .fa-facebook,
-#news .fa-twitter {
-  margin: 0 .2em;
-  cursor: pointer;
-  color: #9CCC65; }
-
-#news .fa-facebook:hover,
-#news .fa-twitter:hover {
-  color: #558B2F; }
-
-#news .fa-clock-o {
-  color: #558B2F; }
+#calendar #mini-clndr {
+  width: 100%;
+  box-shadow: 4px 4px 0 #98a2ac; }
+  #calendar #mini-clndr .clndr {
+    overflow: hidden;
+    border-bottom: 7px solid #558B2F; }
+    #calendar #mini-clndr .clndr .controls {
+      background-color: #558B2F;
+      color: #ffffff;
+      display: flex;
+      align-items: center; }
+      #calendar #mini-clndr .clndr .controls .clndr-previous-button,
+      #calendar #mini-clndr .clndr .controls .clndr-next-button {
+        width: 15%;
+        cursor: pointer;
+        text-align: center;
+        padding: 1em 0; }
+        #calendar #mini-clndr .clndr .controls .clndr-previous-button:hover,
+        #calendar #mini-clndr .clndr .controls .clndr-next-button:hover {
+          background-color: #3e6522; }
+      #calendar #mini-clndr .clndr .controls .month {
+        width: 70%;
+        font-size: 1.4em;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center; }
+    #calendar #mini-clndr .clndr .days-container .days .headers {
+      background-color: #9CCC65; }
 
 #partners {
   padding-top: 1em;
@@ -117,11 +121,11 @@ nav h1 {
   background-color: #558B2F;
   color: #ffffff;
   text-align: center; }
-
-#partners h1 {
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #212121; }
+  #partners h1 {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #212121; }
 
 footer {
+  height: 500px;
   color: #ffffff;
   background-color: #08090A; }

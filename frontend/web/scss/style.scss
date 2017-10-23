@@ -1,55 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-/**
- *	Other Shades:
- *	Main Color:
- *   D: #69a776;
- *	 L: #97ce7f;
- *
- *	Black: #414141;
- *
-*/
-
-//Variables
-$main-font: 'Noto Sans';
-$bg-color: #f8f9fa;
-
-$primary: #558B2F;
-$secondary: #9CCC65;
-
-$accent-secondary: #007BFF;
-
-$white: #ffffff;
-$black: #08090A;
-
-$text-shadow: 1px 1px 1px #212121;
+@import 'variables';
 
 body{
     margin-top: 122px;
-    background-color: $bg-color;
+    background-color: $body-bg;
     font-family: $main-font;
 }
 
 nav{
     background-color: $white;
-    border-bottom: 1px solid $primary;
-}
+    border-bottom: 1px solid $secondary;
 
-.navbar-nav a{
-    color: lighten($black, 60%) !important;
-    transition: color 250ms ease-in-out;
-}
+    h1{
+        color: $secondary;
+        font-weight: bold;
+    }
 
-.navbar-nav a:hover{
-    color: $primary !important;
-}
+    .navbar-nav a{
+        color: lighten($black, 60%) !important;
+        transition: color 250ms ease-in-out;
 
-nav h1{
-    color: $primary;
-    font-weight: bold;
-}
-
-#banner{
-    background-color: $secondary;
+        &:hover{
+            color: $secondary !important;
+        }
+    }
 }
 
 /* Change On Mobile View */
@@ -64,19 +37,18 @@ nav h1{
 	justify-content: center;
 }
 
-#banner h1{
-	font-size: 4em;
-	font-weight: bold;
-}
+#banner{
+    background-color: $primary;
 
-#banner a{
-	width: 50%;
-	align-self: flex-end;
-}
+    h1{
+        font-size: 4em;
+	    font-weight: bold;
+    }
 
-#headline{
-	color: $white;
-	background-color: $primary;
+    a{
+        width: 50%;
+	    align-self: flex-end;
+    }
 }
 
 /* Change On Mobile View */
@@ -88,12 +60,17 @@ nav h1{
 	justify-content: center;
 }
 
-#headline h4{
-    text-shadow: $text-shadow;
-}
+#headline{
+	color: $white;
+    background-color: $secondary;
+    
+    h4{
+        text-shadow: $text-shadow;
+    }
 
-#headline h6{
-	align-self: flex-end;
+    h6{
+        align-self: flex-end;
+    }
 }
 
 #content{
@@ -101,71 +78,130 @@ nav h1{
 	background-color: $white;
 }
 
-#news h1{
-	font-weight: bold;
+#news{
+
+    h1{
+        font-weight: bold;
+    }
+
+    li{
+        display: flex;
+        border-right: none;
+        border-left: none;
+
+        &:first-child{
+            border-top: none;
+        }
+        
+        &:last-child{
+            border-bottom: none;
+        }
+
+        /* Change On Mobile View */
+        img{
+            width: 35%;
+        }
+
+        .n-content{
+            width: 65%;
+        
+            h3{
+                font-weight: bold;
+
+                a{
+                    color: $secondary;
+                }
+            }
+            
+            h6{
+                .fa-facebook,
+                .fa-twitter{
+                    cursor: pointer;
+                    margin: 0 .2em;
+                    color: $primary;
+
+                    &:hover{
+                        color: $secondary;
+                    }
+                }
+
+                .fa-clock-o{
+                    color: $secondary;
+                }
+            }
+        }
+    }
 }
 
-#news li{
-	display: flex;
-	border-right: none;
-	border-left: none;
-}
+#calendar{
 
-#news li:first-child{
-	border-top: none;
-}
+  #mini-clndr{
+    width: 100%;
+    box-shadow: 4px 4px 0 lighten($black, 60%);
 
-#news li:last-child{
-	border-bottom: none;
-}
+    .clndr{
+      overflow: hidden;
+      border-bottom: 7px solid $secondary;
 
-/* Change On Mobile View */
-#news img{
-	width: 35%;
-}
+      .controls{
+        background-color: $secondary;
+        color: $white;
+        display: flex;
+        align-items: center;
 
-#news .n-content{
-	width: 65%;
-}
+        .clndr-previous-button, 
+        .clndr-next-button{
+          width: 15%;
+          cursor: pointer;
+          text-align: center;
+          padding: 1em 0;
 
-#news h3{
-	font-weight: bold;
-}
+           &:hover{
+            background-color: darken($secondary, 10%);
+          }
+        }
 
-#news a{
-	color: $primary;
-}
+        .month{
+          width: 70%;
+          font-size: 1.4em;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
 
-#news .fa-facebook,
-#news .fa-twitter{
-	margin: 0 .2em;
-	cursor: pointer;
-	color: $secondary;
-}
+      .days-container{
+        .days{
+          .headers{
+            background-color: $primary;
+          }
 
-#news .fa-facebook:hover,
-#news .fa-twitter:hover{
-	color: $primary;
-}
+          
+        }
+      }
 
-#news .fa-clock-o{
-	color: $primary;
+      .events{
+
+      }
+    }
+  }
 }
 
 #partners{
     padding-top: 1em;
     height: 500px;
-    background-color: $primary;
+    background-color: $secondary;
     color: $white;
     text-align: center;
-}
 
-#partners h1{
-    font-weight: bold;
-    text-shadow: $text-shadow;
+    h1{
+        font-weight: bold;
+        text-shadow: $text-shadow;
+    }
 }
 
 footer{
+    height: 500px;
     color: $white;
     background-color: $black;
 }

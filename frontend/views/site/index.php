@@ -1,6 +1,8 @@
 <?php
+namespace frontend\views\site;
 
-/* @var $this yii\web\View */
+use Yii;
+use yii\helpers\Html;
 
 $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippine Poverty-Environment Initiative';
 ?>
@@ -83,8 +85,36 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
             </div>
             <div class="col-md-4">
                 <div id="calendar">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officia, qui eligendi impedit quasi culpa porro modi, unde, saepe optio atque excepturi! Deleniti perferendis veniam sint vero dicta tenetur possimus.</p>
-                    <div id="mCalendar"></div>
+                    <div id="mini-clndr">
+                        <script id="mini-clndr-template" type="text/template">
+                            <div class="controls">
+                                <div class="clndr-previous-button">&lsaquo;</div>
+                                <div class="month"><%= month %></div>
+                                <div class="clndr-next-button">&rsaquo;</div>
+                            </div>
+                            <div class="days-container">
+                                <div class="days">
+                                    <div class="headers">
+                                    <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
+                                    </div>
+                                    <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
+                                </div>
+                                <div class="events">
+                                    <div class="headers">
+                                        <div class="x-button">x</div>
+                                        <div class="event-header">EVENTS</div>
+                                    </div>
+                                    <div class="events-list">
+                                        <% _.each(eventsThisMonth, function(event) { %>
+                                            <div class="event">
+                                            <a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>
+                                            </div>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,6 +123,9 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
     <section id="partners" class="container-fluid">
         <div class="container">
             <h1><i class="fa fa-handshake-o" aria-hidden="true"></i> Our partners</h1>
+
+            <?= Html::img(Yii::getAlias('@backend').'/web/uploads/images/partners/logo/CBMS.png');?>
+
         </div>
     </section><!-- Partners -->
 
