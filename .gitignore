@@ -36,3 +36,6 @@ phpunit.phar
 
 # node modules
 node_modules
+
+# npm-debug
+npm-debug.log

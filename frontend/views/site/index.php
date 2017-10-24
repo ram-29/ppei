@@ -86,45 +86,50 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
             <div class="col-md-4">
                 <div id="calendar">
                     <div id="mini-clndr">
-                        <script id="mini-clndr-template" type="text/template">
+												<script id="mini-clndr-template" type="text/template">
                             <div class="controls">
-                                <div class="clndr-previous-button">&lsaquo;</div>
-                                <div class="month"><%= month %></div>
-                                <div class="clndr-next-button">&rsaquo;</div>
-                            </div>
-                            <div class="days-container">
-                                <div class="days">
-                                    <div class="headers">
-                                    <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-                                    </div>
-                                    <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
-                                </div>
-                                <div class="events">
-                                    <div class="headers">
-                                        <div class="x-button">x</div>
-                                        <div class="event-header">EVENTS</div>
-                                    </div>
-                                    <div class="events-list">
-                                        <% _.each(eventsThisMonth, function(event) { %>
-                                            <div class="event">
-                                            <a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>
-                                            </div>
-                                        <% }); %>
-                                    </div>
-                                </div>
-                            </div>
+															<div class="clndr-previous-button">&lsaquo;</div>
+															<div class="month-year"><%= month %> | <%= year %></div>
+															<div class="clndr-next-button">&rsaquo;</div>
+														</div>
+														<div class="clndr-content">
+															<div class="days-container">
+																<div class="headers">
+																	<% _.each(daysOfTheWeek, function(day) { %>
+																		<div class="day-header"><%= day %></div>
+																	<% }); %>
+																</div>
+																<div class="days-list">
+																	<% _.each(days, function(day) { %>
+																		<div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div>
+																	<% }); %>
+																</div>
+															</div>
+															<div class="events-container">
+																<div class="headers">
+																	<div class="x-button">x</div>
+																	<div class="event-header">EVENTS</div>
+																</div>
+																<div class="events-list">
+																	<% _.each(eventsThisMonth, function(event) { %>
+																		<div class="event">
+																			<a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>
+																		</div>
+																	<% }); %>
+																</div>
+															</div>
+														</div>
                         </script>
-                    </div>
+										</div>
                 </div>
             </div>
-        </div>
+				</div>
     </section><!-- Content -->
-
     <section id="partners" class="container-fluid">
         <div class="container">
             <h1><i class="fa fa-handshake-o" aria-hidden="true"></i> Our partners</h1>
 
-            <?= Html::img(Yii::getAlias('@backend').'/web/uploads/images/partners/logo/CBMS.png');?>
+            <!-- <?= Html::img(Yii::getAlias('@backend').'/web/uploads/images/partners/logo/CBMS.png');?> -->
 
         </div>
     </section><!-- Partners -->

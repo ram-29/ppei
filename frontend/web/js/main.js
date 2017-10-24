@@ -1,34 +1,43 @@
 (function ($) {
     var currentMonth = moment().format('YYYY-MM');
-    var nextMonth = moment().add('month', 1).format('YYYY-MM');
+		var nextMonth = moment().add(1, 'month').format('YYYY-MM');
 
     var events = [
-        { date: currentMonth + '-' + '10', title: 'Persian Kitten Auction', location: 'Center for Beautiful Cats' },
-        { date: currentMonth + '-' + '19', title: 'Cat Frisbee', location: 'Jefferson Park' },
-        { date: currentMonth + '-' + '23', title: 'Kitten Demonstration', location: 'Center for Beautiful Cats' },
-        { date: nextMonth + '-' + '07', title: 'Small Cat Photo Session', location: 'Center for Cat Photography' }
-    ];
+        
+			{ date: currentMonth + '-' + '1', title: 'Cat Frisbee', location: 'Jefferson Park' },
+			{ date: currentMonth + '-' + '6', title: 'Lorem ipsum!', location: 'Center for Beautiful Cats' },
+			{ date: currentMonth + '-' + '10', title: 'Persian Kitten Auction', location: 'Center for Beautiful Cats' },
+			{ date: currentMonth + '-' + '19', title: 'Dolor sit amet.', location: 'Center for Beautiful Cats' },
+			{ date: currentMonth + '-' + '24', title: 'Her birthday!', location: 'Center for Beautiful Cats' },
+			{ date: currentMonth + '-' + '29', title: 'My day!', location: 'Center for Beautiful Cats' },
+			{ date: nextMonth + '-' + '07', title: 'Small Cat Photo Session', location: 'Center for Cat Photography' }
+		];
 
-    $('#mini-clndr').clndr({
-        template: $('#mini-clndr-template').html(),
-        events: events,
-        clickEvents: {
-            click: function (target) {
-                if (target.events.length) {
-                    var daysContainer = $('#mini-clndr').find('.days-container');
-                    daysContainer.toggleClass('show-events', true);
-                    $('#mini-clndr').find('.x-button').click(function () {
-                        daysContainer.toggleClass('show-events', false);
-                    });
-                }
-            }
-        },
-        adjacentDaysChangeMonth: true,
-        forceSixRows: true
+		var miniClndr = $('#mini-clndr');
+    miniClndr.clndr({
+			template: $('#mini-clndr-template').html(),
+			daysOfTheWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+			events: events,
+			clickEvents: {
+				click: function (target) {
+					if (target.events.length) {
+						miniClndr.toggleClass('show-events', true);
+					}
+					miniClndr.find('.x-button').click(function () {
+						miniClndr.toggleClass('show-events', false);
+					});
+				},
+				onMonthChange: function () {
+					miniClndr.find('.x-button').click(function () {
+						miniClndr.toggleClass('show-events', false);
+					});
+				}
+			},
+			adjacentDaysChangeMonth: true,
+			forceSixRows: false
     });
-
-    $('.fa').tooltip()
-
+	
+		$('.fa').tooltip()
     $('.list-group').on('click', function (e) {
         
         const li = e.target;

@@ -20,11 +20,11 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'assets/jQuery/dist/jquery.slim.min.js',
-        'assets/popperJs/dist/umd/popper.min.js',
+        'assets/popper.js/dist/umd/popper.min.js',
         'assets/twbs/bootstrap/dist/js/bootstrap.min.js',
         'assets/moment/min/moment.min.js',
         'assets/underscore/underscore-min.js',
-        'assets/clndr/clndr.min.js',
+				'assets/clndr/clndr.min.js',
         'js/main.js'
     ];
     public $depends = [
