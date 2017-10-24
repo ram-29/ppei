@@ -1,4 +1,7 @@
-;(function($) {
+; (function ($) {
+	// MomentJS Hack : Deprecation Issue
+	moment.createFromInputFallback = function (config) { config._d = new Date(config._i); };
+	
   var currentMonth = moment().format("YYYY-MM");
   var nextMonth = moment().add(1, "month").format("YYYY-MM");
 
