@@ -55,7 +55,8 @@
           miniClndr.toggleClass("show-events", false);
         });
       },
-      onMonthChange: function() {
+			onMonthChange: function () {
+				miniClndr.toggleClass("show-events", false);	
         miniClndr.find(".x-button").click(function() {
           miniClndr.toggleClass("show-events", false);
         });
