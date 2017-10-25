@@ -1,7 +1,7 @@
 ; (function ($) {
-	// MomentJS Hack : Deprecation Issue
-	moment.createFromInputFallback = function (config) { config._d = new Date(config._i); };
-	
+  // MomentJS Hack : Deprecation Issue
+  moment.createFromInputFallback = function (config) { config._d = new Date(config._i); };
+
   var currentMonth = moment().format("YYYY-MM");
   var nextMonth = moment().add(1, "month").format("YYYY-MM");
 
@@ -49,15 +49,15 @@
     daysOfTheWeek: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
     events: events,
     clickEvents: {
-      click: function(target) {
+      click: function (target) {
         if (target.events.length) miniClndr.toggleClass("show-events", true);
-        miniClndr.find(".x-button").click(function() {
+        miniClndr.find(".x-button").click(function () {
           miniClndr.toggleClass("show-events", false);
         });
       },
-			onMonthChange: function () {
-				miniClndr.toggleClass("show-events", false);	
-        miniClndr.find(".x-button").click(function() {
+      onMonthChange: function () {
+        miniClndr.toggleClass("show-events", false);
+        miniClndr.find(".x-button").click(function () {
           miniClndr.toggleClass("show-events", false);
         });
       }
@@ -67,7 +67,7 @@
   });
 
   $(".fa").tooltip();
-  $(".list-group").on("click", function(e) {
+  $(".list-group").on("click", function (e) {
     const li = e.target;
     let title, summary;
 

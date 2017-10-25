@@ -2,33 +2,39 @@ const gulp = require('gulp')
 const livereload = require('gulp-livereload')
 const open = require('gulp-open')
 const sass = require('gulp-sass')
+const minify = require('gulp-minify')
+const cleanCss = require('gulp-clean-css')
+const rename = require("gulp-rename")
 
-gulp.task('sass', function () {
+gulp.task('compile-sass', function () {
     return gulp.src(['frontend/web/scss/*.scss'])
-        .pipe(sass())    
+        .pipe(sass())
+        .pipe(cleanCss())
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('frontend/web/css'))
-})
-
-gulp.task('css', function () {
-    gulp.src('frontend/web/css/*.css')
         .pipe(livereload({ start: true }))
 })
 
-gulp.task('js', function () {
-    gulp.src('frontend/web/js/*.js')
+gulp.task('compile-js', function () {
+    return gulp.src(['frontend/web/scripts/*.js'])
+        .pipe(minify({
+            ext: { min: '.min.js' },
+            noSource: true
+        }))
+        .pipe(gulp.dest('frontend/web/js'))
         .pipe(livereload({ start: true }))
 })
 
 gulp.task('php', function () {
-    gulp.src('frontend/views/**/*.php')
+    return gulp.src('frontend/views/**/*.php')
         .pipe(livereload({ start: true }))
 })
 
 gulp.task('watch', function () {
     livereload.listen()
-    gulp.watch(['frontend/web/scss/*.scss'], ['sass'])
-    gulp.watch(['frontend/web/css/*.css'], ['css'])
-    gulp.watch(['frontend/web/js/*.js'], ['js'])
+    gulp.watch(['frontend/web/scss/*.scss'], ['compile-sass'])
+    gulp.watch(['frontend/web/scripts/*.js'], ['compile-js'])
+
     gulp.watch(['frontend/views/**/*.php'], ['php'])
 })
 
