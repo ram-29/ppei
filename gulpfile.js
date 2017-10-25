@@ -7,7 +7,7 @@ const cleanCss = require('gulp-clean-css')
 const rename = require("gulp-rename")
 
 gulp.task('compile-sass', function () {
-    return gulp.src(['frontend/web/scss/*.scss'])
+    return gulp.src(['frontend/design/scss/*.scss'])
         .pipe(sass())
         .pipe(cleanCss())
         .pipe(rename({ suffix: '.min' }))
@@ -16,7 +16,7 @@ gulp.task('compile-sass', function () {
 })
 
 gulp.task('compile-js', function () {
-    return gulp.src(['frontend/web/scripts/*.js'])
+    return gulp.src(['frontend/design/scripts/*.js'])
         .pipe(minify({
             ext: { min: '.min.js' },
             noSource: true
@@ -32,8 +32,8 @@ gulp.task('php', function () {
 
 gulp.task('watch', function () {
     livereload.listen()
-    gulp.watch(['frontend/web/scss/*.scss'], ['compile-sass'])
-    gulp.watch(['frontend/web/scripts/*.js'], ['compile-js'])
+    gulp.watch(['frontend/design/scss/*.scss'], ['compile-sass'])
+    gulp.watch(['frontend/design/scripts/*.js'], ['compile-js'])
 
     gulp.watch(['frontend/views/**/*.php'], ['php'])
 })
