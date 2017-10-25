@@ -40,7 +40,7 @@ gulp.task('watch', function () {
 
 gulp.task('uri', function () {
     gulp.src(__filename)
-        .pipe(open({ uri: 'http://ppei.io' }))
+        .pipe(open({ uri: 'http://fr.ppei.io' }))
 })
 
 gulp.task('serve', ['watch', 'uri'])

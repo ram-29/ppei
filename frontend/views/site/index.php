@@ -130,7 +130,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 		<div class="container">
 			<h1><i class="fa fa-handshake-o" aria-hidden="true"></i> Our partners</h1>
 
-			<!-- <?= Html::img(Yii::getAlias('@backend').'/web/uploads/images/partners/logo/CBMS.png');?> -->
+			<?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.png');?>
 
 		</div>
 	</section><!-- Partners -->

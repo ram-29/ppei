@@ -16,6 +16,10 @@ nav {
     font-weight: bold;
   }
 
+  .navbar-toggler{
+    cursor: pointer;
+  }
+
   .navbar-nav a {
     color: lighten($black, 60%) !important;
     transition: color 250ms ease-in-out;
