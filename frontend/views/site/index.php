@@ -40,10 +40,35 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 	<section id="content" class="container">
 		<div class="row">
 			<div id="news" class="col-md-8">
-				<h1>News & Updates</h1>            
+				<h1>News & Updates</h1>
+				<div id="news-headline" class="row">
+					<div class="col-md-7">
+						<div class="card">
+							<img class="card-img-top" src="https://dummyimage.com/400x388/558B2F/fff" alt="...">
+							<div class="card-body">
+								<h3 class="card-title"><a href="#">Lorem ipsum dolor sit amet.</a></h3>
+								<h6 class="text-secondary">
+									By PPEIV2 &#8226; 
+									<i class="fa fa-clock-o" aria-hidden="true"></i> X days ago &#8226;
+									<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
+									<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
+								</h6>
+								<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, nisi aspernatur ipsa sint natus accusamus...</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="card">
+							<img class="card-img-top" src="https://dummyimage.com/400x404/558B2F/fff" alt="...">
+						</div>
+						<div class="card">
+							<img class="card-img-top" src="https://dummyimage.com/400x404/558B2F/fff" alt="...">
+						</div>
+					</div>
+				</div>            
 				<ul class="list-group">
 					<li class="list-group-item">
-						<img src="http://lorempixel.com/400/300/cats/" alt="...">
+						<img src="https://dummyimage.com/400x250/558B2F/fff" alt="...">
 						<div class="n-content p-3">
 							<h3><a href="#">Lorem ipsum dolor sit.</a></h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum rerum voluptatem expedita voluptatum tenetur earum aperiam quas esse! Harum, ad dolores nobis nesciunt esse alias debitis. Atque iste molestiae hic.</p>
@@ -56,7 +81,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						</div>
 					</li>
 					<li class="list-group-item">
-						<img src="http://lorempixel.com/400/300/cats/" alt="...">
+						<img src="https://dummyimage.com/400x250/558B2F/fff" alt="...">
 						<div class="n-content p-3">
 							<h3><a href="#">Quas accusamus optio doloribus!</a></h3>
 							<p>Reprehenderit explicabo perferendis a ad quo, reiciendis nisi modi. Exercitationem, saepe odio? Voluptatem possimus omnis, labore illo eligendi saepe dolorum nesciunt, esse hic unde necessitatibus, molestiae sit praesentium magnam nisi.</p>
@@ -69,7 +94,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						</div>
 					</li>
 					<li class="list-group-item">
-						<img src="http://lorempixel.com/400/300/cats/" alt="...">
+						<img src="https://dummyimage.com/400x250/558B2F/fff" alt="...">
 						<div class="n-content p-3">
 							<h3><a href="#">Eius sapiente sit eligendi?</a></h3>
 							<p>Cumque reprehenderit laudantium repellendus tempora non cum est molestiae doloribus facere dolorum magni amet officia similique esse voluptates consequatur, delectus nemo quisquam. Consequatur modi aliquam odio optio saepe perferendis maiores!</p>
@@ -82,9 +107,11 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						</div>
 					</li>
 				</ul>
+				<h4>Looking for more? Check out our <a href="#">News & Updates</a> section.</h4>
 			</div>
 			<div class="col-md-4">
 				<div id="calendar">
+					<h2>Calendar of Activities</h2>
 					<div id="mini-clndr">
 						<script id="mini-clndr-template" type="text/template">
 							<div class="controls">
