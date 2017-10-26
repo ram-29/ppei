@@ -382,11 +382,19 @@ nav {
   }
 }
 
+#map{
+  background-color: $secondary;
+  
+  .container{
+    padding: unset;
+  }
+}
+
 #partners {
   padding-top: 1em;
   height: 500px;
-  background-color: $secondary;
-  color: $white;
+  background-color: $white;
+  color: $secondary;
   text-align: center;
 
   h1 {

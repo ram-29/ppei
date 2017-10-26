@@ -95,4 +95,31 @@
       console.log(`TWEET\nTitle: ${title}\nContent: ${summary}`);
     }
   });
+
+  // Google chart visualization
+  google.charts.load('current', {
+    'packages': ['geochart'],
+    'mapsApiKey': 'AIzaSyCnO5ud0AQXw38v6CWmNujOeksxvjqUdfk'
+  });
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['Provinces'],
+      [{ v: 'PH-08', f: 'Mining' }]
+    ]);
+
+    var options = {
+      region: 'PH',
+      displayMode: 'markers',
+      resolution: 'provinces',
+      backgroundColor: '#558B2F',
+      datalessRegionColor: '#fff'
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+    chart.draw(data, options);
+  }
+
 })(window.jQuery);

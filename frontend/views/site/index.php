@@ -17,12 +17,12 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 					<a href="#" class="btn btn-primary btn-lg">Learn more</a>		
 				</div>
 				<div class="col-md-5">
-						
+					
 				</div>
 			</div>
 		</div>
 	</section><!-- Banner -->
-    
+		
 	<section id="headline" class="container-fluid">
 		<div class="container">
 			<div class="row">
@@ -40,7 +40,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 	<section id="content" class="container">
 		<div class="row">
 			<div id="news" class="col-md-8">
-				<h1>News & Updates</h1>
+				<h1>News & Events</h1>
 				<div id="news-headline" class="row">
 					<div class="col-md-7">
 						<div class="card">
@@ -152,13 +152,25 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 			</div>
 		</div>
 	</section><!-- Content -->
-		
+
+	<section id="map" class="container-fluid">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-md-6">
+					<div id="regions_div"></div>
+				</div>
+				<div class="col-md-6">
+
+				</div>
+			</div>
+		</div>
+	</section><!-- Map -->
+  
 	<section id="partners" class="container-fluid">
 		<div class="container">
 			<h1><i class="fa fa-handshake-o" aria-hidden="true"></i> Our partners</h1>
 
 			<?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.png');?>
-
 		</div>
 	</section><!-- Partners -->
 </div>

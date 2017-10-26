@@ -35,7 +35,7 @@ AppAsset::register($this);
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">News & Updates</a>
+            <a class="nav-link" href="#">News & Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">PPEI Knowledge Hub</a>
@@ -59,7 +59,7 @@ AppAsset::register($this);
       </div>
     </div>
   </nav>
-    
+  
   <main>
     <?= $content ?>
   </main>
@@ -87,7 +87,7 @@ AppAsset::register($this);
   </footer>
 
   <div style="height:500px;"></div>
-
+  
 <?php $this->endBody() ?>
 </body>
 </html>
