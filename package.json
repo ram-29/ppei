@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ram-29/ppei#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-bundle-assets": "^2.29.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-livereload": "^3.8.1",
     "gulp-minify": "^1.0.0",
