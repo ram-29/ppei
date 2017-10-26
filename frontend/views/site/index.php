@@ -14,7 +14,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 				<div class="col-md-7">
 					<h1>Philippine Poverty-Environment Initiative</h1>
 					<p>PPEI is a five-year (2011-2015) collaborative program of the Government of the Philippines and United Nations Development Programme-United Nations Environment Programme (UNDP-UNEP), through the Department of the Interior and Local Government (DILG).</p>
-					<a href="#" class="btn btn-primary btn-lg">Learn more</a>		
+					<a href="#" class="btn btn-primary btn-lg">Learn more</a>
 				</div>
 				<div class="col-md-5">
 					
@@ -43,8 +43,8 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 				<h1>News & Events</h1>
 				<div id="news-headline" class="row">
 					<div class="col-md-7">
-						<div class="card">
-							<img class="card-img-top" src="https://dummyimage.com/400x388/558B2F/fff" alt="...">
+						<div class="card hvr-float">
+							<img class="card-img-top" src="https://dummyimage.com/400x400/558B2F/fff" alt="...">
 							<div class="card-body">
 								<h3 class="card-title"><a href="#">Lorem ipsum dolor sit amet.</a></h3>
 								<h6 class="text-secondary">
@@ -58,16 +58,16 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						</div>
 					</div>
 					<div class="col-md-5">
-						<div class="card">
-							<img class="card-img-top" src="https://dummyimage.com/400x404/558B2F/fff" alt="...">
+						<div class="card hvr-float">
+							<img class="card-img-top" src="https://dummyimage.com/400x400/558B2F/fff" alt="...">
 						</div>
-						<div class="card">
-							<img class="card-img-top" src="https://dummyimage.com/400x404/558B2F/fff" alt="...">
+						<div class="card hvr-float">
+							<img class="card-img-top" src="https://dummyimage.com/400x400/558B2F/fff" alt="...">
 						</div>
 					</div>
 				</div>            
 				<ul class="list-group">
-					<li class="list-group-item">
+					<li class="list-group-item hvr-forward">
 						<img src="https://dummyimage.com/400x250/558B2F/fff" alt="...">
 						<div class="n-content p-3">
 							<h3><a href="#">Lorem ipsum dolor sit.</a></h3>
@@ -80,7 +80,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 							</h6>
 						</div>
 					</li>
-					<li class="list-group-item">
+					<li class="list-group-item hvr-forward">
 						<img src="https://dummyimage.com/400x250/558B2F/fff" alt="...">
 						<div class="n-content p-3">
 							<h3><a href="#">Quas accusamus optio doloribus!</a></h3>
@@ -93,7 +93,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 							</h6>
 						</div>
 					</li>
-					<li class="list-group-item">
+					<li class="list-group-item hvr-forward">
 						<img src="https://dummyimage.com/400x250/558B2F/fff" alt="...">
 						<div class="n-content p-3">
 							<h3><a href="#">Eius sapiente sit eligendi?</a></h3>
@@ -107,7 +107,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						</div>
 					</li>
 				</ul>
-				<h4>Looking for more? Check out our <a href="#">News & Updates</a> section.</h4>
+				<h4>Looking for more? Check out our <a href="#">News & Events</a> section.</h4>
 			</div>
 			<div class="col-md-4">
 				<div id="calendar">
@@ -135,12 +135,12 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 								<div class="events-container">
 									<div class="headers">
 										<div class="x-button">x</div>
-										<div class="event-header">EVENTS</div>
+										<div class="event-header">Activities</div>
 									</div>
 									<div class="events-list">
 										<% _.each(eventsThisMonth, function(event) { %>
 											<div class="event">
-												<a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>
+												<h6><%= moment(event.date).format('MMMM Do') %>: <a href="<%= event.url %>"><%= event.title %></a></h6> 
 											</div>
 										<% }); %>
 									</div>
@@ -155,22 +155,24 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 
 	<section id="map" class="container-fluid">
 		<div class="container">
-			<div class="row no-gutters">
+			<div class="row">
 				<div class="col-md-6">
-					<div id="regions_div"></div>
+					<div id="geo-map"></div>
 				</div>
-				<div class="col-md-6">
-
+				<div id="map-desc" class="col-md-6">
+					<h1>Dolor sit amet consectetur adipisicing.</h1>
+				  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore quidem, mollitia magnam, maxime dignissimos deleniti sunt officiis tenetur, vel non fugit sint esse sapiente ipsam. Quos repudiandae ipsa itaque aliquam?</p>
+					<p>Tenetur fugit accusantium quas eveniet vitae eligendi autem eos doloremque laborum, quia dolore ducimus itaque sed, ullam at nisi corporis asperiores quod qui totam! Assumenda eligendi eaque fugiat quae velit.</p>
 				</div>
 			</div>
 		</div>
 	</section><!-- Map -->
   
-	<section id="partners" class="container-fluid">
-		<div class="container">
-			<h1><i class="fa fa-handshake-o" aria-hidden="true"></i> Our partners</h1>
+	<section id="partners" class="container">
+		
+			<h1><i class="fa fa-handshake-o fa-lg" aria-hidden="true"></i> Our Partners</h1>
 
 			<?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.png');?>
-		</div>
+		
 	</section><!-- Partners -->
 </div>

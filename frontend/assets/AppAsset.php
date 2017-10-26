@@ -18,11 +18,10 @@ class AppAsset extends AssetBundle
 		'css/app.min.css'
 	];
 	public $js = [
-		'https://www.gstatic.com/charts/loader.js',
 		'bundle/js/vendor.min.js',
 		'js/app.min.js'
 	];
 	public $depends = [
-			
+		
 	];
 }

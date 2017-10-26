@@ -79,12 +79,8 @@ nav {
 }
 
 #content {
-  padding: 1em;
+  padding: 1em 0 1em 0;
   background-color: $white;
-
-  .col-md-4{
-    padding-left: 0 !important;
-  }
 }
 
 #news {
@@ -97,6 +93,12 @@ nav {
 
     .col-md-7{
       .card{
+				transition: $hover-transition;
+
+				&:hover{
+					box-shadow: $hover-shadow;
+				}
+
         h3{
           margin-top: unset;
           font-weight: bold;
@@ -126,11 +128,18 @@ nav {
     }
 
     .col-md-5{
-      padding-left: 0 !important;
+			.card{
+				cursor: pointer;
+				transition: $hover-transition;
 
-      .card:nth-child(1){
-        margin-bottom: .5em;
-      }
+				&:hover{
+					box-shadow: $hover-shadow;
+				}
+
+				&:nth-child(1){
+					margin-bottom: 1em;
+				}
+			}
     }
   }
 
@@ -191,7 +200,7 @@ nav {
 
   #mini-clndr {
     width: 100%;
-    box-shadow: 4px 4px 0 lighten($black, 80%);
+    box-shadow: $box-shadow;
 
     &.show-events {
       .days-container {
@@ -265,7 +274,7 @@ nav {
           }
 
           .days-list {
-            background-color: $body-bg;
+						background-color: $body-bg;
 
             &::after {
               display: block;
@@ -286,18 +295,9 @@ nav {
               &:nth-child(14),
               &:nth-child(21),
               &:nth-child(28),
-              &:nth-child(35) {
+							&:nth-child(35),
+							&:nth-child(42) {
                 border-right: unset;
-              }
-
-              &:nth-child(29),
-              &:nth-child(30),
-              &:nth-child(31),
-              &:nth-child(32),
-              &:nth-child(33),
-              &:nth-child(34),
-              &:nth-child(35) {
-                border-bottom: unset;
               }
 
               &.event {
@@ -354,26 +354,34 @@ nav {
             .event-header {
               width: 100%;
               text-align: center;
-              font-weight: bold;
+							font-weight: bold;
+							text-transform: uppercase;
             }
           }
 
           .events-list {
-            background-color: $secondary;
-            box-shadow: 4px 4px 0 lighten($black, 80%);
+						background-color: $white;
+						border-left: 1px solid lighten($black, 85%);
+						border-bottom: 1px solid lighten($black, 85%);
+            box-shadow: $box-shadow;
 
             .event {
               padding: 1em;
-              border-bottom: 1px solid white;
+              border-bottom: 1px solid lighten($black, 85%);
 
               &:last-child {
                 border-bottom: unset;
               }
 
-              a {
-                color: $white;
-                text-decoration: none;
-              }
+              h6 {
+								font-weight: bold;
+								color: $secondary;
+
+								a {
+									color: $black;
+									font-weight: normal;
+								}
+							}
             }
           }
         }
@@ -383,28 +391,40 @@ nav {
 }
 
 #map{
-  background-color: $secondary;
-  
-  .container{
-    padding: unset;
-  }
+	height: 500px; // Change on Mobile View
+	padding: 1em 0 1em 0;
+	background-color: $secondary;
+	display: flex;
+	align-items: center;
+	
+	#geo-map{
+		box-shadow: $box-shadow-secondary;
+	}
+
+	#map-desc{
+		color: $white;
+		text-shadow: $text-shadow;
+	}
 }
 
 #partners {
-  padding-top: 1em;
-  height: 500px;
+	height: 500px;
+	padding: 1em 0 1em 0;
   background-color: $white;
-  color: $secondary;
   text-align: center;
 
   h1 {
-    font-weight: bold;
-    text-shadow: $text-shadow;
+		font-weight: bold;
+		color: $black;
+
+		i{
+			color: $secondary;
+		}
   }
 }
 
 footer {
   height: 500px;
   color: $white;
-  background-color: $black;
+  background-color: lighten($black, 10%);
 }

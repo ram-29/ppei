@@ -106,18 +106,19 @@
   function drawRegionsMap() {
     var data = google.visualization.arrayToDataTable([
       ['Provinces'],
-      [{ v: 'PH-08', f: 'Mining' }]
+			['PH-08'],
+			[{ v: 'PH-08', f: 'Bicol: Mining' }]
     ]);
 
-    var options = {
+		var options = {
       region: 'PH',
       displayMode: 'markers',
       resolution: 'provinces',
-      backgroundColor: '#558B2F',
-      datalessRegionColor: '#fff'
+      backgroundColor: '#fff',
+      datalessRegionColor: '#558B2F'
     };
 
-    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    var chart = new google.visualization.GeoChart(document.getElementById('geo-map'));
 
     chart.draw(data, options);
   }

@@ -85,8 +85,6 @@ AppAsset::register($this);
       </div>
     </div>
   </footer>
-
-  <div style="height:500px;"></div>
   
 <?php $this->endBody() ?>
 </body>

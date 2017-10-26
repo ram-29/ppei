@@ -13,3 +13,9 @@ $white: #ffffff;
 $black: #08090A;
 
 $text-shadow: 1px 1px 1px #212121;
+
+$box-shadow: 4px 4px 0 lighten($black, 80%);
+$box-shadow-secondary: 4px 4px 0 lighten($black, 20%);
+
+$hover-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+$hover-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
