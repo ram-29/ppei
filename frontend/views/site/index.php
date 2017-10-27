@@ -8,21 +8,42 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 ?>
 <div class="site-index">
 
-	<section id="banner" class="container-fluid">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<h1>Philippine Poverty-Environment Initiative</h1>
-					<p>PPEI is a five-year (2011-2015) collaborative program of the Government of the Philippines and United Nations Development Programme-United Nations Environment Programme (UNDP-UNEP), through the Department of the Interior and Local Government (DILG).</p>
-					<a href="#" class="btn btn-primary btn-lg">Learn more</a>
-				</div>
-				<div class="col-md-5">
-					
+	<section id="banner">
+		<div id="banner-carousel" class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block w-100" src="https://dummyimage.com/1366x500/F44336/fff" alt="First slide">
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="https://dummyimage.com/1366x500/F44336/fff" alt="Second slide">
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="https://dummyimage.com/1366x500/F44336/fff" alt="Third slide">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section><!-- Banner -->
-		
+		<div id="banner-content" class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<h1>Philippine Poverty-Environment Initiative</h1>
+						<p>PPEI is a five-year (2011-2015) collaborative program of the Government of the Philippines and United Nations Development Programme-United Nations Environment Programme (UNDP-UNEP), through the Department of the Interior and Local Government (DILG).</p>
+						<a href="#" class="btn btn-primary btn-lg">Learn more</a>
+					</div>
+					<div class="col-md-5">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ratione facilis vel amet rerum debitis magni ab eos inventore, perferendis dignissimos, asperiores officiis numquam nam voluptatibus ipsam eveniet reiciendis fuga.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section id="headline" class="container-fluid">
 		<div class="container">
 			<div class="row">
@@ -44,7 +65,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 				<div id="news-headline" class="row">
 					<div class="col-md-7">
 						<div class="card hvr-float">
-							<img class="card-img-top" src="https://dummyimage.com/400x400/558B2F/fff" alt="...">
+							<img class="card-img-top" src="http://lorempixel.com/400/400/cats/" alt="...">
 							<div class="card-body">
 								<h3 class="card-title"><a href="#">Lorem ipsum dolor sit amet.</a></h3>
 								<h6 class="text-secondary">
@@ -58,11 +79,17 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						</div>
 					</div>
 					<div class="col-md-5">
-						<div class="card hvr-float">
-							<img class="card-img-top" src="https://dummyimage.com/400x400/558B2F/fff" alt="...">
+						<div class="card text-white hvr-float">
+							<img class="card-img" src="http://lorempixel.com/400/420/cats/" alt="Card image">
+							<div class="card-img-overlay">
+								<h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+							</div>
 						</div>
-						<div class="card hvr-float">
-							<img class="card-img-top" src="https://dummyimage.com/400x400/558B2F/fff" alt="...">
+						<div class="card text-white hvr-float">
+							<img class="card-img" src="http://lorempixel.com/400/420/cats/" alt="Card image">
+							<div class="card-img-overlay">
+								<h5 class="card-title">Illum omnis recusandae odit deserunt.</h5>
+							</div>
 						</div>
 					</div>
 				</div>            
@@ -160,19 +187,114 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 					<div id="geo-map"></div>
 				</div>
 				<div id="map-desc" class="col-md-6">
-					<h1>Dolor sit amet consectetur adipisicing.</h1>
-				  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore quidem, mollitia magnam, maxime dignissimos deleniti sunt officiis tenetur, vel non fugit sint esse sapiente ipsam. Quos repudiandae ipsa itaque aliquam?</p>
-					<p>Tenetur fugit accusantium quas eveniet vitae eligendi autem eos doloremque laborum, quia dolore ducimus itaque sed, ullam at nisi corporis asperiores quod qui totam! Assumenda eligendi eaque fugiat quae velit.</p>
+					<h1>Philippine Poverty-Environment Initiative</h1>
+					<p>Operates at national and local levels, providing a better enabling environment for national and local governments to improve governance of natural wealth and benefit sharing from the revenues derived from them for a sustained and broad-based growth and ecological stability.</p>
+					<p>At the local level, PPEI is currently working with the following local government units for piloting, capacity development, analytical studies, etc. Since 2011, the focus has been on mining and energy. PPEI aims to cover other natural resources (i.e. forestry, marine and coastal, water, etc.) beginning 2013.</p>
 				</div>
 			</div>
 		</div>
 	</section><!-- Map -->
-  
-	<section id="partners" class="container">
-		
-			<h1><i class="fa fa-handshake-o fa-lg" aria-hidden="true"></i> Our Partners</h1>
 
-			<?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.png');?>
-		
+	<section id="partners" class="container-fluid">
+		<div class="container">
+			<h1><i class="fa fa-handshake-o fa-lg" aria-hidden="true"></i> Our Partners</h1>
+			<div class="row">
+				<div class="col-md">
+				  <?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Community-Based Monitoring System</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/COMP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Chambers of Mines of the Philippines</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DBM.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Department of Budget and Management</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DENR.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Department of Environment and Natural Resources</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DOE.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Department of Energy</h6>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DOF.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Department of Finance</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/LCP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>League of Cities of the Philippines</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/LMP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>League of Municipalities of the Philippines</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/LPP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>League of Provinces of the Philippines</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/MGB.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Mines and Geosciences Bureau</h6>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/NAPC.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>National Anti-Poverty Commission</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/NCIP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>National Commission on Indigeneous Peoples</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/NEDA.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>National Economic and Development Authority</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/PBSP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Philippine Business for Social Pogress</h6>
+				</div>
+				<div class="col-md">
+					<?= Html::img('@mBackEnd/uploads/images/partners/logo/ULAP.jpg', [
+						'class' => 'img-thumbnail hvr-grow'
+					]); ?>
+					<h6>Union of Local Authorities of the Philippines</h6>
+				</div>
+			</div>
+			
+		</div>
 	</section><!-- Partners -->
 </div>

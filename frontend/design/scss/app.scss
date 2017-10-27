@@ -31,28 +31,46 @@ nav {
 }
 
 /* Change On Mobile View */
-#banner .col-md-7,
-#banner .col-md-5 {
-  height: 500px;
-}
+#banner{
+  height:500px;
+  position: relative !important;
+  
+  #banner-carousel{
+    height:500px;
+    position: absolute;
 
-#banner .col-md-7 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#banner {
-  background-color: $primary;
-
-  h1 {
-    font-size: 4em;
-    font-weight: bold;
+    img{
+      height: 500px;
+    }
   }
 
-  a {
-    width: 50%;
-    align-self: flex-end;
+  #banner-content{
+    position: absolute;
+    background-color: $primary-transparent;
+
+    .col-md-7{
+      height:500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 4em;
+        font-weight: bold;
+      }
+
+      a {
+        width: 50%;
+        align-self: flex-end;
+      }
+    }
+
+    .col-md-5{
+      height:500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
 
@@ -79,7 +97,7 @@ nav {
 }
 
 #content {
-  padding: 1em 0 1em 0;
+  padding: 1em;
   background-color: $white;
 }
 
@@ -130,7 +148,21 @@ nav {
     .col-md-5{
 			.card{
 				cursor: pointer;
-				transition: $hover-transition;
+        transition: $hover-transition;
+        
+        .card-img-overlay{
+          display:flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: unset;
+          
+          .card-title{
+            margin: unset;
+            padding: .5em;
+            font-weight: normal;
+            background-color: $secondary-transparent;
+          }
+        }
 
 				&:hover{
 					box-shadow: $hover-shadow;
@@ -156,7 +188,12 @@ nav {
     display: flex;
     border-right: none;
     border-left: none;
+    transition: $hover-transition;
 
+    &:hover{
+      background-color: $body-bg;
+    }
+    
     /* Change On Mobile View */
     img {
       width: 35%;
@@ -338,7 +375,6 @@ nav {
             background-color: $primary;
             display: flex;
             align-items: center;
-            position: relative;
             height: 3em;
 
             .x-button {
@@ -403,28 +439,55 @@ nav {
 
 	#map-desc{
 		color: $white;
-		text-shadow: $text-shadow;
+    text-shadow: $text-shadow;
+    
+    p{
+      span{
+        font-weight: bold;
+      }
+    }
 	}
 }
 
 #partners {
-	height: 500px;
 	padding: 1em 0 1em 0;
   background-color: $white;
   text-align: center;
 
   h1 {
 		font-weight: bold;
-		color: $black;
+    color: $black;
 
 		i{
 			color: $secondary;
 		}
   }
+
+  .row {
+    margin: 4em 0 4em 0;
+  }
+
+  img{
+    cursor: pointer;
+    transition: $hover-transition;
+    margin-bottom: 1em;
+
+    &:hover{
+      box-shadow: $hover-shadow-secondary;
+    }
+  }
+
+  h6{
+    color: $secondary;
+    font-weight: bold;
+  }
+
+  
 }
 
 footer {
   height: 500px;
-  color: $white;
-  background-color: lighten($black, 10%);
+  padding: 1em 0 1em;
+  color: $black;
+  background-color: $primary;
 }

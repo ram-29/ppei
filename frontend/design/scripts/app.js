@@ -105,17 +105,26 @@
 
   function drawRegionsMap() {
     var data = google.visualization.arrayToDataTable([
-      ['Provinces'],
-			['PH-08'],
-			[{ v: 'PH-08', f: 'Bicol: Mining' }]
+      ['Provinces', 'Region'],
+      [{ v: 'PH-01', f: 'Metallic Mining' }, 1],
+      [{ v: 'PH-03', f: 'Non-Metallic Mining' }, 3],
+      [{ v: 'PH-41', f: 'Oil & Gas' }, 4],
+      [{ v: 'PH-05', f: 'Metallic Mining' }, 5],
+      [{ v: 'PH-06', f: 'Renewable Energy Source' }, 6],
+      [{ v: 'PH-07', f: 'Metallic Mining' }, 7],
+      [{ v: 'PH-13', f: 'Metallic Mining' }, 13]
     ]);
 
 		var options = {
       region: 'PH',
-      displayMode: 'markers',
       resolution: 'provinces',
       backgroundColor: '#fff',
-      datalessRegionColor: '#558B2F'
+      datalessRegionColor: '#9CCC65',
+      colorAxis: {
+        colors: ['#FFFF03', '#FF0000', '#000099', '#FFFF03', '#009900', '#FFFF03', '#FFFF03'],
+        values: [1, 3, 4, 5, 6, 7, 13]
+      },
+      legend: 'none'
     };
 
     var chart = new google.visualization.GeoChart(document.getElementById('geo-map'));
