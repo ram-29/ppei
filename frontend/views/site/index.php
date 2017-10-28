@@ -7,28 +7,22 @@ use yii\helpers\Html;
 $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippine Poverty-Environment Initiative';
 ?>
 <div class="site-index">
-
+	
 	<section id="banner">
-		<div id="banner-carousel" class="container-fluid">
-			<div class="container">
-				<div class="row">
-					<div class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img class="d-block w-100" src="https://dummyimage.com/1366x500/F44336/fff" alt="First slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="https://dummyimage.com/1366x500/F44336/fff" alt="Second slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="https://dummyimage.com/1366x500/F44336/fff" alt="Third slide">
-							</div>
-						</div>
-					</div>
+		<div id="banner-slider" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="images/banner/image-1.jpg" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="images/banner/image-2.jpg" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="images/banner/image-3.jpg" alt="...">
 				</div>
 			</div>
 		</div>
-		<div id="banner-content" class="container-fluid">
+		<div id="banner-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
@@ -37,12 +31,14 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						<a href="#" class="btn btn-primary btn-lg">Learn more</a>
 					</div>
 					<div class="col-md-5">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ratione facilis vel amet rerum debitis magni ab eos inventore, perferendis dignissimos, asperiores officiis numquam nam voluptatibus ipsam eveniet reiciendis fuga.</p>
+						<img src="images/logo/dilg-logo.png" alt="DILG Logo">
+						<img src="images/logo/undp-logo.png" alt="UNDP Logo">
+						<img src="images/logo/unep-logo.png" alt="UNEP Logo">
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section><!-- Banner -->
 
 	<section id="headline" class="container-fluid">
 		<div class="container">
@@ -200,101 +196,130 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 			<h1><i class="fa fa-handshake-o fa-lg" aria-hidden="true"></i> Our Partners</h1>
 			<div class="row">
 				<div class="col-md">
-				  <?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/CBMS.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Community-Based Monitoring System</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/COMP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/COMP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Chambers of Mines of the Philippines</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DBM.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/DBM.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Department of Budget and Management</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DENR.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/DENR.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Department of Environment and Natural Resources</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DOE.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/DOE.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Department of Energy</h6>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/DOF.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/DOF.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Department of Finance</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/LCP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/LCP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>League of Cities of the Philippines</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/LMP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/LMP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>League of Municipalities of the Philippines</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/LPP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/LPP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>League of Provinces of the Philippines</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/MGB.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/MGB.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Mines and Geosciences Bureau</h6>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/NAPC.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/NAPC.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>National Anti-Poverty Commission</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/NCIP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/NCIP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>National Commission on Indigeneous Peoples</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/NEDA.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/NEDA.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>National Economic and Development Authority</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/PBSP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/PBSP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Philippine Business for Social Pogress</h6>
 				</div>
 				<div class="col-md">
-					<?= Html::img('@mBackEnd/uploads/images/partners/logo/ULAP.jpg', [
-						'class' => 'img-thumbnail hvr-grow'
-					]); ?>
+					<a href="#">
+						<?= Html::img('@mBackEnd/uploads/images/partners/logo/ULAP.jpg', [
+							'class' => 'img-thumbnail hvr-grow'
+						]); ?>
+					</a>
 					<h6>Union of Local Authorities of the Philippines</h6>
 				</div>
 			</div>
-			
 		</div>
 	</section><!-- Partners -->
 </div>

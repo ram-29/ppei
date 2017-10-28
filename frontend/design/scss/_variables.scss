@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-$body-bg: #f8f9fa;
+$body-bg: #E9EBEE;
 $main-font: 'Noto Sans';
 
 $primary: #9CCC65;
 $secondary: #558B2F;
 
-$primary-transparent: rgba(156, 204, 101, 0.7);
+$primary-transparent: rgba(156, 204, 101, 0.3);
 $secondary-transparent: rgba(85, 139, 47, 0.7);
 
 $accent: #007BFF;
@@ -24,8 +24,3 @@ $hover-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
 $hover-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $hover-shadow-secondary: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
-
-$metallic: #FFFF03;
-$non-metallic: #FF0000;
-$oil: #000099;
-$renewable: #009900;

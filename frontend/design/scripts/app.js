@@ -66,7 +66,7 @@
     forceSixRows: false
   });
 
-  $(".fa").tooltip();
+  $('[data-toggle="tooltip"]').tooltip();
   $(".list-group").on("click", function (e) {
     const li = e.target;
     let title, summary;
