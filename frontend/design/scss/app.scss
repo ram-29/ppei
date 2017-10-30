@@ -118,9 +118,10 @@ nav {
   }
 
   #news-container {
+
     #news-sub{
       img{
-        height: 300px;
+        height: 304px !important;
       }
     }
 
@@ -383,10 +384,14 @@ footer {
     }
   }
 
-  .col-md-5{
+  #news-sub{
     .card{
       cursor: pointer;
       transition: $hover-transition;
+
+      img{
+        height: 388px;
+      }
 
       .card-img-overlay{
         display:flex;
@@ -395,6 +400,7 @@ footer {
         padding: unset;
         
         .card-content{
+          text-shadow: $text-shadow;
           padding: .5em;           
           background-color: $secondary-transparent;
         }
@@ -410,6 +416,24 @@ footer {
 
       &:nth-child(1){
         margin-bottom: 1em;
+      }
+
+      h6 {
+        text-shadow: $text-shadow;
+        .fa-facebook,
+        .fa-twitter {
+          cursor: pointer;
+          margin: 0 0.2em;
+          color: lighten($accent, 10%);
+
+          &:hover {
+            color: $accent;
+          }
+        }
+
+        .fa-clock-o {
+          color: $accent;
+        }
       }
     }
   }
