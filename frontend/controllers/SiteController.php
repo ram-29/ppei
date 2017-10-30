@@ -36,6 +36,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionNews()
+    {
+        return $this->render('news');
+    }
+
     /**
      * Displays about page.
      *
