@@ -20,12 +20,12 @@
 			</div>
 		</div>
 		<div id="news-sub" class="col-md-5">
-			<div class="card text-white hvr-float">
+			<div class="card hvr-float">
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
 						<h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
-						<h6 class="text-white">
+						<h6>
 							By PPEIV2 &#8226; 
 							<i class="fa fa-clock-o" aria-hidden="true"></i> X days ago &#8226;
 							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
@@ -34,12 +34,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="card text-white hvr-float">
+			<div class="card hvr-float">
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
 						<h5 class="card-title">Illum omnis recusandae odit deserunt.</h5>
-						<h6 class="text-white">
+						<h6>
 							By PPEIV2 &#8226; 
 							<i class="fa fa-clock-o" aria-hidden="true"></i> X days ago &#8226;
 							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>

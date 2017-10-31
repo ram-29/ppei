@@ -24,7 +24,7 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
-    }
+		}
 
     /**
      * Displays homepage.
@@ -36,10 +36,18 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionNews()
+		/**
+     * Displays indidvidual news or the News page.
+     *
+     * @return mixed
+     */
+    public function actionNewsAndEvents($id = null) // Optional param
     {
-        return $this->render('news');
-    }
+			if($id){
+				return $this->render('news');
+			}
+			return $this->render('news-list');
+		}
 
     /**
      * Displays about page.

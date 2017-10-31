@@ -26,8 +26,13 @@ gulp.task('compile-js', function () {
 		.pipe(livereload({ start: true }))
 })
 
-gulp.task('php', function () {
+gulp.task('views', function () {
 	return gulp.src('frontend/views/**/*.php')
+		.pipe(livereload({ start: true }))
+})
+
+gulp.task('controllers', function(){
+	return gulp.src('frontend/controllers/*.php')
 		.pipe(livereload({ start: true }))
 })
 
@@ -64,7 +69,8 @@ gulp.task('watch', function () {
 	gulp.watch(['frontend/design/scss/*.scss'], ['compile-sass'])
 	gulp.watch(['frontend/design/scripts/*.js'], ['compile-js'])
 
-	gulp.watch(['frontend/views/**/*.php'], ['php'])
+	gulp.watch(['frontend/views/**/*.php'], ['views'])
+	gulp.watch(['frontend/controllers/*.php'], ['controllers'])
 })
 
 gulp.task('uri', function () {

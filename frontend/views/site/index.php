@@ -14,13 +14,22 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 		<div id="banner-slider" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="images/banner/image-1.jpg" alt="...">
+					<?= Html::img('@mFrontEnd/images/banner/image-1.jpg', [
+						'class' => 'd-block w-100',
+						'alt' => 'Banner Image'
+					]); ?>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="images/banner/image-2.jpg" alt="...">
+					<?= Html::img('@mFrontEnd/images/banner/image-2.jpg', [
+						'class' => 'd-block w-100',
+						'alt' => 'Banner Image'
+					]); ?>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100" src="images/banner/image-3.jpg" alt="...">
+					<?= Html::img('@mFrontEnd/images/banner/image-3.jpg', [
+						'class' => 'd-block w-100',
+						'alt' => 'Banner Image'
+					]); ?>
 				</div>
 			</div>
 		</div>
@@ -33,9 +42,15 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippin
 						<a href="#" class="btn btn-primary btn-lg">Learn more</a>
 					</div>
 					<div class="col-md-5">
-						<img src="images/logo/dilg-logo.png" alt="DILG Logo">
-						<img src="images/logo/undp-logo.png" alt="UNDP Logo">
-						<img src="images/logo/unep-logo.png" alt="UNEP Logo">
+						<?= Html::img('@mFrontEnd/images/logo/dilg-logo.png', [
+							'alt' => 'DILG Logo'
+						]); ?>
+						<?= Html::img('@mFrontEnd/images/logo/undp-logo.png', [
+							'alt' => 'UNDP Logo'
+						]); ?>
+						<?= Html::img('@mFrontEnd/images/logo/unep-logo.png', [
+							'alt' => 'UNEP Logo'
+						]); ?>
 					</div>
 				</div>
 			</div>

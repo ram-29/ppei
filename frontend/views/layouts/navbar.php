@@ -1,11 +1,16 @@
 <?php
 
+use yii\helpers\Html;
 ?>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light">
 	<div class="container">
 		<a class="navbar-brand" href="/">
 			<div class="logo-container">
-				<img src="images/logo/ppei-logo.png" width="70" height="50" alt="PPEI Logo">
+				<?= Html::img('@mFrontEnd/images/logo/ppei-logo.png', [
+					'width' => '70',
+					'height' => '50',
+					'alt' => 'PPEI Logo'
+				]); ?>
 				<h1>PPEI</h1>
 			</div>
 			<h6>Working Towards Building a<br>Green Economy and Sustainable Local Communities</h6>
@@ -16,7 +21,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="/news">News & Events</a>
+					<a class="nav-link" href="/news-and-events">News & Events</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">PPEI Knowledge Hub</a>
