@@ -1,8 +1,8 @@
 <?php
 
 ?>
-<div id="calendar">
-	<h2>Calendar of Activities</h2>
+<div id="components-calendar">
+	<h1>Calendar of Activities</h1>
 	<div id="mini-clndr">
 		<script id="mini-clndr-template" type="text/template">
 			<div class="controls">

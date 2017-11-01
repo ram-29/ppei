@@ -2,18 +2,18 @@
 
 use yii\helpers\Html;
 ?>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light">
-	<div class="container">
-		<a class="navbar-brand" href="/">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+		<a class="navbar-brand" href="#">
 			<div class="logo-container">
 				<?= Html::img('@mFrontEnd/images/logo/ppei-logo.png', [
 					'width' => '70',
 					'height' => '50',
 					'alt' => 'PPEI Logo'
 				]); ?>
-				<h1>PPEI</h1>
+				<h1 class="abbr">PPEI</h1>
 			</div>
-			<h6>Working Towards Building a<br>Green Economy and Sustainable Local Communities</h6>
+			<h6 class="tagline">Working Towards Building a<br>Green Economy and Sustainable Local Communities</h6>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -27,9 +27,7 @@ use yii\helpers\Html;
 					<a class="nav-link" href="#">PPEI Knowledge Hub</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							About Us
-					</a>
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" href="#">Who We Are</a>
 						<a class="dropdown-item" href="#">What We Do</a>
@@ -43,5 +41,5 @@ use yii\helpers\Html;
 				</li>
 			</ul>
 		</div>
-	</div>
+  </div>
 </nav>
