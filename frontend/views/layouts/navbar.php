@@ -2,9 +2,9 @@
 
 use yii\helpers\Html;
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="/">
 			<div class="logo-container">
 				<?= Html::img('@mFrontEnd/images/logo/ppei-logo.png', [
 					'width' => '70',
@@ -33,8 +33,10 @@ use yii\helpers\Html;
 						<a class="dropdown-item" href="#">What We Do</a>
 						<a class="dropdown-item" href="#">Stories of Change</a>
 						<a class="dropdown-item" href="#">Partners</a>
-						<a class="dropdown-item" href="#">Gallery</a>
 					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Gallery</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Contact Us</a>

@@ -26,12 +26,12 @@
 				padding: 1rem;
 				background-color: $secondary-transparent;
 
-				.card-category{
-					color: $accent-secondary;
-					font-weight: bold;
-					text-transform: uppercase;
-					letter-spacing: -2px;
-				}
+				// .card-category{
+				// 	color: $accent-secondary;
+				// 	font-weight: bold;
+				// 	text-transform: uppercase;
+				// 	letter-spacing: -2px;
+				// }
 
 				.card-title{
 					color: $white;
@@ -63,7 +63,7 @@
 						color: $white;
 
 						&:hover{
-							color: $accent-secondary;
+							color: $accent;
 						}
 					}
 				}
@@ -148,11 +148,11 @@
 							width: 60%;
 							padding-left: 1rem;
 
-							.item-category{
-								color: $accent-secondary;
-								font-weight: bold;
-								text-transform: uppercase;
-							}
+							// .item-category{
+							// 	color: $accent-secondary;
+							// 	font-weight: bold;
+							// 	text-transform: uppercase;
+							// }
 
 							.item-title{
 								color: $secondary;
@@ -391,5 +391,42 @@
         }
       }
     }
+	}
+}
+
+#components-partners{
+	h1{
+		font-weight: bold;
+		text-align: center;
+
+		i{
+			color: $secondary;
+		}
+	}
+
+	.col-md{
+		display: flex;
+		flex-wrap: wrap;
+
+		.partner{
+			flex-basis: 20%;
+			text-align: center;
+			margin: 1rem 0;
+
+			img{
+				margin-bottom: .4rem;
+				transition: $hover-transition;
+
+				&:hover{
+					box-shadow: $hover-shadow-secondary;
+				}
+			}
+
+			h6{
+				font-size: .9rem;
+				color: $secondary;
+				font-weight: bold;
+			}
+		}
 	}
 }

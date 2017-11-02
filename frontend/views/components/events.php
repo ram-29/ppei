@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Html;
 ?>
 <div id="components-events">
 	<h1>News & Events</h1>
@@ -9,7 +10,6 @@
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h5 class="card-category">Event</h5>
 						<h4 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, odit?</h4>
 						<h6 class="card-details lead">
 							By PPEIV2 &#8226; 
@@ -26,7 +26,6 @@
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h5 class="card-category">Event</h5>
 						<h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
 						<h6 class="card-details">
 							By PPEIV2 &#8226; 
@@ -41,7 +40,6 @@
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h5 class="card-category">News</h5>
 						<h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
 						<h6 class="card-details">
 							By PPEIV2 &#8226; 
@@ -61,7 +59,6 @@
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h5 class="card-category">Event</h5>
 						<h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
 						<h6 class="card-details">
 							By PPEIV2 &#8226; 
@@ -78,7 +75,6 @@
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h5 class="card-category">Event</h5>
 						<h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
 						<h6 class="card-details">
 							By PPEIV2 &#8226; 
@@ -95,7 +91,6 @@
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h5 class="card-category">News</h5>
 						<h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
 						<h6 class="card-details">
 							By PPEIV2 &#8226; 
@@ -116,7 +111,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">Event</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -132,7 +126,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">News</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -148,7 +141,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">Event</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -164,7 +156,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">Event</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -180,7 +171,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">News</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -196,7 +186,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">News</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -212,7 +201,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">Event</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -228,7 +216,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">News</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -244,7 +231,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">Event</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">
@@ -260,7 +246,6 @@
 					<div class="item-content hvr-forward">
 						<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 						<div class="item-overview">
-							<h5 class="item-category">Event</h5>
 							<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
 							<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
 							<h6 class="item-details">

@@ -6,9 +6,11 @@ const minify = require('gulp-minify')
 const cleanCss = require('gulp-clean-css')
 const rename = require("gulp-rename")
 const bundle = require('gulp-bundle-assets')
+const wait = require('gulp-wait')
 
 gulp.task('compile-sass', function () {
 	return gulp.src(['frontend/design/scss/*.scss'])
+		.pipe(wait(500))
 		.pipe(sass())
 		.pipe(cleanCss({level: {1: {specialComments: 0}}}))
 		.pipe(rename({ suffix: '.min' }))
@@ -18,6 +20,7 @@ gulp.task('compile-sass', function () {
 
 gulp.task('compile-js', function () {
 	return gulp.src(['frontend/design/scripts/*.js'])
+		.pipe(wait(500))	
 		.pipe(minify({
 			ext: { min: '.min.js' },
 			noSource: true
@@ -28,16 +31,19 @@ gulp.task('compile-js', function () {
 
 gulp.task('views', function () {
 	return gulp.src('frontend/views/**/*.php')
+		.pipe(wait(500))	
 		.pipe(livereload({ start: true }))
 })
 
 gulp.task('controllers', function(){
 	return gulp.src('frontend/controllers/*.php')
+		.pipe(wait(500))	
 		.pipe(livereload({ start: true }))
 })
 
 gulp.task('css-bundle', function () {
 	return gulp.src('./css-bundle.config.js')
+		.pipe(wait(500))	
 		.pipe(bundle())
 		.pipe(cleanCss({level: {1: {specialComments: 0}}}))
 		.pipe(rename({
@@ -49,6 +55,7 @@ gulp.task('css-bundle', function () {
 
 gulp.task('js-bundle', function () {
 	return gulp.src('./js-bundle.config.js')
+		.pipe(wait(500))	
 		.pipe(bundle())
 		.pipe(rename({
 				basename: "vendor",

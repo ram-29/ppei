@@ -19,7 +19,11 @@ $this->title = $name;
         <a href="/" class="btn btn-primary">Go somewhere</a>
       </div>
       <div class="card-logo">
-        <img src="images/logo/ppei-logo.png" width="110" height="70" alt="PPEI Logo">
+        <?= Html::img('@web/images/logo/ppei-logo.png', [
+          'height' => '70',
+          'width' => '110',
+          'alt' => 'PPEI Logo'
+        ]); ?>
         <p class="lead">Philippine Poverty-Environment Initiative</p>
       </div>
     </div>
