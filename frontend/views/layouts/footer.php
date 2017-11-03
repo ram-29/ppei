@@ -46,7 +46,7 @@ use yii\helpers\Html;
 					'height' => '70',
 					'alt' => 'PPEI Logo'
 				]); ?>
-				<h4>Philippine Poverty-Environment Initiative &copy; 2017</h4>
+				<h4>Philippine Poverty-Environment Initiative &copy; 2013 - <?= date('Y') ?></h4>
 				<ul id="list-lower" class="list-group">
 					<li><a href="#">Site Map</a></li>
 					<li><a href="#">About Us</a></li>

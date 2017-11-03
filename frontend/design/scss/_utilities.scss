@@ -1,0 +1,11 @@
+.mHover{
+	background-color: $accent;
+	color: $white !important;
+	text-decoration: none !important;
+	border-radius: 0.25rem;
+	padding: .4rem 1.4rem .4rem 2.2rem;
+
+	&:hover{
+		background-color: $accent-secondary;
+	}
+}

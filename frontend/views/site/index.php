@@ -4,7 +4,7 @@ namespace frontend\views\site;
 use Yii;
 use yii\helpers\Html;
 
-$this->title = 'Welcome to Philippine Poverty-Environment Initiative | Philippine Poverty-Environment Initiative';
+$this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
 

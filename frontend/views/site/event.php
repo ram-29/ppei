@@ -1,6 +1,6 @@
 <?php
 
-$this->title = 'Philippine Poverty-Environment Initiative | News & Events';
+$this->title = 'News & Events | '.ucwords(preg_replace('/-/', ' ', $slug));
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
 

@@ -12,7 +12,7 @@ html,body{
 
 #nav{
 	background-color: $white !important;
-	border-bottom: 2px solid $secondary;
+	border-bottom: 1px solid $secondary;
 
 	.navbar-brand{
 		margin: unset;
@@ -36,12 +36,92 @@ html,body{
     cursor: pointer;
   }
 
-	.navbar-nav a {
-    transition: $hover-transition;
+	.navbar-nav{
+		.nav-item{
+			margin-right: 1rem;
 
-    &:hover {
-      color: $secondary !important;
-    }
+			&:first-child{
+				.nav-link{
+					&.hvr-icon-bob{
+						&::before{
+							right: -1.1rem !important;
+							content: "\f1ea" !important;
+						}
+					}
+				}
+			}
+
+			&:nth-child(2){
+				margin-right: .4rem;
+				.nav-link{
+					&.hvr-icon-bounce{
+						&::before{
+							right: -.5rem !important;
+							content: "\f0eb" !important;
+						}
+					}
+				}
+			}
+
+			&:nth-child(3){
+				margin-right: unset;
+
+				&.show{
+					.nav-link{
+						color: $secondary !important;
+					}
+				}
+
+				.dropdown-menu{
+					border-color: $secondary;
+					.dropdown-item{
+						color: #7F7F7F;
+
+						&:hover{
+							color: $secondary;
+						}
+
+						&:active{
+							background-color: $secondary;
+							color: $white;
+						}
+					}
+				}
+			}
+
+			&:nth-child(4){
+				.nav-link{
+					padding-left: unset;
+					&.hvr-icon-grow{
+						&::before{
+							right: -1.1rem !important;
+							content: "\f03e" !important;
+						}
+					}
+				}
+			}
+
+			&:last-child{
+				.nav-link{
+					&.hvr-icon-float-away{
+						&::before,
+						&::after{
+							right: -1rem !important;
+							content: "\f0e0" !important;
+						}
+					}
+				}
+			}
+
+			.nav-link{
+				font-weight: bold;
+				transition: $hover-transition;
+
+				&:hover{
+					color: $secondary;
+				}
+			}
+		}
   }
 }
 
@@ -214,21 +294,6 @@ html,body{
 					background-color: $secondary-transparent;
 					position: relative;
 
-					// .category{
-					// 	position: absolute;
-					// 	top: 0;
-					// 	left: 0;
-					// 	right: 0;
-					// 	margin: auto;
-					// 	padding: .2em;
-					// 	width: 10%;
-					// 	transform: translateY(-1em);			
-					// 	font-weight: bold;
-					// 	background-color: $accent-secondary;
-					// 	color: $white;
-					// 	text-transform: uppercase;
-					// }
-
 					.card-title{
 						font-weight: bold;
 						color: $white;
@@ -289,6 +354,93 @@ html,body{
 	}
 }
 
+.site-hub{
+	#hub{
+		padding: 1rem;
+		background-color: $white;
+
+		.col-md-8{
+			.hub-header{
+				i{
+					color: $black;
+				}
+				font-weight: bold;
+				color: $secondary;
+				letter-spacing: -.1rem;
+
+				span{
+					color: $black;
+					font-size: 2rem;
+					font-weight: normal;
+				}
+			}
+
+			h1, h2, h3, h4, h5, h6{
+				color: $secondary;
+				font-weight: bold;
+			}
+
+			ul{
+				list-style: none;
+			}
+
+			li{
+				&::before{
+					content: ">>";
+					display: inline-block;
+					transform: translateX(-.8rem); 
+					color: darken($secondary, 5%);
+				}
+				font-size: 1rem;
+				margin-bottom: 1rem;
+
+				ul{
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		.col-md-4{
+			.card{
+				margin-bottom: 1rem;
+				border-color: $secondary;
+				.card-header{
+					font-weight: bold;
+					border-color: $secondary;
+					text-align: center;
+					i{
+						color: $secondary;
+					}
+				}
+			}
+		}
+	}
+}
+
+.site-about{
+	#about{
+		padding: 1rem;
+		background-color: $white;
+
+		.about-header{
+			text-align: unset;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: $secondary;
+			i{
+				color: $black;
+			}
+		}
+
+		h1{
+			text-align: center;
+			letter-spacing: -1px;
+			font-weight: bold;
+			color: $secondary;
+		}
+	}
+}
+
 .site-error{
   height: 100vh;
   width: 100%;
@@ -298,33 +450,13 @@ html,body{
   align-items: center;
 
   .card{
-    width: 50%;
-
     .card-body{
-      height: 240px;
-      display: flex;
+      height: 250px;
+			text-align: center;
 
-      .card-content{
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-grow: 1;
-        border-right: 1px solid $body-bg;
-      }
-
-      .card-logo{
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        p{
-          font-weight: bold;
-        }
-      }
-
+			h4{
+				font-weight: bold;
+			}
     }
   }
 }

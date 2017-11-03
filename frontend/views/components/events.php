@@ -3,7 +3,10 @@
 use yii\helpers\Html;
 ?>
 <div id="components-events">
-	<h1>News & Events</h1>
+	<h1 class="news-header">
+		<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+		News & Events
+	</h1>
 	<div id="news-head" class="row no-gutters">
 		<div class="col-md-7">
 			<div class="card hvr-float">

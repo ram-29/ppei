@@ -13,19 +13,14 @@ $this->title = $name;
 
   <div class="card">
     <div class="card-body">
-      <div class="card-content">
-        <h4><?= Html::encode($this->title) ?></h4>
-        <p class="card-text lead text-danger"><?= nl2br(Html::encode($message)) ?></p>
-        <a href="/" class="btn btn-primary">Go somewhere</a>
-      </div>
-      <div class="card-logo">
-        <?= Html::img('@web/images/logo/ppei-logo.png', [
+      <?= Html::img('@web/images/logo/ppei-logo.png', [
           'height' => '70',
           'width' => '110',
           'alt' => 'PPEI Logo'
         ]); ?>
-        <p class="lead">Philippine Poverty-Environment Initiative</p>
-      </div>
+      <h4>Philippine Poverty-Environment Initiative</h4>
+      <p class="card-text lead text-danger"><?= nl2br(Html::encode($message)) ?></p>
+      <a href="/" class="mHover hvr-icon-back">Go back</a>
     </div>
     <div class="card-footer text-muted">
       <h6>The above error occurred while the Web server was processing your request.</h6>

@@ -2,7 +2,10 @@
 
 ?>
 <div id="components-calendar">
-	<h1>Calendar of Activities</h1>
+	<h1 class="cal-header">
+		<i class="fa fa-calendar" aria-hidden="true"></i>
+		Calendar of Activities
+	</h1>
 	<div id="mini-clndr">
 		<script id="mini-clndr-template" type="text/template">
 			<div class="controls">

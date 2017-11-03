@@ -21,25 +21,25 @@ use yii\helpers\Html;
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="/news-and-events">News & Events</a>
+					<a class="nav-link hvr-icon-bob" href="/news-and-events">News & Events</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">PPEI Knowledge Hub</a>
+					<a class="nav-link hvr-icon-bounce" href="/hub">Knowledge Hub</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+					<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Who We Are</a>
-						<a class="dropdown-item" href="#">What We Do</a>
-						<a class="dropdown-item" href="#">Stories of Change</a>
-						<a class="dropdown-item" href="#">Partners</a>
+						<a class="dropdown-item" href="/about#who-we-are">Who We Are</a>
+						<a class="dropdown-item" href="/about#what-we-do">What We Do</a>
+						<a class="dropdown-item" href="/about#stories-of-change">Stories of Change</a>
+						<a class="dropdown-item" href="/about#partners">Partners</a>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Gallery</a>
+					<a class="nav-link hvr-icon-grow" href="/gallery">Gallery</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contact Us</a>
+					<a class="nav-link hvr-icon-float-away" href="/contact-us">Contact Us</a>
 				</li>
 			</ul>
 		</div>

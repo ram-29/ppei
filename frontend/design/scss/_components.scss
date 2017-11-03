@@ -1,6 +1,11 @@
 // Row: No gutters
 #components-events{
-	h1{
+	.news-header{
+		i{
+			color: $black;
+		}
+		color: $secondary;
+		letter-spacing: -.1rem;
 		font-weight: bold;
 	}
 
@@ -25,13 +30,6 @@
 			.card-content{
 				padding: 1rem;
 				background-color: $secondary-transparent;
-
-				// .card-category{
-				// 	color: $accent-secondary;
-				// 	font-weight: bold;
-				// 	text-transform: uppercase;
-				// 	letter-spacing: -2px;
-				// }
 
 				.card-title{
 					color: $white;
@@ -148,12 +146,6 @@
 							width: 60%;
 							padding-left: 1rem;
 
-							// .item-category{
-							// 	color: $accent-secondary;
-							// 	font-weight: bold;
-							// 	text-transform: uppercase;
-							// }
-
 							.item-title{
 								color: $secondary;
 								font-weight: bold;
@@ -200,7 +192,11 @@
 }
 
 #components-calendar{
-	h1{
+	.cal-header{
+		i{
+			color: $black;
+		}
+		color: $secondary;
 		font-size: 2rem;
 		text-align: center;
 		font-weight: bold;
@@ -398,9 +394,10 @@
 	h1{
 		font-weight: bold;
 		text-align: center;
+		color: $secondary;
 
 		i{
-			color: $secondary;
+			color: $black;
 		}
 	}
 
@@ -424,7 +421,7 @@
 
 			h6{
 				font-size: .9rem;
-				color: $secondary;
+				color: $black;
 				font-weight: bold;
 			}
 		}

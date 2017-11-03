@@ -40,6 +40,10 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionHub(){
+        return $this->render('hub');
+    }
+
     /**
      * Displays indidvidual news or the News page.
      *
@@ -48,27 +52,21 @@ class SiteController extends Controller
     public function actionNewsAndEvents($year = null, $month = null, $slug = null) // Optional Params
     {
         $mYear = ((date('Y', 0) <= $year) && ($year <= date('Y')));
-        $mMonth = ((1 <= $month) && ($month < 13));
+        $mMonth = ((1 <= $month) && ($month <= 12));
 
-        if($mYear && $mMonth && $slug){
-            $model = Event::find()->where(['slug' => $slug])->one();
-            if(!is_null($model)) return $this->render('event', ['model' => $model]);
+        if(!is_null($year) && !is_null($month) && !is_null($slug)){
+            if($mYear && $mMonth){
+                $model = Event::find()
+                    ->where(['like', 'date', $year.'-'.$month]) // <--- Here
+                    ->andWhere(['slug' => $slug])->one();
+                if(!is_null($model)) return $this->render('event', [
+                    'model' => $model,
+                    'slug' => $slug
+                    ]);
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-
-        if($mYear && $mMonth){
-            $monthlyArticles = Event::find()->where(['like', 'date', $year.'-'.$month])->all();
-            if($monthlyArticles) return var_dump(count($monthlyArticles));
-            return Yii::$app->response->redirect(Url::to(['/news-and-events']));
-        }
-
-        if($mYear){
-            $yearlyArticles = Event::find()->where(['like', 'date', $year])->all();
-            if($yearlyArticles) return var_dump(count($yearlyArticles));
-            return Yii::$app->response->redirect(Url::to(['/news-and-events']));
-        }
-
-        // TODO: Send an Error message if date less than 1970
         return $this->render('events');
     }
 
