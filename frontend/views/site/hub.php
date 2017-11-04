@@ -35,7 +35,7 @@ $this->title = 'Knowledge Hub';
 				<h2>PED integration and method dev’t., 6</h2>
 				<ul>
 					<li>
-					 <b>Review of Utilization of Revenues from Natural Resources and Application of Best Practices and Media Strategy</b>
+					 Review of Utilization of Revenues from Natural Resources and Application of Best Practices and Media Strategy.
 						<ul>
 							<li><a href="#">3 case studies in 2011</a></li>
 							<li><a href="#">Additional 9 cases in 2012</a></li>

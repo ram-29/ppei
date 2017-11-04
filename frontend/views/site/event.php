@@ -1,6 +1,6 @@
 <?php
 
-$this->title = 'News & Events | '.ucwords(preg_replace('/-/', ' ', $slug));
+$this->title = ucwords(preg_replace('/-/', ' ', $slug)).' | News & Events';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
 

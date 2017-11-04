@@ -24,7 +24,7 @@ use yii\helpers\Html;
 					<a class="nav-link hvr-icon-bob" href="/news-and-events">News & Events</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link hvr-icon-bounce" href="/hub">Knowledge Hub</a>
+					<a class="nav-link hvr-icon-bounce" href="/knowledge-hub">Knowledge Hub</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
@@ -39,7 +39,7 @@ use yii\helpers\Html;
 					<a class="nav-link hvr-icon-grow" href="/gallery">Gallery</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link hvr-icon-float-away" href="/contact-us">Contact Us</a>
+					<a class="nav-link hvr-icon-float-away" href="/contact">Contact Us</a>
 				</li>
 			</ul>
 		</div>

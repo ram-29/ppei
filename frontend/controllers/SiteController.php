@@ -40,7 +40,7 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionHub(){
+    public function actionKnowledgeHub(){
         return $this->render('hub');
     }
 
@@ -57,12 +57,12 @@ class SiteController extends Controller
         if(!is_null($year) && !is_null($month) && !is_null($slug)){
             if($mYear && $mMonth){
                 $model = Event::find()
-                    ->where(['like', 'date', $year.'-'.$month]) // <--- Here
+                    ->where(['like', 'date', $year.'-'.$month])
                     ->andWhere(['slug' => $slug])->one();
                 if(!is_null($model)) return $this->render('event', [
                     'model' => $model,
                     'slug' => $slug
-                    ]);
+                ]);
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
             throw new NotFoundHttpException('The requested page does not exist.');

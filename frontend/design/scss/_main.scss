@@ -380,22 +380,23 @@ html,body{
 				font-weight: bold;
 			}
 
-			ul{
-				list-style: none;
+			li{
+				margin-bottom: 1rem;
+				ol, ul{
+					margin-top: 1rem;
+				}
 			}
 
-			li{
-				&::before{
-					content: ">>";
-					display: inline-block;
-					transform: translateX(-.8rem); 
-					color: darken($secondary, 5%);
-				}
-				font-size: 1rem;
-				margin-bottom: 1rem;
-
-				ul{
-					margin-top: 1rem;
+			ul{
+				list-style: none;
+				li{
+					&::before{
+						content: ">>";
+						font-weight: bold;
+						display: inline-block;
+						transform: translateX(-.8rem);
+						color: darken($secondary, 5%);
+					}
 				}
 			}
 		}
@@ -432,11 +433,122 @@ html,body{
 			}
 		}
 
-		h1{
+		.m-h1{
 			text-align: center;
-			letter-spacing: -1px;
 			font-weight: bold;
 			color: $secondary;
+		}
+
+		section{
+			padding: 2rem;
+			border-radius: 1rem;
+
+			.content{
+				margin-top: 3rem;
+			}
+
+			&::before{
+				left: 0;
+				right: 0;
+				margin: auto;
+				height: 5rem;
+				width: 5rem * 2;
+				transform: translateY(-3rem);
+				border-bottom-left-radius: 5rem * 2;
+				border-bottom-right-radius: 5rem * 2;
+				position: absolute;
+				display: inline-block;
+				content: '';
+			}
+
+			li{
+				margin-bottom: 1rem;
+				ol, ul{
+					margin-top: 1rem;
+				}
+			}
+
+			ul{
+				list-style: none;
+				li{
+					&::before{
+						content: ">>";
+						font-weight: bold;
+						display: inline-block;
+						transform: translateX(-.8rem);
+					}
+				}
+			}
+
+
+			&:nth-child(odd){
+				&::before{
+					background-color: $white;
+				}
+
+				background-color: $secondary;
+				text-shadow: $text-shadow;
+				color: $white;
+
+				.m-h1{
+					color: $white;
+				}
+			}
+
+			&:nth-child(even){
+				h1, h2, h3, h4, h5, h6{
+					color: $secondary;
+				}
+
+				ul{
+					li{
+						&::before{
+							color: $secondary;
+						}
+					}
+				}
+				
+				&::before{
+					background-color: $secondary;
+				}
+
+				background-color: $white;
+				border-left: 1px solid $secondary;
+				border-right: 1px solid $secondary;
+
+				&:last-child{
+					border-bottom: 1px solid $secondary
+				}
+			}
+		}
+
+		#who-we-are{
+			.col-md-6{
+				&:first-child{
+					img{
+						display: block;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+
+		#what-we-do{
+			.col-md{
+				img{
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		#stories-of-change{
+			.col-md{
+				text-align: center;
+				p{
+					text-align: left !important;
+				}
+			}
 		}
 	}
 }
