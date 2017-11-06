@@ -553,6 +553,22 @@ html,body{
 	}
 }
 
+.site-gallery{
+	#gallery{
+		padding: 1rem;
+		background-color: $white;
+
+		.gallery-header{
+			letter-spacing: -1px;
+			color: $secondary;
+			font-weight: bold;
+			i{
+				color: $black;
+			}
+		}
+	}
+}
+
 .site-error{
   height: 100vh;
   width: 100%;

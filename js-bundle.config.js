@@ -3,12 +3,13 @@ module.exports = {
     vendor: {
 			scripts: [
 				'frontend/web/assets/google-scripts/loader.js',
-        'frontend/web/assets/jquery/dist/jquery.slim.min.js',
+        'frontend/web/assets/jquery/dist/jquery.min.js',
         'frontend/web/assets/popper.js/dist/umd/popper.min.js',
         'frontend/web/assets/twbs/bootstrap/dist/js/bootstrap.min.js',
         'frontend/web/assets/moment/min/moment.min.js',
         'frontend/web/assets/underscore/underscore-min.js',
         'frontend/web/assets/clndr/clndr.min.js',
+        'frontend/web/assets/nanogallery2/dist/jquery.nanogallery2.min.js'
       ],
       options: {
         maps: false

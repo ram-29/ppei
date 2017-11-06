@@ -1,9 +1,9 @@
 <?php
 
-namespace frontend\models;
+namespace common\models;
 
 use Yii;
-use yii\behaviors\SluggableBehavior;
+use common\models\User;
 
 /**
  * This is the model class for table "tblevent".
@@ -13,7 +13,6 @@ use yii\behaviors\SluggableBehavior;
  * @property string $content
  * @property string $date
  * @property string $image_name
- * @property string $image_path
  * @property string $slug
  * @property integer $user_id
  *
@@ -21,18 +20,6 @@ use yii\behaviors\SluggableBehavior;
  */
 class Event extends \yii\db\ActiveRecord
 {
-    public function behaviors()
-    {
-        return [
-            [
-                'class' => SluggableBehavior::className(),
-                'attribute' => 'title',
-                'immutable' => true,
-                'ensureUnique'=> true,
-            ],
-        ];
-    }
-
     /**
      * @inheritdoc
      */
@@ -47,13 +34,13 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content', 'image_name', 'image_path', 'slug', 'user_id'], 'required'],
-            [['content', 'image_path'], 'string'],
+            [['title', 'content', 'image_name', 'slug', 'user_id'], 'required'],
+            [['content'], 'string'],
             [['date'], 'safe'],
             [['user_id'], 'integer'],
-            [['title', 'image_name'], 'string', 'max' => 45],
-            [['slug'], 'string', 'max' => 150],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tbluser::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['title', 'image_name'], 'string', 'max' => 145],
+            [['slug'], 'string', 'max' => 145],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -68,7 +55,6 @@ class Event extends \yii\db\ActiveRecord
             'content' => 'Content',
             'date' => 'Date',
             'image_name' => 'Image Name',
-            'image_path' => 'Image Path',
             'slug' => 'Slug',
             'user_id' => 'User ID',
         ];
@@ -79,6 +65,6 @@ class Event extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(Tbluser::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

@@ -62,13 +62,24 @@ gulp.task('js-bundle', function () {
 				suffix: ".min"
 		}))
 		.pipe(gulp.dest('frontend/web/bundle/js'));
-});
+})
 
-gulp.task('copy', function () {
+gulp.task('nano-1', function () {
+	return gulp.src(['frontend/web/assets/nanogallery2/dist/css/loading.gif'])
+		.pipe(gulp.dest('frontend/web/bundle/css'))
+})
+
+gulp.task('nano-2', function () {
+	return gulp.src(['frontend/web/assets/nanogallery2/dist/css/font/*.*'])
+		.pipe(gulp.dest('frontend/web/bundle/css/font'))
+})
+
+gulp.task('fa', function () {
 	return gulp.src(['frontend/web/assets/components-font-awesome/fonts/*.*'])
 		.pipe(gulp.dest('frontend/web/bundle/fonts'))
 })
 
+gulp.task('copy', ['fa', 'nano-1', 'nano-2'])
 gulp.task('bundle', ['css-bundle', 'js-bundle', 'copy'])
 
 gulp.task('watch', function () {

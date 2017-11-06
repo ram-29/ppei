@@ -1,40 +1,40 @@
 ; (function ($) {
 	$('[data-toggle="tooltip"]').tooltip();
-	
-  $(".list-group").on("click", function (e) {
-    const li = e.target;
-    let title, summary;
 
-    if (li.className.includes("facebook")) {
-      getNewsTitleAndContent();
-      share(title, summary);
-    } else if (li.className.includes("twitter")) {
-      getNewsTitleAndContent();
-      tweet(title, summary);
-    }
+	$(".list-group").on("click", function (e) {
+		const li = e.target;
+		let title, summary;
 
-    function getNewsTitleAndContent() {
-      const p = $(li).parent().prev();
-      const h3 = $(p).prev();
+		if (li.className.includes("facebook")) {
+			getNewsTitleAndContent();
+			share(title, summary);
+		} else if (li.className.includes("twitter")) {
+			getNewsTitleAndContent();
+			tweet(title, summary);
+		}
 
-      title = h3.text();
-      summary = p.text();
-    }
+		function getNewsTitleAndContent() {
+			const p = $(li).parent().prev();
+			const h3 = $(p).prev();
 
-    function share(title, summary) {
-      console.log(`SHARE\nTitle: ${title}\nContent: ${summary}`);
-    }
+			title = h3.text();
+			summary = p.text();
+		}
 
-    function tweet(title, summary) {
-      console.log(`TWEET\nTitle: ${title}\nContent: ${summary}`);
-    }
+		function share(title, summary) {
+			console.log(`SHARE\nTitle: ${title}\nContent: ${summary}`);
+		}
+
+		function tweet(title, summary) {
+			console.log(`TWEET\nTitle: ${title}\nContent: ${summary}`);
+		}
 	});
 
 	// CLNDRjs
 	if ($('#mini-clndr').length) {
 		// MomentJS Hack : Deprecation Issue
 		moment.createFromInputFallback = function (config) { config._d = new Date(config._i); };
-		
+
 		var currentMonth = moment().format("YYYY-MM");
 		var nextMonth = moment().add(1, "month").format("YYYY-MM");
 
@@ -97,7 +97,7 @@
 			},
 			adjacentDaysChangeMonth: true,
 			forceSixRows: false
-		});	
+		});
 	}
 
 	// Google GeoChart Visualization
@@ -107,7 +107,7 @@
 			'mapsApiKey': 'AIzaSyCnO5ud0AQXw38v6CWmNujOeksxvjqUdfk'
 		});
 		google.charts.setOnLoadCallback(drawRegionsMap);
-	
+
 		function drawRegionsMap() {
 			var data = google.visualization.arrayToDataTable([
 				['Provinces', 'Region'],
@@ -119,7 +119,7 @@
 				[{ v: 'PH-07', f: 'Metallic Mining' }, 7],
 				[{ v: 'PH-13', f: 'Metallic Mining' }, 13]
 			]);
-	
+
 			var options = {
 				region: 'PH',
 				resolution: 'provinces',
@@ -131,10 +131,17 @@
 				},
 				legend: 'none'
 			};
-	
+
 			var chart = new google.visualization.GeoChart(document.getElementById('geo-map'));
-	
+
 			chart.draw(data, options);
 		}
 	}
+
+	//NanoGallery
+	// if ($('#nano-gallery').length) {
+	// 	$('#nano-gallery').nanogallery2({
+	// 		displayBreadcrumb: true
+	// 	})
+	// }
 })(window.jQuery);

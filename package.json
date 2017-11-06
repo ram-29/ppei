@@ -26,5 +26,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-wait": "0.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "nanogallery2": "^1.5.0"
   }
 }

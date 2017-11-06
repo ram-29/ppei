@@ -2,11 +2,16 @@
 namespace frontend\controllers;
 
 use Yii;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use yii\helpers\Url;
+use yii\web\Controller;
+use yii\helpers\ArrayHelper;
+use yii\web\NotFoundHttpException;
 
-use frontend\models\Event;
+use common\models\User;
+use common\models\Event;
+use common\models\Album;
+use common\models\Image;
+
 use frontend\models\ContactForm;
 
 /**
@@ -28,7 +33,7 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
-		}
+    }
 
     /**
      * Displays homepage.
@@ -38,10 +43,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
-    }
-
-    public function actionKnowledgeHub(){
-        return $this->render('hub');
     }
 
     /**
@@ -54,20 +55,32 @@ class SiteController extends Controller
         $mYear = ((date('Y', 0) <= $year) && ($year <= date('Y')));
         $mMonth = ((1 <= $month) && ($month <= 12));
 
-        if(!is_null($year) && !is_null($month) && !is_null($slug)){
-            if($mYear && $mMonth){
+        if (!is_null($year) && !is_null($month) && !is_null($slug)) {
+            if ($mYear && $mMonth) {
                 $model = Event::find()
                     ->where(['like', 'date', $year.'-'.$month])
                     ->andWhere(['slug' => $slug])->one();
-                if(!is_null($model)) return $this->render('event', [
+                if (!is_null($model)) {
+                    return $this->render('event', [
                     'model' => $model,
                     'slug' => $slug
-                ]);
+                    ]);
+                }
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         return $this->render('events');
+    }
+
+    /**
+     * Displays knowledge hub page.
+     *
+     * @return mixed
+     */
+    public function actionKnowledgeHub()
+    {
+        return $this->render('hub');
     }
 
     /**
@@ -78,6 +91,34 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    /**
+     * Displays gallery page.
+     *
+     * @return mixed
+     */
+    public function actionGallery()
+    {
+        $albums = Album::find()->all();
+        $mAlbums = [];
+
+        foreach($albums as $album){
+            array_push($mAlbums, [
+                'id' => $album['id'],
+                'name' => $album['name'],
+                'images' => ArrayHelper::getColumn($album->images, function($element){
+                    return [
+                        'id' => $element['id'],
+                        'name' => $element['image_name']
+                    ];
+                })
+            ]);
+        }
+
+        return $this->render('gallery', [
+            'albums' => $mAlbums
+        ]);
     }
 
     /**
@@ -101,5 +142,5 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-    }    
+    }
 }
