@@ -211,7 +211,7 @@ html,body{
 	}
 
 	#map{
-		padding: 2rem 0;
+		padding: 4rem 0;
 		background-color: $secondary;
 
 		#geo-map{
@@ -235,7 +235,7 @@ html,body{
 	}
 
 	#partners{
-		padding: 2rem 0;
+		padding: 4rem 0;
 		background-color: $white;
 	}
 }
@@ -584,15 +584,49 @@ html,body{
 
 .site-contact{
 	#contact{
+		height: 100vh;
 		padding: 1rem;
-		background-color: $white;
+		background-color: $secondary;
+		text-shadow: $text-shadow;
+		color: $white;
+
+		.contact-header,
+		.contact-desc{
+			text-align: center;
+		}
+
+		hr{
+			background-color: $white;
+		}
 
 		.contact-header{
 			font-weight: bold;
 			letter-spacing: -1px;
-			color: $secondary;
+
 			i{
-				color: $black;
+				color: $primary;
+			}
+		}
+
+		.col-md-6{
+			&:first-child{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			&:nth-child(2){
+				text-align: center;
+
+				h1{
+					font-weight: bold;
+				}
+
+				h5{
+					a{
+						color: $white;
+					}
+				}
 			}
 		}
 	}
@@ -619,7 +653,7 @@ html,body{
 }
 
 footer{
-	padding: 2rem 0;
+	padding: 4rem 0;
 	background-color: $primary;
 	text-align: center;
 
