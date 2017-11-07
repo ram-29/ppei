@@ -5,7 +5,7 @@ module.exports = {
 				'frontend/web/assets/google-scripts/loader.js',
         'frontend/web/assets/jquery/dist/jquery.min.js',
         'frontend/web/assets/popper.js/dist/umd/popper.min.js',
-        'frontend/web/assets/twbs/bootstrap/dist/js/bootstrap.min.js',
+        'frontend/web/assets/bootstrap/dist/js/bootstrap.min.js',
         'frontend/web/assets/moment/min/moment.min.js',
         'frontend/web/assets/underscore/underscore-min.js',
         'frontend/web/assets/clndr/clndr.min.js',

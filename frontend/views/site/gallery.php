@@ -13,15 +13,13 @@ $this->title = 'Gallery';
 		<div class="row">
 			<div class="col-md">
 				<h1 class="gallery-header">
-				<i class="fa fa-picture-o" aria-hidden="true"></i>
-					<a href="/gallery">Gallery</a>
+					<i class="fa fa-picture-o" aria-hidden="true"></i>
+					Gallery
 				</h1>
 
-				<!-- Gallery Content -->
-				<?php $baseUrl = Yii::getAlias('@mBackEnd').'/uploads/images/albums'; ?>
-				<div id="nano-gallery" data-nanogallery2='{
-					displayBreadcrumb: false
-				}'>
+				<a href="/gallery"><h2 id="mAlbum" class="mDisplay hvr-icon-back"></h2></a>
+				<div id="nano-gallery" data-nanogallery2>
+					<?php $baseUrl = Yii::getAlias('@mBackEnd').'/uploads/images/albums'; ?>
 					<?php foreach($albums as $album) :?>
 						<a href="" data-ngkind="album" data-ngid="<?= $album['id'] ?>" data-ngthumb="<?= $baseUrl.'/'.$album['name'].'/'.$album['images'][0]['name'] ?>"><?= $album['name'] ?></a>
 						<?php foreach($album['images'] as $image) :?>

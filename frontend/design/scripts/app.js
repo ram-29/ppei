@@ -139,9 +139,25 @@
 	}
 
 	//NanoGallery
-	// if ($('#nano-gallery').length) {
-	// 	$('#nano-gallery').nanogallery2({
-	// 		displayBreadcrumb: true
-	// 	})
-	// }
+	if ($('#nano-gallery').length) {
+		$('#nano-gallery').nanogallery2({
+			displayBreadcrumb: false,
+			thumbnailDisplayTransition: 'slideLeft',
+			thumbnailDisplayTransitionDuration: 500,
+			thumbnailDisplayInterval: 250
+		})
+
+		$('.nGY2Gallery').one('click', function(e){
+			if (e.target.className === 'nGY2GThumbnailCustomLayer') {
+				var mLayer = e.target;
+				var h2 = $('#mAlbum');
+				var albumName = $(mLayer).next().children().text();
+
+				if (albumName.indexOf('image') !== -1) return;
+				
+				h2.html(albumName);
+				h2.toggleClass('mDisplay');
+			}
+		});
+	}
 })(window.jQuery);
