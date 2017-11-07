@@ -24,6 +24,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 	<?= $content ?>
+    <?= Yii::$app->view->renderFile('@app/views/components/fab.php') ?>
   
 <?php $this->endBody() ?>
 </body>

@@ -427,3 +427,43 @@
 		}
 	}
 }
+
+#components-fab{
+	transition: $transition;
+	position: fixed;
+  bottom: 43%;
+  right: -10rem;
+  cursor: pointer;
+	box-shadow: 0px 2px 5px #666;
+
+	&.fab-show {
+		right: 1rem;
+	}
+	
+	.box{
+		background: $secondary;
+		color: $white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 56px;
+		width: 56px;
+
+		&.box-up,
+		&.box-down{
+			transition: $hover-transition;
+			&:hover{
+				background-color: $white;
+				i{
+					color: $secondary;
+				}
+			}
+		}
+	}
+
+	hr{
+		margin: unset;
+		background-color: $white;
+	}
+}
