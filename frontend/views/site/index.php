@@ -44,16 +44,25 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 						<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 					</div>
 					<div class="col-md-5">
-						<?= Html::img('@web/images/logo/dilg-logo.png', [
-							'alt' => 'DILG Logo'
-						]); ?>
-						<?= Html::img('@web/images/logo/undp-logo.png', [
-							'alt' => 'UNDP Logo'
-						]); ?>
+						<a href="http://dilg.gov.ph">
+							<?= Html::img('@web/images/logo/dilg-logo.png', [
+								'class' => 'hvr-grow',
+								'alt' => 'DILG Logo'
+							]); ?>
+						</a>
+						<a href="http://www.undp.org/content/undp/en/home.html">
+							<?= Html::img('@web/images/logo/undp-logo.png', [
+								'class' => 'hvr-grow',
+								'alt' => 'UNDP Logo'
+							]); ?>
+						</a>
 						<br>
-						<?= Html::img('@web/images/logo/unep-logo.png', [
-							'alt' => 'UNEP Logo'
-						]); ?>
+						<a href="http://www.unenvironment.org">
+							<?= Html::img('@web/images/logo/unep-logo.png', [
+								'class' => 'hvr-grow',
+								'alt' => 'UNEP Logo'
+							]); ?>
+						</a>
 					</div>
 				</div>
 			</div>

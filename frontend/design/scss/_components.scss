@@ -429,6 +429,7 @@
 }
 
 #components-fab{
+	z-index: 1;
 	transition: $transition;
 	position: fixed;
   bottom: 43%;

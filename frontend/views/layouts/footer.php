@@ -49,7 +49,7 @@ use yii\helpers\Html;
 				<h4>Philippine Poverty-Environment Initiative &copy; 2013 - <?= date('Y') ?></h4>
 				<ul id="list-lower" class="list-group">
 					<li><a href="#">Site Map</a></li>
-					<li><a href="#">About Us</a></li>
+					<li><a href="/about#who-we-are">About Us</a></li>
 					<li><a href="#">Terms and Conditions</a></li>
 					<li><a href="#">Privacy Policy</a></li>
 				</ul>

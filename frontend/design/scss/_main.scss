@@ -163,6 +163,11 @@ html,body{
 
 			.col-md-5{
 				text-align: center;
+
+				img{
+					transition: $hover-transition;
+					cursor: pointer;
+				}
 			}
 		}
 	}
@@ -622,6 +627,9 @@ html,body{
 				}
 
 				h5{
+					i{
+						color: $primary;
+					}
 					a{
 						color: $white;
 					}
