@@ -435,7 +435,7 @@
   bottom: 43%;
   right: -10rem;
   cursor: pointer;
-	box-shadow: 0px 2px 5px #666;
+	box-shadow: $fab-shadow;
 
 	&.fab-show {
 		right: 1rem;
