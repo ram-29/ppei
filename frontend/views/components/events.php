@@ -7,7 +7,7 @@ use yii\helpers\Html;
 		<i class="fa fa-newspaper-o" aria-hidden="true"></i>
 		News & Events
 	</h1>
-	<div id="news-head" class="row no-gutters">
+	<div id="news-head" class="row">
 		<div class="col-md-7">
 			<div class="card hvr-float">
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
@@ -56,7 +56,7 @@ use yii\helpers\Html;
 		</div>
 	</div>
 
-	<div id="news-subhead" class="row no-gutters">
+	<div id="news-subhead" class="row">
 		<div class="col-md-4">
 			<div class="card hvr-float">
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
@@ -107,7 +107,7 @@ use yii\helpers\Html;
 		</div>
 	</div>
 
-	<div id="news-list" class="row no-gutters">
+	<div id="news-list" class="row">
 		<div class="col-md-8">
 			<ul class="list-group">
 				<li class="list-group-item">

@@ -1,0 +1,20 @@
+// Portrait
+@media (min-width: 600px) {
+  .container {
+    max-width: 1300px !important;
+	}
+
+  .site-index{
+    #banner{
+      #banner-content{
+        padding: 4rem 0;
+      }
+    }
+  }
+}
+
+// Landscape
+@media (min-width: 900px) {
+	
+}
+

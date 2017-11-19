@@ -1,0 +1,17 @@
+@media (max-width: 599px) {
+  #nav{
+    .navbar-brand{
+      .tagline{
+        display: none;
+      }
+    }
+  }
+
+	.site-index{
+    #banner{
+      #banner-content{
+        padding: 2rem 0;
+      }
+    }
+  }
+}

@@ -1,4 +1,9 @@
 @import 'variables';
 @import 'utilities';
-@import 'main';
-@import 'components';
+
+@import 'global';
+@import 'mobile';
+@import 'tablet';
+@import 'desktop';
+
+@import 'custom';
