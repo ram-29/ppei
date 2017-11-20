@@ -51,7 +51,7 @@ $this->title = 'Contact Us';
           <h4>Bureau of Local Government Development</h4>
           <h4>Department of the Interior and Local Government</h4>
           <hr>
-          <iframe width="600" height="450" frameborder="0" style="border:0"
+          <iframe width="100%" height="450" frameborder="0" style="border:0"
           src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJTYUFhgC3lzMR84odg6-nTQk&key=AIzaSyCnO5ud0AQXw38v6CWmNujOeksxvjqUdfk" allowfullscreen></iframe>
           <hr>
           <h5><i class="fa fa-map-marker" aria-hidden="true"></i> 25th Floor, DILG-NAPOLCOM Center, EDSA cor. <br> Quezon Avenue, Quezon City, PH</h5>

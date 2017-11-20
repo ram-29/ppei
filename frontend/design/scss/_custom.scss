@@ -8,6 +8,40 @@
         }
       }
     }
+
+    #headline{
+      .col-md-8{
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  #components-events{
+    #news-head,
+    #news-subhead{
+      .card{
+        .card-img{
+          height: 600px;
+        }
+      }
+    }
+
+    #news-list{
+      .list-group-item{
+        img{
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+
+        .item-content{
+          display: block;
+        }
+      }
+    }
+  }
+
+  #components-calendar{
+    margin-top: 1rem;
   }
 }
 
@@ -23,4 +57,36 @@
       }
     }
   }
+
+  #components-events{
+    #news-head{
+      .col-md-7{
+        .card{
+          .card-img{
+            height: 600px;
+          }
+        }
+      }
+
+      .col-md-5{
+        .card{
+          .card-img{
+            height: 291px;
+          }
+        }
+      }
+    }
+
+    #news-list{
+      .list-group-item{
+        img{
+          width: 50%;
+        }
+
+        .item-content{
+          display: flex;
+        }
+      }
+    }
+  }  
 }
