@@ -1,5 +1,7 @@
 <?php
 
+use kartik\social\Disqus;
+
 $this->title = ucwords(preg_replace('/-/', ' ', $slug)).' | News & Events';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
@@ -56,6 +58,9 @@ $this->title = ucwords(preg_replace('/-/', ' ', $slug)).' | News & Events';
 				<p>Natus iusto reiciendis saepe tempora cupiditate est quaerat temporibus sunt nisi explicabo nostrum sit, commodi, dolorem eius, ut officiis. Cum consequuntur totam quo obcaecati corrupti, accusamus beatae assumenda quod in.</p>
 				</div>
 
+			</div>
+			<div class="col-md">
+				<?= Disqus::widget() ?>
 			</div>
 		</div>
 	</section>

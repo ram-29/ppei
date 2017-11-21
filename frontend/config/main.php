@@ -46,5 +46,16 @@ return [
 			],
 		],
 	],
+	'modules' => [
+		'social' => [
+			'class' => 'kartik\social\Module',
+			'disqus' => [
+				'credits' => '',
+				'settings' => [
+					'shortname' => 'ppei'
+				]
+			],
+		]
+	],
 	'params' => $params,
 ];

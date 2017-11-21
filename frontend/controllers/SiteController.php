@@ -7,11 +7,6 @@ use yii\web\Controller;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
-use common\models\User;
-use common\models\Event;
-use common\models\Album;
-use common\models\Image;
-
 use frontend\models\ContactForm;
 
 /**
