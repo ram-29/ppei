@@ -25,7 +25,7 @@ $this->title = 'About Us';
               <h1 class="m-h1">Who We Are</h1>
               <div class="row">
                 <div class="col-md-6">
-                  <?= Html::img('@web/images/about/who-we-are.jpg', [
+                  <?= Html::img('@mBackEnd/uploads/images/about/who-we-are.jpg', [
                     'class' => 'img-thumbnail',
                     'style' => 'margin-bottom: 1rem;'
                   ]); ?>
@@ -68,7 +68,7 @@ $this->title = 'About Us';
               <h1 class="m-h1">What We Do</h1>
               <div class="row">
                 <div class="col-md">
-                  <?= Html::img('@web/images/about/what-we-do.jpg', [
+                  <?= Html::img('@mBackEnd/uploads/images/about/what-we-do.jpg', [
                     'class' => 'img-thumbnail',
                     'style' => 'margin-bottom: 1rem;'
                   ]); ?>

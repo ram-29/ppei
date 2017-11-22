@@ -1,14 +1,15 @@
 {
-    "extends": "airbnb-base",
-    "rules": {
-        "one-var": "off",
-        "no-undef": "off",
-        "no-underscore-dangle":"off",
-        "func-names":"off",
-        "no-param-reassign" : "off",
-        "linebreak-style": "off",
-        "no-console": "off",
-        "no-restricted-globals": "off",
-        "no-unused-expressions": "off"
-    }
+	"extends": "airbnb-base",
+	"rules": {
+		"indent": "off",
+		"one-var": "off",
+		"no-tabs": "off",
+		"no-undef": "off",
+		"func-names":"off",
+		"no-console": "off",
+		"linebreak-style": "off",
+		"no-param-reassign" : "off",
+		"no-underscore-dangle": "off",
+		"no-restricted-globals": "off"
+	}
 }

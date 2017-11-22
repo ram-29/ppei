@@ -6,8 +6,9 @@
     const images = bannerSlider.children().children().children().children();
 
     const imageResize = function () {
-      Object.keys(images).forEach((i) => {
-        !isNaN(i) ? images[i].style.height = `${bannerContent[0].clientHeight}px` : '';
+			Object.keys(images).forEach((i) => {
+				if (isNaN(i)) return;
+        images[i].style.height = `${bannerContent[0].clientHeight}px`;
       });
     };
 
