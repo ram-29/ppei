@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "popper.js": "^1.12.5",
-    "jQuery": "3.2.1",
+    "jquery": "3.2.1",
     "components-font-awesome": "^4.7.0",
     "moment": "^2.19.1",
     "underscore": "^1.8.3",
