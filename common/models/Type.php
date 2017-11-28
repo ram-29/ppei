@@ -3,12 +3,13 @@
 namespace common\models;
 
 use Yii;
+use common\models\Attribute;
 
 /**
  * This is the model class for table "tbltype".
  *
  * @property integer $id
- * @property string $type
+ * @property string $name
  *
  * @property Tblattribute[] $tblattributes
  */
@@ -28,8 +29,8 @@ class Type extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type'], 'required'],
-            [['type'], 'string', 'max' => 45],
+            [['name'], 'required'],
+            [['name'], 'string', 'max' => 45],
         ];
     }
 
@@ -40,7 +41,7 @@ class Type extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'type' => 'Type',
+            'name' => 'Name',
         ];
     }
 
@@ -49,6 +50,6 @@ class Type extends \yii\db\ActiveRecord
      */
     public function getTblattributes()
     {
-        return $this->hasMany(Tblattribute::className(), ['type_id' => 'id']);
+        return $this->hasMany(Attribute::className(), ['type_id' => 'id']);
     }
 }

@@ -3,15 +3,17 @@
 namespace common\models;
 
 use Yii;
+use common\models\Group;
 
 /**
  * This is the model class for table "tblcontent".
  *
  * @property integer $id
- * @property integer $feature_id
- * @property string $content
+ * @property string $attribute
+ * @property string $value
+ * @property integer $group_id
  *
- * @property Tblfeature $feature
+ * @property Tblgroup $group
  */
 class Content extends \yii\db\ActiveRecord
 {
@@ -29,10 +31,11 @@ class Content extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['feature_id', 'content'], 'required'],
-            [['feature_id'], 'integer'],
-            [['content'], 'string'],
-            [['feature_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tblfeature::className(), 'targetAttribute' => ['feature_id' => 'id']],
+            [['attribute', 'value', 'group_id'], 'required'],
+            [['value'], 'string'],
+            [['group_id'], 'integer'],
+            [['attribute'], 'string', 'max' => 45],
+            [['group_id'], 'exist', 'skipOnError' => true, 'targetClass' => Group::className(), 'targetAttribute' => ['group_id' => 'id']],
         ];
     }
 
@@ -43,16 +46,17 @@ class Content extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'feature_id' => 'Feature ID',
-            'content' => 'Content',
+            'attribute' => 'Attribute',
+            'value' => 'Value',
+            'group_id' => 'Group ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getFeature()
+    public function getGroup()
     {
-        return $this->hasOne(Tblfeature::className(), ['id' => 'feature_id']);
+        return $this->hasOne(Group::className(), ['id' => 'group_id']);
     }
 }

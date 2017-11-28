@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\Type;
 
 /**
  * This is the model class for table "tblattribute".
@@ -32,7 +33,7 @@ class Attribute extends \yii\db\ActiveRecord
             [['name', 'type_id'], 'required'],
             [['type_id'], 'integer'],
             [['name'], 'string', 'max' => 45],
-            [['type_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tbltype::className(), 'targetAttribute' => ['type_id' => 'id']],
+            [['type_id'], 'exist', 'skipOnError' => true, 'targetClass' => Type::className(), 'targetAttribute' => ['type_id' => 'id']],
         ];
     }
 
@@ -53,6 +54,6 @@ class Attribute extends \yii\db\ActiveRecord
      */
     public function getType()
     {
-        return $this->hasOne(Tbltype::className(), ['id' => 'type_id']);
+        return $this->hasOne(Type::className(), ['id' => 'type_id']);
     }
 }

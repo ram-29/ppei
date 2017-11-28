@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\Group;
 
 /**
  * This is the model class for table "tblfeature".
@@ -10,9 +11,10 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property string $attributes
+ * @property string $parents
  * @property integer $isVisible
  *
- * @property Tblcontent[] $tblcontents
+ * @property Tblgroup[] $tblgroups
  */
 class Feature extends \yii\db\ActiveRecord
 {
@@ -30,8 +32,8 @@ class Feature extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'attributes', 'isVisible'], 'required'],
-            [['attributes'], 'string'],
+            [['name', 'attributes', 'parents', 'isVisible'], 'required'],
+            [['attributes', 'parents'], 'string'],
             [['isVisible'], 'integer'],
             [['name'], 'string', 'max' => 45],
         ];
@@ -46,6 +48,7 @@ class Feature extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'attributes' => 'Attributes',
+            'parents' => 'Parents',
             'isVisible' => 'Is Visible',
         ];
     }
@@ -53,8 +56,8 @@ class Feature extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTblcontents()
+    public function getGroups()
     {
-        return $this->hasMany(Tblcontent::className(), ['feature_id' => 'id']);
+        return $this->hasMany(Group::className(), ['feature_id' => 'id']);
     }
 }
