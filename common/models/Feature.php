@@ -11,7 +11,6 @@ use common\models\Group;
  * @property integer $id
  * @property string $name
  * @property string $attributes
- * @property string $parents
  * @property integer $isVisible
  *
  * @property Tblgroup[] $tblgroups
@@ -32,8 +31,8 @@ class Feature extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'attributes', 'parents', 'isVisible'], 'required'],
-            [['attributes', 'parents'], 'string'],
+            [['name', 'attributes', 'isVisible'], 'required'],
+            [['attributes'], 'string'],
             [['isVisible'], 'integer'],
             [['name'], 'string', 'max' => 45],
         ];
@@ -48,7 +47,6 @@ class Feature extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'attributes' => 'Attributes',
-            'parents' => 'Parents',
             'isVisible' => 'Is Visible',
         ];
     }

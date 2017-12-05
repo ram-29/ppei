@@ -7,6 +7,7 @@ use yii\web\Controller;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
+use common\models\Album;
 use frontend\models\ContactForm;
 
 /**
@@ -105,7 +106,7 @@ class SiteController extends Controller
                 'images' => ArrayHelper::getColumn($album->images, function($element){
                     return [
                         'id' => $element['id'],
-                        'name' => $element['image_name']
+                        'name' => $element['name']
                     ];
                 })
             ]);

@@ -231,21 +231,18 @@ const mModule = (function (global, $) {
         mapsApiKey: 'AIzaSyCnO5ud0AQXw38v6CWmNujOeksxvjqUdfk',
       });
     }
+  }
 
-    // NanoGallery
-    if ($('#nano-gallery').length) {
-      const $nanoGallery = $('#nano-gallery');
-      const $nanoLayer = $('.nGY2Gallery');
+  // NanoGallery
+  if ($('#nano-gallery').length) {
+    $('#nano-gallery').nanogallery2({
+      displayBreadcrumb: false,
+      thumbnailDisplayTransition: 'slideLeft',
+      thumbnailDisplayTransitionDuration: 500,
+      thumbnailDisplayInterval: 250,
+    });
 
-      $nanoGallery.nanogallery2({
-        displayBreadcrumb: false,
-        thumbnailDisplayTransition: 'slideLeft',
-        thumbnailDisplayTransitionDuration: 500,
-        thumbnailDisplayInterval: 250,
-      });
-
-      $nanoLayer.one('click', showAlbum);
-    }
+    $('.nGY2Gallery').one('click', showAlbum);
   }
 
   return {
