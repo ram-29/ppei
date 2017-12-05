@@ -600,6 +600,12 @@ html,body{
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+
+				#contact-form{
+					.help-block-error{
+						color: $error;
+					}
+				}
 			}
 
 			&:nth-child(2){

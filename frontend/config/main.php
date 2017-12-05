@@ -45,6 +45,18 @@ return [
 				'<action:(.*)>' => 'site/<action>'
 			],
 		],
+		'assetManager' => [
+			'bundles' => [
+				'yii\web\JqueryAsset' => [
+					'sourcePath' => null,
+					'basePath' => '@webroot',
+					'baseUrl' => '@web',
+					'js' => [
+						'bundle/js/vendor.min.js'
+					]
+				],
+			],
+		],
 	],
 	'modules' => [
 		'social' => [

@@ -1,6 +1,4 @@
-const mModule = (function ($) {
-
-  const GLOBAL = $(window);
+const mModule = (function (global, $) {
 
   function imageResize({ data: { images, bannerContent } }) {
     Object.keys(images).forEach((i) => {
@@ -42,7 +40,7 @@ const mModule = (function ($) {
       fab.addClass('fab-show');
       return;
     }
-    fab.removeClass('fab-show');
+    fab.removeAttr('class');
   }
 
   function scrollTop({ data: { page } }) {
@@ -59,10 +57,10 @@ const mModule = (function ($) {
 
   function initFab({ data: { fab } }) {
     let ticking = false;
-    const scrollPosition = GLOBAL[0].scrollY;
+    const scrollPosition = global[0].scrollY;
 
     if (!ticking) {
-      GLOBAL[0].requestAnimationFrame(() => {
+      global[0].requestAnimationFrame(() => {
         toggleFab({ fab, scrollPosition });
         ticking = false;
       });
@@ -105,7 +103,7 @@ const mModule = (function ($) {
 
     drawChart({ data: { data, options } });
 
-    GLOBAL.resize({ data, options }, drawChart);
+    global.resize({ data, options }, drawChart);
   }
 
   function showAlbum(e) {
@@ -129,7 +127,7 @@ const mModule = (function ($) {
       const images = $bannerSlider.children().children().children().children();
 
       imageResize({ data: { images, bannerContent } });
-      GLOBAL.resize({ images, bannerContent }, imageResize);
+      global.resize({ images, bannerContent }, imageResize);
     }
 
     // Tooltip
@@ -148,6 +146,7 @@ const mModule = (function ($) {
 
     // FAB
     if ($('#components-fab').length) {
+
       const page = $('html, body');
       const fab = $('#components-fab');
       const up = $(fab).children().first();
@@ -155,7 +154,7 @@ const mModule = (function ($) {
 
       up.click({ page }, scrollTop);
       down.click({ page }, scrollBottom);
-      GLOBAL.scroll({ fab }, initFab);
+      global.scroll({ fab }, initFab);
     }
 
     // CLNDRjs
@@ -253,6 +252,6 @@ const mModule = (function ($) {
     init,
   };
 
-}(window.jQuery));
+}($(window), window.jQuery));
 
-$(document).ready(mModule.init());
+$(document).ready(mModule.init);

@@ -14,4 +14,24 @@
       }
     }
   }
+
+  footer{
+    #list-lower{
+      li{
+        float: unset;
+        border: unset;
+        padding: .5rem;
+      }
+    }
+  }
+
+  #components-partners{
+    .col-md{
+      justify-content: center;
+
+      .partner{
+        flex-basis: 30% !important;        
+      }
+    }
+  }
 }

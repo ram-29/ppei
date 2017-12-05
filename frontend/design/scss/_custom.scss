@@ -43,6 +43,22 @@
   #components-calendar{
     margin-top: 1rem;
   }
+
+  footer {
+    .col-md-2{
+      border-right: unset;
+      margin-bottom: 1rem;
+    }
+
+    .list-group{
+      border-bottom: 1px solid $black;
+      padding-bottom: 1rem;
+    }
+
+    #list-lower{
+      border-bottom: unset;
+    }
+  }
 }
 
 @media (min-width: 768px) {
