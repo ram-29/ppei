@@ -2,12 +2,18 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\data\Sort;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
+use common\models\Content;
+use common\models\Feature;
+use common\models\Group;
+
 use common\models\Album;
+
 use frontend\models\ContactForm;
 
 /**
@@ -38,6 +44,35 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $feature = Feature::findOne(['name' => 'News & Events']);
+
+        $sort = new Sort([
+            'attributes' => [
+                'attribute' => [
+                    'date_posted' => SORT_DESC
+                ],
+                'value' => [
+                    preg_match('/\d{4}-\d{2}-\d{2}/', 'foobarbaz', $matches, PREG_OFFSET_CAPTURE) => SORT_DESC
+                ]
+
+                // (s:\\d+:"%s";s:\\d+:"%s";)
+            ]
+        ]);
+
+        foreach ($feature->groups as $group) {
+            echo $group->id.'<br>';
+
+            $content = $group->getContents();
+
+            var_dump($content);
+
+            die();
+            foreach ($content as $content) {
+                echo $content->attribute.' : '.$content->value.'<br>';
+            }
+        }
+
+        die();
         return $this->render('index');
     }
 
