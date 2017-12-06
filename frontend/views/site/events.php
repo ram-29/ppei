@@ -1,5 +1,7 @@
 <?php
 
+use yii\widgets\LinkPager;
+
 $this->title = 'News & Events';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
@@ -9,23 +11,17 @@ $this->title = 'News & Events';
 	<section id="events" class="container">
 		<?= Yii::$app->view->renderFile('@app/views/components/events.php') ?>
 
-		<ul class="pagination">
-			<li class="page-item disabled">
-				<a class="page-link" href="#" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-					<span class="sr-only">Previous</span>
-				</a>
-			</li>
-			<li class="page-item active"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-					<span class="sr-only">Next</span>
-				</a>
-			</li>
-		</ul>
+		<?= LinkPager::widget([
+			'pagination' => $pagination,
+			'prevPageCssClass' => 'page-item',
+			'pageCssClass' => 'page-item',
+			'nextPageCssClass' => 'page-item',
+			'activePageCssClass' => 'active',
+			'disabledPageCssClass' => 'disabled',
+			'linkOptions' => [
+				'class' => 'page-link'
+			]
+		]) ?>
 	</section>
 	
 </div>

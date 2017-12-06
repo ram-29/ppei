@@ -242,8 +242,33 @@ html,body{
 					color: $secondary;
 				}
 
+				&:first-child{
+					span{
+						border-top-left-radius: .25rem;
+    				border-bottom-left-radius: .25rem;
+					}
+				}
+
+				&:last-child{
+					span{
+						border-top-right-radius: .25rem;
+    				border-bottom-right-radius: .25rem;
+					}
+				}
+
 				&.disabled{
 					cursor: not-allowed;
+
+					span{
+						color: #558b2f;
+						position: relative;
+						padding: .5rem .75rem;
+						display: block;
+						margin-left: -1px;
+						line-height: 1.25;
+						background-color: #fff;
+    				border: 1px solid #ddd;
+					}
 				}
 
 				&.active{

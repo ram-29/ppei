@@ -5,6 +5,7 @@ use Yii;
 use yii\data\Sort;
 use yii\helpers\Url;
 use yii\web\Controller;
+use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
@@ -44,36 +45,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $feature = Feature::findOne(['name' => 'News & Events']);
-
-        $sort = new Sort([
-            'attributes' => [
-                'attribute' => [
-                    'date_posted' => SORT_DESC
-                ],
-                'value' => [
-                    preg_match('/\d{4}-\d{2}-\d{2}/', 'foobarbaz', $matches, PREG_OFFSET_CAPTURE) => SORT_DESC
-                ]
-
-                // (s:\\d+:"%s";s:\\d+:"%s";)
-            ]
-        ]);
-
-        foreach ($feature->groups as $group) {
-            echo $group->id.'<br>';
-
-            $content = $group->getContents();
-
-            var_dump($content);
-
-            die();
-            foreach ($content as $content) {
-                echo $content->attribute.' : '.$content->value.'<br>';
-            }
-        }
-
-        die();
-        return $this->render('index');
+				return $this->render('index', $this->getArticles('News & Events'));
     }
 
     /**
@@ -101,7 +73,7 @@ class SiteController extends Controller
             }
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-        return $this->render('events');
+        return $this->render('events', $this->getArticles('News & Events'));
     }
 
     /**
@@ -173,5 +145,23 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-    }
+		}
+		
+		public function getArticles($featureName)
+		{
+				$feature = Feature::findOne(['name' => $featureName]);
+				$groups = $feature->getGroups();
+
+				$pagination = new Pagination([
+					'defaultPageSize' => 2,
+					'totalCount' => $groups->count()
+				]);
+
+				$groups = $groups->offset($pagination->offset)->limit($pagination->limit)->all();
+
+				return [
+					'groups' => $groups,
+					'pagination' => $pagination
+				];
+		}
 }
