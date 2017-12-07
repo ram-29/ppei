@@ -56,19 +56,20 @@ class SiteController extends Controller
     public function actionNewsAndEvents($year = null, $month = null, $slug = null) // Optional Params
     {
         $mYear = ((date('Y', 0) <= $year) && ($year <= date('Y')));
-        $mMonth = ((1 <= $month) && ($month <= 12));
+				$mMonth = ((1 <= $month) && ($month <= 12));
 
         if (!is_null($year) && !is_null($month) && !is_null($slug)) {
             if ($mYear && $mMonth) {
-                $model = Event::find()
-                    ->where(['like', 'date', $year.'-'.$month])
-                    ->andWhere(['slug' => $slug])->one();
-                if (!is_null($model)) {
-                    return $this->render('event', [
-                    'model' => $model,
-                    'slug' => $slug
-                    ]);
-                }
+                // $model = Event::find()
+                //     ->where(['like', 'date', $year.'-'.$month])
+                //     ->andWhere(['slug' => $slug])->one();
+                // if (!is_null($model)) {
+                    
+								// }
+								return $this->render('event', [
+										// 'model' => $model,
+										'slug' => $slug
+								]);
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
             throw new NotFoundHttpException('The requested page does not exist.');

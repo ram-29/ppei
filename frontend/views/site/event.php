@@ -1,8 +1,10 @@
 <?php
 
+use yii\helpers\Url;
 use kartik\social\Disqus;
 
-$this->title = ucwords(preg_replace('/-/', ' ', $slug)).' | News & Events';
+$mSlug = ucwords(preg_replace('/-/', ' ', $slug));
+$this->title = $mSlug.' | News & Events';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
 
@@ -10,7 +12,7 @@ $this->title = ucwords(preg_replace('/-/', ' ', $slug)).' | News & Events';
 
 	<section id="event" class="container">
 		<div class="row">
-			<div class="col-md">
+			<div class="col-md-12">
 				
 				<div class="card">
 					<img class="card-img" src="https://dummyimage.com/600x600/000/fff" alt="...">
@@ -59,8 +61,13 @@ $this->title = ucwords(preg_replace('/-/', ' ', $slug)).' | News & Events';
 				</div>
 
 			</div>
-			<div class="col-md">
-				<?= Disqus::widget() ?>
+			<div class="col-md-12">
+				<?= Disqus::widget([
+					'settings' => [
+						'url' => Url::canonical(),
+						'identifier' => $mSlug
+					]
+				]) ?>
 			</div>
 		</div>
 	</section>
