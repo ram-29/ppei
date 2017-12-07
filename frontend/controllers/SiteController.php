@@ -45,7 +45,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-				return $this->render('index', $this->getArticles('News & Events'));
+        return $this->render('index', $this->getArticles('News & Events'));
     }
 
     /**
@@ -56,7 +56,7 @@ class SiteController extends Controller
     public function actionNewsAndEvents($year = null, $month = null, $slug = null) // Optional Params
     {
         $mYear = ((date('Y', 0) <= $year) && ($year <= date('Y')));
-				$mMonth = ((1 <= $month) && ($month <= 12));
+        $mMonth = ((1 <= $month) && ($month <= 12));
 
         if (!is_null($year) && !is_null($month) && !is_null($slug)) {
             if ($mYear && $mMonth) {
@@ -65,11 +65,11 @@ class SiteController extends Controller
                 //     ->andWhere(['slug' => $slug])->one();
                 // if (!is_null($model)) {
                     
-								// }
-								return $this->render('event', [
-										// 'model' => $model,
-										'slug' => $slug
-								]);
+                // }
+                return $this->render('event', [
+                        // 'model' => $model,
+                        'slug' => $slug
+                ]);
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -151,17 +151,19 @@ class SiteController extends Controller
 		public function getArticles($featureName)
 		{
 				$feature = Feature::findOne(['name' => $featureName]);
-				$groups = $feature->getGroups();
+                $groups = $feature->getGroups();
 
 				$pagination = new Pagination([
 					'defaultPageSize' => 2,
 					'totalCount' => $groups->count()
 				]);
 
-				$groups = $groups->offset($pagination->offset)->limit($pagination->limit)->all();
+                # Unused offset
+                $groups = $groups->offset($pagination->offset)->limit($pagination->limit)->all();
 
 				return [
-					'groups' => $groups,
+                    'featureName' => $featureName,
+					'groups' => $feature->groups,
 					'pagination' => $pagination
 				];
 		}

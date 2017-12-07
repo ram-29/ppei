@@ -9,7 +9,10 @@ $this->title = 'News & Events';
 <div class="site-events">
 
 	<section id="events" class="container">
-		<?= Yii::$app->view->renderFile('@app/views/components/events.php') ?>
+		<?= Yii::$app->view->renderFile('@app/views/components/articles.php', [
+			'featureName' => $featureName,
+			'groups' => $groups
+		]) ?>
 
 		<?= LinkPager::widget([
 			'pagination' => $pagination,

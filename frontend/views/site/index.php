@@ -84,7 +84,10 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 	</section>
 
 	<section id="content" class="container">
-		<?= Yii::$app->view->renderFile('@app/views/components/events.php', ['groups' => $groups]) ?>
+		<?= Yii::$app->view->renderFile('@app/views/components/articles.php', [
+			'featureName' => $featureName,
+			'groups' => $groups
+		]) ?>
 		<h4 class="events-link">Looking for more? Check out our <a href="#">News & Events</a> section.</h4>
 	</section>
 
