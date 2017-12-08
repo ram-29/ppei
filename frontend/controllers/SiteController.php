@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use yii\data\Sort;
 use yii\helpers\Url;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
@@ -45,6 +46,24 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+				$feature = Feature::findOne(['name' => 'News & Events']);
+
+				$groups = $feature->getGroups()
+					->addSelect([
+						'tblgroup.*', # Crappy Hack
+						'date_posted.value as date_posted',
+					// 'title.value as title',
+					])
+					->joinWith([
+						'contents date_posted' => function($q){
+							$q->onCondition(['date_posted.attribute' => 'date_posted']);
+						}
+					])
+					->orderBy(['date_posted' => SORT_ASC])->all();
+
+				print_r($groups);
+				die();
+				
         return $this->render('index', $this->getArticles('News & Events'));
     }
 
@@ -151,18 +170,18 @@ class SiteController extends Controller
 		public function getArticles($featureName)
 		{
 				$feature = Feature::findOne(['name' => $featureName]);
-                $groups = $feature->getGroups();
+				$groups = $feature->getGroups();
 
 				$pagination = new Pagination([
 					'defaultPageSize' => 2,
 					'totalCount' => $groups->count()
 				]);
 
-                # Unused offset
-                $groups = $groups->offset($pagination->offset)->limit($pagination->limit)->all();
+				# Unused offset
+				$groups = $groups->offset($pagination->offset)->limit($pagination->limit)->all();
 
 				return [
-                    'featureName' => $featureName,
+					'featureName' => $featureName,
 					'groups' => $feature->groups,
 					'pagination' => $pagination
 				];
