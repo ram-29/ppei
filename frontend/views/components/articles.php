@@ -111,51 +111,27 @@ use yii\helpers\Html;
 		<div class="col-md-8">
 			<ul class="list-group">
 
-			<?php foreach($groups as $group):?>
-				<li class="list-group-item">
-					<div class="item-content hvr-forward">
-						<?php foreach($group->contents as $content) :?>
-							<?php if($content->attribute === 'images') :?>
-								<img src="<?= $content->value ?>" alt="<?= $content->value ?>">
-							<?php endif ?>
-						<?php endforeach ?>
-						<div class="item-overview">
-							<?php foreach($group->contents as $content) :?>
-								<?php switch($content->attribute) :
-									case 'title' :?>
-										<h4 class="item-title"><?= $content->value ?></h4>
-									<?php break ?>
-									<?php case 'content' :?>
-										<p class="item-summary"><?= $content->value ?></p>
-									<?php break ?>
-								<?php endswitch ?>
-							<?php endforeach ?>
-							<h6 class="item-details">
-								By PPEIV2 &#8226; 
-								<i class="fa fa-clock-o" aria-hidden="true"></i> X days ago &#8226;
-								<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-								<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-							</h6>
-						</div>						
-					</div>
-				</li>
-			<?php endforeach ?>
-
-			<li class="list-group-item">
-				<div class="item-content hvr-forward">
-					<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
-					<div class="item-overview">
-						<h4 class="item-title">Lorem ipsum dolor sit amet.</h4>
-						<p class="item-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias, eaque ex sapiente laudantium, vitae quam at nobis perspiciatis distinctio id dignissimos expedita atque. Culpa, possimus reprehenderit! Alias, nostrum quam?</p>
-						<h6 class="item-details">
-							By PPEIV2 &#8226; 
-							<i class="fa fa-clock-o" aria-hidden="true"></i> X days ago &#8226;
-							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-							<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-						</h6>
-					</div>
-				</div>
-			</li>
+				<?php $i = 0; ?>
+				<?php foreach($contents as $content) :?>
+						<li class="list-group-item">
+							<div class="item-content hvr-forward">
+								<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
+								<div class="item-overview">
+									<h4 class="item-title"><?= $content['title'] ?></h4>
+									<p class="item-summary"><?= $content['content'] ?></p>
+									<h6 class="item-details">
+										By PPEIV2 &#8226; 
+										<i class="fa fa-clock-o" aria-hidden="true"></i>
+											<span id="list-time-<?= $i ?>"></span> &#8226;
+											<?= $this->registerJs('var time = $("#list-time-'.$i.'"); time.text("Published "+moment("'.$content['date_posted'].'").fromNow());'); ?>
+										<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
+										<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
+									</h6>
+								</div>
+							</div>
+						</li>
+					<?php $i++; ?>
+				<?php endforeach ?>
 				
 			</ul>
 		</div>

@@ -45,25 +45,7 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {
-				$feature = Feature::findOne(['name' => 'News & Events']);
-
-				$groups = $feature->getGroups()
-					->addSelect([
-						'tblgroup.*', # Crappy Hack
-						'date_posted.value as date_posted',
-					// 'title.value as title',
-					])
-					->joinWith([
-						'contents date_posted' => function($q){
-							$q->onCondition(['date_posted.attribute' => 'date_posted']);
-						}
-					])
-					->orderBy(['date_posted' => SORT_ASC])->all();
-
-				print_r($groups);
-				die();
-				
+    {		
         return $this->render('index', $this->getArticles('News & Events'));
     }
 
@@ -172,18 +154,51 @@ class SiteController extends Controller
 				$feature = Feature::findOne(['name' => $featureName]);
 				$groups = $feature->getGroups();
 
+				$contents = $this->removeArrayItem($groups
+					->addSelect([
+						'tblgroup.*',
+						'title.value as title',
+						'content.value as content',
+						'date_posted.value as date_posted',
+					])
+					->joinWith([
+						'contents title' => 
+							function($q){ $q->onCondition(['title.attribute' => 'title']); }
+					])
+					->joinWith([
+						'contents content' => 
+							function($q){ $q->onCondition(['content.attribute' => 'content']); }
+					])
+					->joinWith([
+						'contents date_posted' => 
+							function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
+					])
+					->asArray()
+					->orderBy(['date_posted' => SORT_DESC])
+					->all()
+				, 'contents');
+
 				$pagination = new Pagination([
-					'defaultPageSize' => 2,
-					'totalCount' => $groups->count()
+					'defaultPageSize' => 16,
+					'totalCount' => count($contents)
 				]);
 
-				# Unused offset
-				$groups = $groups->offset($pagination->offset)->limit($pagination->limit)->all();
+				$contents = $groups->offset($pagination->offset)
+						->limit($pagination->limit)
+						->all();
 
 				return [
 					'featureName' => $featureName,
-					'groups' => $feature->groups,
+					'contents' => $contents,
 					'pagination' => $pagination
 				];
+		}
+
+		public function removeArrayItem(array $array, string $item)
+		{
+			for ($i=0; $i <= count($array); $i++) { 
+				unset($array[$i][$item]); 
+			}
+			return $array;
 		}
 }
