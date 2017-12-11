@@ -674,7 +674,7 @@ html,body{
 }
 
 footer{
-	padding: 4rem 0;
+	padding: 1rem 0;
 	background-color: $primary;
 	text-align: center;
 
@@ -682,41 +682,43 @@ footer{
 		font-weight: bold;
 	}
 
-	.col-md-2{
-		border-right: 1px solid $black;
-	}
-
 	.col-md{
-		margin-top: 2rem;
-		padding-top: 2rem;
-		border-top: 1px solid $black;
-	}
+		padding: 1rem 0;
 
-	.list-group {
-		list-style: none;
+		.divider{
+			padding: .5rem 0;
+		}
 
-		li{
-			a{
-				color: $black;
+		.list-group {
+			list-style: none;
 
-				&:hover{
-					color: $accent-secondary;
+			li{
+				a{
+					color: $black;
+
+					&:hover{
+						color: $accent-secondary;
+					}
 				}
 			}
 		}
-	}
 
-	#list-lower{
-		display: inline-block;
+		#list-lower{
+			display: inline-block;
 
-		li{
-			float: left;
-			padding: 0 1rem;
-			border-right: 1px solid $black;
+			li{
+				float: left;
+				padding: 0 1rem;
+				border-right: 1px solid $black;
 
-			&:last-child{
-				border-right: unset;
+				&:last-child{
+					border-right: unset;
+				}
 			}
+		}
+
+		.copyright{
+			margin: unset;
 		}
 	}
 }

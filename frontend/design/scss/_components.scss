@@ -1,5 +1,5 @@
-#components-events{
-	.news-header{
+#components-articles{
+	.articles-header{
 		i{
 			color: $black;
 		}
@@ -68,14 +68,14 @@
 		}
 	}
 
-	#news-head,
-	#news-subhead{
+	#articles-head,
+	#articles-subhead{
 		.card{
 			margin-bottom: 1rem;
 		}
 	}
 
-	#news-list{
+	#articles-list{
 		.col-md-8{
 			.list-group{
 				overflow: hidden;

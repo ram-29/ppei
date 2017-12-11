@@ -2,9 +2,6 @@
 namespace frontend\controllers;
 
 use Yii;
-use yii\data\Sort;
-use yii\helpers\Url;
-use yii\helpers\Json;
 use yii\web\Controller;
 use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
@@ -154,12 +151,15 @@ class SiteController extends Controller
 				$feature = Feature::findOne(['name' => $featureName]);
 				$groups = $feature->getGroups();
 
-				$contents = $this->removeArrayItem($groups
+				$contents = $groups
 					->addSelect([
 						'tblgroup.*',
 						'title.value as title',
-						'content.value as content',
-						'date_posted.value as date_posted',
+                        'content.value as content',
+                        'images.value as images',
+                        'date_posted.value as date_posted',
+                        'slug.value as slug',
+                        'user.value as user'
 					])
 					->joinWith([
 						'contents title' => 
@@ -168,27 +168,42 @@ class SiteController extends Controller
 					->joinWith([
 						'contents content' => 
 							function($q){ $q->onCondition(['content.attribute' => 'content']); }
+                    ])
+                    ->joinWith([
+						'contents images' => 
+							function($q){ $q->onCondition(['images.attribute' => 'images']); }
 					])
 					->joinWith([
 						'contents date_posted' => 
 							function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
+                    ])
+                    ->joinWith([
+						'contents slug' => 
+							function($q){ $q->onCondition(['slug.attribute' => 'slug']); }
+                    ])
+                    ->joinWith([
+						'contents user' => 
+							function($q){ $q->onCondition(['user.attribute' => 'user']); }
 					])
 					->asArray()
 					->orderBy(['date_posted' => SORT_DESC])
-					->all()
-				, 'contents');
+					->all();
 
 				$pagination = new Pagination([
 					'defaultPageSize' => 16,
 					'totalCount' => count($contents)
 				]);
 
-				$contents = $groups->offset($pagination->offset)
+				$contents = $this->removeArrayItem(
+                    $groups->offset($pagination->offset)
 						->limit($pagination->limit)
-						->all();
+                        ->all()
+                    , 'contents');
 
 				return [
-					'featureName' => $featureName,
+                    'featureName' => $featureName,
+                    'headers' => array_splice($contents, 0, 3),
+                    'subHeads' => array_splice($contents, 0, 3),
 					'contents' => $contents,
 					'pagination' => $pagination
 				];

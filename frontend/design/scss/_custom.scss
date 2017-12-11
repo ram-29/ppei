@@ -16,9 +16,9 @@
     }
   }
 
-  #components-events{
-    #news-head,
-    #news-subhead{
+  #components-articles{
+    #articles-head,
+    #articles-subhead{
       .card{
         .card-img{
           height: 600px;
@@ -26,7 +26,7 @@
       }
     }
 
-    #news-list{
+    #articles-list{
       .list-group-item{
         img{
           width: 100%;
@@ -74,8 +74,8 @@
     }
   }
 
-  #components-events{
-    #news-head{
+  #components-articles{
+    #articles-head{
       .col-md-7{
         .card{
           .card-img{
@@ -93,7 +93,7 @@
       }
     }
 
-    #news-list{
+    #articles-list{
       .list-group-item{
         img{
           width: 50%;
