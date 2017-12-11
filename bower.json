@@ -23,6 +23,7 @@
     "moment": "^2.19.1",
     "underscore": "^1.8.3",
     "clndr": "^1.4.7",
-    "hover": "^2.1.1"
+    "hover": "^2.1.1",
+    "moment-timezone": "^0.5.14"
   }
 }

@@ -119,7 +119,18 @@ const mModule = (function (global, $) {
     }
   }
 
+  const mTime = $('.time');
+  function initLocalTime() {
+    const localTime = moment().tz('Asia/Manila').format('dddd, MMMM Do YYYY, h:mm:ss a');
+    mTime.html(localTime);
+  }
+
   function init() {
+    // Set PSTime
+    if ($('.time').length) {
+      global[0].setInterval(initLocalTime, 1000);
+    }
+
     // Banner Image
     if ($('#banner').length) {
       const $bannerSlider = $('#banner-slider');

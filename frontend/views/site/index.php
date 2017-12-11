@@ -77,7 +77,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 				</div>
 				<div class="col-md-4">
 					<h6>Philippine Standard Time:</h6>
-					<h6 class="time">Thursday, October 12, 2017, 12:09:27 AM</h6>
+					<h6 class="time"></h6>
 				</div>
 			</div>
 		</div>
