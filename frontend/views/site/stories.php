@@ -2,13 +2,13 @@
 
 use yii\widgets\LinkPager;
 
-$this->title = 'News & Events';
+$this->title = 'Stories of Change';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
 
-<div class="site-events">
+<div class="site-stories">
 
-	<section id="events" class="container">
+	<section id="stories" class="container">
 		<?= Yii::$app->view->renderFile('@app/views/components/articles.php', [
 			'feature' => $feature,
 			'contents' => $contents
@@ -26,7 +26,7 @@ $this->title = 'News & Events';
 			]
 		]) ?>
 	</section>
-	
+
 </div>
 
 <?= Yii::$app->view->renderFile('@app/views/layouts/footer.php') ?>

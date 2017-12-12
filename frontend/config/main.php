@@ -41,7 +41,7 @@ return [
 			'showScriptName' => false,
 			'enableStrictParsing' => true,
 			'rules' => [
-				'news-and-events/<year:\d{4}>/<month:\d{2}>/<slug>' => 'site/news-and-events',
+				'<feature>/<year:\d{4}>/<month:\d{2}>/<slug>' => 'site/validator',
 				'<action:(.*)>' => 'site/<action>'
 			],
 		],

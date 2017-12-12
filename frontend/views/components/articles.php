@@ -3,11 +3,15 @@
 use yii\helpers\Html;
 ?>
 <div id="components-articles">
-	<h1 class="articles-header">
-		<?php if($featureName === 'News & Events') :?>
-			<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?= $featureName ?>
-		<?php elseif($featureName === 'Stories of Change') :?>
-			<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?= $featureName ?>
+	<?php if($contents) :?>
+		<?php $headers = array_splice($contents, 0, 3); ?>
+		<?php $subHeads = array_splice($contents, 0, 3); ?>
+
+		<h1 class="articles-header">
+		<?php if($feature === 'News & Events') :?>
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?= $feature ?>
+		<?php elseif($feature === 'Stories of Change') :?>
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?= $feature ?>
 		<?php endif ?>
 	</h1>
 	<div id="articles-head" class="row">
@@ -168,4 +172,9 @@ use yii\helpers\Html;
 			<?= Yii::$app->view->renderFile('@app/views/components/calendar.php') ?>
 		</div>
 	</div>
+	<?php else :?>
+		<div id="error" class="container">
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, doloremque debitis perspiciatis adipisci, vitae mollitia officia hic, aliquam cumque eius laborum doloribus officiis quam tempora fuga facere ab suscipit laboriosam.</p>
+		</div>
+	<?php endif ?>
 </div>
