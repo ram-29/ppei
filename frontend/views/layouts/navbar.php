@@ -24,6 +24,9 @@ use yii\helpers\Html;
 					<a class="nav-link hvr-icon-bob" href="/news-and-events">News & Events</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link hvr-icon-buzz-out" href="/stories-of-change">Stories of Change</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link hvr-icon-bounce" href="/knowledge-hub">Knowledge Hub</a>
 				</li>
 				<li class="nav-item dropdown">

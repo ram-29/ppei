@@ -47,6 +47,18 @@ html,body{
 			}
 
 			&:nth-child(2){
+				margin-right: .5rem;
+				.nav-link{
+					&.hvr-icon-buzz-out{
+						&::before{
+							right: -.8rem !important;
+							content: "\f0a1" !important;
+						}
+					}
+				}
+			}
+
+			&:nth-child(3){
 				margin-right: .4rem;
 				.nav-link{
 					&.hvr-icon-bounce{
@@ -58,7 +70,7 @@ html,body{
 				}
 			}
 
-			&:nth-child(3){
+			&:nth-child(4){
 				margin-right: unset;
 
 				&.show{
@@ -84,7 +96,7 @@ html,body{
 				}
 			}
 
-			&:nth-child(4){
+			&:nth-child(5){
 				.nav-link{
 					padding-left: unset;
 					&.hvr-icon-grow{

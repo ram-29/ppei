@@ -11,7 +11,7 @@ use yii\helpers\Html;
 		<?php if($feature === 'News & Events') :?>
 			<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?= $feature ?>
 		<?php elseif($feature === 'Stories of Change') :?>
-			<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?= $feature ?>
+			<i class="fa fa-bullhorn" aria-hidden="true"></i> <?= $feature ?>
 		<?php endif ?>
 	</h1>
 	<div id="articles-head" class="row">

@@ -89,7 +89,9 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 			'slug' => $slug,
 			'contents' => $contents
 		]) ?>
-		<h4 class="events-link">Looking for more? Check out our <a href="/news-and-events">News & Events</a> section.</h4>
+		<?php if($contents) :?>
+			<h4 class="events-link">Looking for more? Check out our <a href="/news-and-events">News & Events</a> section.</h4>
+		<?php endif ?>
 	</section>
 
 	<section id="map" class="container-fluid">
