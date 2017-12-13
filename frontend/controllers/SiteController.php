@@ -43,7 +43,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {		
-        return $this->render('index', $this->getArticles('News & Events'));
+        return $this->render('index', $this->getArticles('News & Events', 'news-and-events'));
     }
 
     /**
@@ -53,7 +53,7 @@ class SiteController extends Controller
      */
     public function actionNewsAndEvents()
     {
-        return $this->render('events', $this->getArticles('News & Events'));
+        return $this->render('events', $this->getArticles('News & Events', 'news-and-events'));
 		}
 		
 		/**
@@ -63,7 +63,7 @@ class SiteController extends Controller
      */
 		public function actionStoriesOfChange()
 		{
-			return $this->render('stories', $this->getArticles('Stories of Change'));
+			return $this->render('stories', $this->getArticles('Stories of Change', 'stories-of-change'));
 		}
 
 		/**
@@ -157,7 +157,7 @@ class SiteController extends Controller
 		}
 
 		# Dev Defined Methods
-		public function getArticles($name)
+		public function getArticles($name, $slug)
 		{
 				$feature = Feature::findOne(['name' => $name]);
 				$groups = $feature->getGroups();
@@ -213,6 +213,7 @@ class SiteController extends Controller
 
 				return [
                     'feature' => $name,
+                    'slug' => $slug,
 					'contents' => $contents,
 					'pagination' => $pagination
 				];

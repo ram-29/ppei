@@ -11,6 +11,7 @@ $this->title = 'News & Events';
 	<section id="events" class="container">
 		<?= Yii::$app->view->renderFile('@app/views/components/articles.php', [
 			'feature' => $feature,
+			'slug' => $slug,
 			'contents' => $contents
 		]) ?>
 

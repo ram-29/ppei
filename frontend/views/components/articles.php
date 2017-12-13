@@ -20,7 +20,7 @@ use yii\helpers\Html;
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h4><a class="card-title" href="/news-and-events/<?= str_replace('-', '/', substr($headers[0]['date_posted'], 0, -3)) ?>/<?= $headers[0]['slug'] ?>">
+						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[0]['date_posted'], 0, -3)) ?>/<?= $headers[0]['slug'] ?>">
 							<?= $headers[0]['title'] ?>
 						</a></h4>
 						<h6 class="card-details lead">
@@ -40,7 +40,7 @@ use yii\helpers\Html;
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h4><a class="card-title" href="/news-and-events/<?= str_replace('-', '/', substr($headers[1]['date_posted'], 0, -3)) ?>/<?= $headers[1]['slug'] ?>">
+						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[1]['date_posted'], 0, -3)) ?>/<?= $headers[1]['slug'] ?>">
 							<?= $headers[1]['title'] ?>
 						</a></h4>
 						<h6 class="card-details">
@@ -58,7 +58,7 @@ use yii\helpers\Html;
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h4><a class="card-title" href="/news-and-events/<?= str_replace('-', '/', substr($headers[2]['date_posted'], 0, -3)) ?>/<?= $headers[2]['slug'] ?>">
+						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[2]['date_posted'], 0, -3)) ?>/<?= $headers[2]['slug'] ?>">
 							<?= $headers[2]['title'] ?>
 						</a></h4>
 						<h6 class="card-details">
@@ -81,7 +81,7 @@ use yii\helpers\Html;
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h4><a class="card-title" href="/news-and-events/<?= str_replace('-', '/', substr($subHeads[0]['date_posted'], 0, -3)) ?>/<?= $subHeads[0]['slug'] ?>">
+						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHeads[0]['date_posted'], 0, -3)) ?>/<?= $subHeads[0]['slug'] ?>">
 							<?= $subHeads[0]['title'] ?>
 						</a></h4>
 						<h6 class="card-details">
@@ -101,7 +101,7 @@ use yii\helpers\Html;
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h4><a class="card-title" href="/news-and-events/<?= str_replace('-', '/', substr($subHeads[1]['date_posted'], 0, -3)) ?>/<?= $subHeads[1]['slug'] ?>">
+						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHeads[1]['date_posted'], 0, -3)) ?>/<?= $subHeads[1]['slug'] ?>">
 							<?= $subHeads[1]['title'] ?>
 						</a></h4>
 						<h6 class="card-details">
@@ -121,7 +121,7 @@ use yii\helpers\Html;
 				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
 				<div class="card-img-overlay">
 					<div class="card-content">
-						<h4><a class="card-title" href="/news-and-events/<?= str_replace('-', '/', substr($subHeads[2]['date_posted'], 0, -3)) ?>/<?= $subHeads[2]['slug'] ?>">
+						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHeads[2]['date_posted'], 0, -3)) ?>/<?= $subHeads[2]['slug'] ?>">
 							<?= $subHeads[2]['title'] ?>
 						</a></h4>
 						<h6 class="card-details">
@@ -148,7 +148,7 @@ use yii\helpers\Html;
 							<div class="item-content hvr-forward">
 								<img src="https://dummyimage.com/400x300/558B2F/fff" alt="...">
 								<div class="item-overview">
-									<h4><a class="item-title" href="/news-and-events/<?= str_replace('-', '/', substr($content['date_posted'], 0, -3)) ?>/<?= $content['slug'] ?>">
+									<h4><a class="item-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($content['date_posted'], 0, -3)) ?>/<?= $content['slug'] ?>">
 										<?= $content['title'] ?>
 									</a></h4>
 									<p class="item-summary"><?= $content['content'] ?></p>
@@ -174,7 +174,7 @@ use yii\helpers\Html;
 	</div>
 	<?php else :?>
 		<div id="error" class="container">
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, doloremque debitis perspiciatis adipisci, vitae mollitia officia hic, aliquam cumque eius laborum doloribus officiis quam tempora fuga facere ab suscipit laboriosam.</p>
+			<p>There are no available articles at this time. Please come back later.</p>
 		</div>
 	<?php endif ?>
 </div>

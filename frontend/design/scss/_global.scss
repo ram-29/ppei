@@ -228,8 +228,10 @@ html,body{
 	}
 }
 
-.site-events{
-	#events{
+.site-events,
+.site-stories{
+	#events,
+	#stories{
 		padding: 1rem;
 		background-color: $white;
 

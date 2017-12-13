@@ -1,4 +1,10 @@
 #components-articles{
+	#error{
+		height: 500px;
+		padding: 2rem;
+		background-color: $white;
+	}
+
 	.articles-header{
 		i{
 			color: $black;
