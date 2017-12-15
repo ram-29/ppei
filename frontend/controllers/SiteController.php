@@ -54,36 +54,36 @@ class SiteController extends Controller
     public function actionNewsAndEvents()
     {
         return $this->render('events', $this->getArticles('News & Events', 'news-and-events'));
-		}
+    }
 		
-		/**
+    /**
      * Displays the Stories page.
      *
      * @return mixed
      */
-		public function actionStoriesOfChange()
-		{
-			return $this->render('stories', $this->getArticles('Stories of Change', 'stories-of-change'));
-		}
+    public function actionStoriesOfChange()
+    {
+        return $this->render('stories', $this->getArticles('Stories of Change', 'stories-of-change'));
+    }
 
-		/**
+    /**
      * Displays the Individual News or Story page.
      *
      * @return mixed
      */
-		public function actionValidator($feature, $year, $month, $slug)
-		{
-			$mFeature = ($feature === 'news-and-events') ? 'News & Events' : 
-				(($feature === 'stories-of-change') ? 'Stories of Change' : false);
-			$mYear = ((date('Y', 0) <= $year) && ($year <= date('Y'))) ? $year : false;
-			$mMonth = ((1 <= $month) && ($month <= 12)) ? $month : false;
+    public function actionValidator($feature, $year, $month, $slug)
+    {
+        $mFeature = ($feature === 'news-and-events') ? 'News & Events' : 
+            (($feature === 'stories-of-change') ? 'Stories of Change' : false);
+        $mYear = ((date('Y', 0) <= $year) && ($year <= date('Y'))) ? $year : false;
+        $mMonth = ((1 <= $month) && ($month <= 12)) ? $month : false;
 
-			if($mFeature && $mYear && $mMonth){
-				return $this->render('article', $this->getArticle($mFeature, $mYear, $mMonth, $slug));
-			}
+        if($mFeature && $mYear && $mMonth){
+            return $this->render('article', $this->getArticle($mFeature, $mYear, $mMonth, $slug));
+        }
 
-			throw new NotFoundHttpException('The requested page does not exist.');
-		}
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 
     /**
      * Displays knowledge hub page.
@@ -154,132 +154,132 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-		}
+    }
 
-		# Dev Defined Methods
-		public function getArticles($name, $slug)
-		{
-				$feature = Feature::findOne(['name' => $name]);
-				$groups = $feature->getGroups();
+    # Dev Defined Methods
+    public function getArticles($name, $slug)
+    {
+        $feature = Feature::findOne(['name' => $name]);
+        $groups = $feature->getGroups();
 
-				$contents = $groups
-					->addSelect([
-						'tblgroup.*',
-						'title.value as title',
-                        'content.value as content',
-                        'images.value as images',
-                        'date_posted.value as date_posted',
-                        'slug.value as slug',
-                        'user.value as user'
-					])
-					->joinWith([
-						'contents title' => 
-							function($q){ $q->onCondition(['title.attribute' => 'title']); }
-					])
-					->joinWith([
-						'contents content' => 
-							function($q){ $q->onCondition(['content.attribute' => 'content']); }
-                    ])
-                    ->joinWith([
-						'contents images' => 
-							function($q){ $q->onCondition(['images.attribute' => 'images']); }
-					])
-					->joinWith([
-						'contents date_posted' => 
-							function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
-                    ])
-                    ->joinWith([
-						'contents slug' => 
-							function($q){ $q->onCondition(['slug.attribute' => 'slug']); }
-                    ])
-                    ->joinWith([
-						'contents user' => 
-							function($q){ $q->onCondition(['user.attribute' => 'user']); }
-					])
-					->asArray()
-					->orderBy(['date_posted' => SORT_DESC])
-					->all();
+        $contents = $groups
+            ->addSelect([
+                'tblgroup.*',
+                'title.value as title',
+                'content.value as content',
+                'images.value as images',
+                'date_posted.value as date_posted',
+                'slug.value as slug',
+                'user.value as user'
+            ])
+            ->joinWith([
+                'contents title' => 
+                    function($q){ $q->onCondition(['title.attribute' => 'title']); }
+            ])
+            ->joinWith([
+                'contents content' => 
+                    function($q){ $q->onCondition(['content.attribute' => 'content']); }
+            ])
+            ->joinWith([
+                'contents images' => 
+                    function($q){ $q->onCondition(['images.attribute' => 'images']); }
+            ])
+            ->joinWith([
+                'contents date_posted' => 
+                    function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
+            ])
+            ->joinWith([
+                'contents slug' => 
+                    function($q){ $q->onCondition(['slug.attribute' => 'slug']); }
+            ])
+            ->joinWith([
+                'contents user' => 
+                    function($q){ $q->onCondition(['user.attribute' => 'user']); }
+            ])
+            ->asArray()
+            ->orderBy(['date_posted' => SORT_DESC])
+            ->all();
 
-				$pagination = new Pagination([
-					'defaultPageSize' => 16,
-					'totalCount' => count($contents)
-				]);
+        $pagination = new Pagination([
+            'defaultPageSize' => 16,
+            'totalCount' => count($contents)
+        ]);
 
-				$contents = $this->removeArrayItem(
-                    $groups->offset($pagination->offset)
-						->limit($pagination->limit)
-                        ->all()
-										, 'contents');
+        $contents = $this->removeArrayItem(
+            $groups->offset($pagination->offset)
+                ->limit($pagination->limit)
+                ->all()
+            , 'contents');
 
-				return [
-                    'feature' => $name,
-                    'slug' => $slug,
-					'contents' => $contents,
-					'pagination' => $pagination
-				];
-		}
+        return [
+            'feature' => $name,
+            'slug' => $slug,
+            'contents' => $contents,
+            'pagination' => $pagination
+        ];
+    }
 
-		public function getArticle($name, $year, $month, $slug)
-		{
-			$feature = Feature::findOne(['name' => $name]);
-			$groups = $feature->getGroups();
+    public function getArticle($name, $year, $month, $slug)
+    {
+        $feature = Feature::findOne(['name' => $name]);
+        $groups = $feature->getGroups();
 
-			$article = $groups
-					->addSelect([
-						'tblgroup.*',
-						'title.value as title',
-                        'content.value as content',
-                        'images.value as images',
-                        'date_posted.value as date_posted',
-                        'slug.value as slug',
-                        'user.value as user'
-					])
-					->joinWith([
-						'contents title' => 
-							function($q){ $q->onCondition(['title.attribute' => 'title']); }
-					])
-					->joinWith([
-						'contents content' => 
-							function($q){ $q->onCondition(['content.attribute' => 'content']); }
-                    ])
-                    ->joinWith([
-						'contents images' => 
-							function($q){ $q->onCondition(['images.attribute' => 'images']); }
-					])
-					->joinWith([
-						'contents date_posted' => 
-							function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
-                    ])
-                    ->joinWith([
-						'contents slug' => 
-							function($q){ $q->onCondition(['slug.attribute' => 'slug']); }
-                    ])
-                    ->joinWith([
-						'contents user' => 
-							function($q){ $q->onCondition(['user.attribute' => 'user']); }
-					])
-					->where(['like', 'date_posted.value', $year.'-'.$month])
-					->andWhere(['slug.value' => $slug])
-					->asArray()
-					->one();
+        $article = $groups
+            ->addSelect([
+                'tblgroup.*',
+                'title.value as title',
+                'content.value as content',
+                'images.value as images',
+                'date_posted.value as date_posted',
+                'slug.value as slug',
+                'user.value as user'
+            ])
+            ->joinWith([
+                'contents title' => 
+                    function($q){ $q->onCondition(['title.attribute' => 'title']); }
+            ])
+            ->joinWith([
+                'contents content' => 
+                    function($q){ $q->onCondition(['content.attribute' => 'content']); }
+            ])
+            ->joinWith([
+                'contents images' => 
+                    function($q){ $q->onCondition(['images.attribute' => 'images']); }
+            ])
+            ->joinWith([
+                'contents date_posted' => 
+                    function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
+            ])
+            ->joinWith([
+                'contents slug' => 
+                    function($q){ $q->onCondition(['slug.attribute' => 'slug']); }
+            ])
+            ->joinWith([
+                'contents user' => 
+                    function($q){ $q->onCondition(['user.attribute' => 'user']); }
+            ])
+            ->where(['like', 'date_posted.value', $year.'-'.$month])
+            ->andWhere(['slug.value' => $slug])
+            ->asArray()
+            ->one();
 
-			unset($article['contents']);
+        unset($article['contents']);
 
-			if($article){
-				return [
-					'article' => $article,
-					'slug' => $slug
-				];
-			}
+        if($article){
+            return [
+                'article' => $article,
+                'slug' => $slug
+            ];
+        }
 
-			throw new NotFoundHttpException('The requested page does not exist.');
-		}
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 
-		public function removeArrayItem(array $array, string $item)
-		{
-			for ($i=0; $i <= count($array); $i++) { 
-				unset($array[$i][$item]); 
-			}
-			return $array;
-		}
+    public function removeArrayItem(array $array, string $item)
+    {
+        for ($i=0; $i <= count($array); $i++) { 
+            unset($array[$i][$item]); 
+        }
+        return $array;
+    }
 }
