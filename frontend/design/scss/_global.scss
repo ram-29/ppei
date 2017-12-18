@@ -34,98 +34,98 @@ html,body{
 	.navbar-nav{
 		.nav-item{
 			margin-right: 1rem;
+		}
 
-			&:first-child{
-				.nav-link{
-					&.hvr-icon-bob{
-						&::before{
-							right: -1.1rem !important;
-							content: "\f1ea" !important;
-						}
-					}
-				}
+		.nav-link{
+			font-weight: bold;
+			transition: $hover-transition;
+
+			&:hover{
+				color: $secondary;
 			}
+		}
 
-			&:nth-child(2){
-				margin-right: .5rem;
-				.nav-link{
-					&.hvr-icon-buzz-out{
-						&::before{
-							right: -.8rem !important;
-							content: "\f0a1" !important;
-						}
-					}
-				}
-			}
-
-			&:nth-child(3){
-				margin-right: .4rem;
-				.nav-link{
-					&.hvr-icon-bounce{
-						&::before{
-							right: -.5rem !important;
-							content: "\f0eb" !important;
-						}
-					}
-				}
-			}
-
-			&:nth-child(4){
-				margin-right: unset;
-
-				&.show{
-					.nav-link{
-						color: $secondary !important;
-					}
-				}
-
-				.dropdown-menu{
-					border-color: $secondary;
-					.dropdown-item{
-						color: #7F7F7F;
-
-						&:hover{
-							color: $secondary;
-						}
-
-						&:active{
-							background-color: $secondary;
-							color: $white;
-						}
-					}
-				}
-			}
-
-			&:nth-child(5){
-				.nav-link{
-					padding-left: unset;
-					&.hvr-icon-grow{
-						&::before{
-							right: -1.1rem !important;
-							content: "\f03e" !important;
-						}
-					}
-				}
-			}
-
-			&:last-child{
-				.nav-link{
-					&.hvr-icon-float-away{
-						&::before,
-						&::after{
-							right: -1rem !important;
-							content: "\f0e0" !important;
-						}
-					}
-				}
-			}
-
+		#news-and-events{
 			.nav-link{
-				font-weight: bold;
-				transition: $hover-transition;
+				&.hvr-icon-bob{
+					&::before{
+						right: -1.1rem !important;
+						content: "\f1ea" !important;
+					}
+				}
+			}
+		}
 
-				&:hover{
-					color: $secondary;
+		#stories-of-change{
+			margin-right: .5rem;
+			.nav-link{
+				&.hvr-icon-buzz-out{
+					&::before{
+						right: -.8rem !important;
+						content: "\f0a1" !important;
+					}
+				}
+			}
+		}
+
+		#knowledge-hub{
+			margin-right: .4rem;
+			.nav-link{
+				&.hvr-icon-bounce{
+					&::before{
+						right: -.5rem !important;
+						content: "\f0eb" !important;
+					}
+				}
+			}
+		}
+
+		#about-us{
+			margin-right: unset;
+
+			&.show{
+				.nav-link{
+					color: $secondary !important;
+				}
+			}
+
+			.dropdown-menu{
+				border-color: $secondary;
+				.dropdown-item{
+					color: #7F7F7F;
+
+					&:hover{
+						color: $secondary;
+					}
+
+					&:active{
+						background-color: $secondary;
+						color: $white;
+					}
+				}
+			}
+		}
+
+		#gallery{
+			.nav-link{
+				padding-left: unset;
+				&.hvr-icon-grow{
+					&::before{
+						right: -1.1rem !important;
+						content: "\f03e" !important;
+					}
+				}
+			}
+		}
+
+		#contact-us{
+			.nav-link{
+				&.hvr-icon-float-away{
+					&::before,
+					&::after{
+						right: -1rem !important;
+						content: "\f0e0" !important;
+					}
 				}
 			}
 		}
