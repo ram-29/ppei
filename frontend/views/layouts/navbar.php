@@ -5,34 +5,17 @@ use common\models\Feature;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
+use frontend\helpers\Transform;
+
 $features = ArrayHelper::getColumn(Feature::find()->asArray()->all(), 'name');
 
-$hyphenated = function (string $string){
-	return str_replace(' ', '-', $string);
-};
-
-$wordify = function (string $string){
-	return str_replace('&', 'and', $string);
-};
-
-$lowered = function (string $string){
-	return strtolower($string);
-};
-
-$build = function(string $a, string $b){
-	return [
-		'name' => $a,
-		'slug' => $b
-	];
-};
-
 $slugged = array_map(
-	$lowered, 
-		array_map($wordify,
-			array_map($hyphenated, $features))
+	Transform::lowered, 
+		array_map(Transform::wordify,
+			array_map(Transform::hyphenated, $features))
 );
 
-$links = array_map($build, $features, $slugged);
+$links = array_map(Transform::build, $features, $slugged);
 ?>
 <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
@@ -64,9 +47,30 @@ $links = array_map($build, $features, $slugged);
 								<a class="nav-link hvr-icon-buzz-out" href="/<?= $link['slug'] ?>"><?= $link['name'] ?></a>
 							</li>
 						<?php break; ?>
+						<?php case 'Knowledge Hub' :?>
+							<li id="<?= $link['slug'] ?>" class="nav-item">
+								<a class="nav-link hvr-icon-bounce" href="/<?= $link['slug'] ?>"><?= $link['name'] ?></a>
+							</li>
+						<?php break; ?>
+						<?php case 'About Us' :?>
+							<li id="<?= $link['slug'] ?>" class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="/<?= $link['slug'] ?>" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $link['name'] ?></a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="/<?= $link['slug'] ?>#who-we-are">Who We Are</a>
+									<a class="dropdown-item" href="/<?= $link['slug'] ?>#what-we-do">What We Do</a>
+									<a class="dropdown-item" href="/<?= $link['slug'] ?>#stories-of-change">Stories of Change</a>
+									<a class="dropdown-item" href="/<?= $link['slug'] ?>#partners">Partners</a>
+								</div>
+							</li>
+						<?php break; ?>
 						<?php case 'Gallery' :?>
 							<li id="<?= $link['slug'] ?>" class="nav-item">
 								<a class="nav-link hvr-icon-grow" href="/<?= $link['slug'] ?>"><?= $link['name'] ?></a>
+							</li>
+						<?php break; ?>
+						<?php case 'Contact Us':?>
+							<li id="<?= $link['slug'] ?>" class="nav-item">
+								<a class="nav-link hvr-icon-float-away" href="/<?= $link['slug'] ?>"><?= $link['name'] ?></a>
 							</li>
 						<?php break; ?>
 					<?php endswitch ?>
