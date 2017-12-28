@@ -43,7 +43,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {   
-        return $this->render('index', $this->getArticles('News & Events', 'news-and-events'));
+        return $this->render('index', $this->getArticles('News and Events', 'news-and-events'));
     }
 
     /**
@@ -159,7 +159,7 @@ class SiteController extends Controller
     # Dev Defined Methods
     public function getArticles($name, $slug)
     {
-        $feature = Feature::findOne(['name' => $name]);
+        $feature = Feature::findOne(['feature' => $name]);
         $groups = $feature->getGroups();
 
         $contents = $groups
@@ -221,7 +221,7 @@ class SiteController extends Controller
 
     public function getArticle($name, $year, $month, $slug)
     {
-        $feature = Feature::findOne(['name' => $name]);
+        $feature = Feature::findOne(['feature' => $name]);
         $groups = $feature->getGroups();
 
         $article = $groups

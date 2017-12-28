@@ -1,53 +1,77 @@
 <?php
 
+use yii\helpers\Html;
 /* @var $this yii\web\View */
+use yii\bootstrap\Nav;
+use backend\models\Tblcontent;
 
-$this->title = 'My Yii Application';
+
+$this->title = 'PPEI Website';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel-header-wrapper"><h3><div class="glyphicon icon glyphicon-dashboard"></div> Dashboard</h3></div>
+       
+            <div class="dashboard-wrapper">
+                        <div class="dashboard-panel-content">
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+                        <?php if(\Yii::$app->user->can('manageUsers')) : ?>
+                            <div class="dashboard-menu">
+                                <?= Html::a(Html::img('images/icon-user.png', ['class' => 'img']), ["user/admin/index"]); ?>
+                                <div class="desc">Manage User</div>
+                            </div>
+                        <?php endif ?>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+                            <div class="dashboard-menu">
+                                <?= Html::a(Html::img('images/icon-folder.png', ['class' => 'img']), ["tblfolder/index"]); ?>
+                                <div class="desc">Admin Folder</div>
+                            </div>
 
-    <div class="body-content">
+                            <div class="dashboard-menu">
+                                <?= Html::a(Html::img('images/features.png', ['class' => 'img']), ["tblfeature/index"]); ?>
+                                <div class="desc">Web Features</div>
+                            </div>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                            <div class="dashboard-menu">
+                                <?= Html::a(Html::img('images/attributes.png', ['class' => 'img']), ["tblattribute/index"]); ?>
+                                <div class="desc">Attributes</div>
+                            </div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                            <div class="dashboard-menu">
+                                <?= Html::a(Html::img('images/gallery.png', ['class' => 'img']), ["tblalbum/index"]); ?>
+                                <div class="desc">Photo Gallery</div>
+                            </div>
+                        
+                        </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            <div class="panel-header-wrapper"><h3><div class="glyphicon icon glyphicon-calendar"></div> Upcoming Events</h3>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+            <div class="dashboard-wrapper">
+                
+                        <div class="activiy-wrapper">
+                        
+                                <div class="calendar-date">
+                                    Dec. 12, 2017
+                                </div>
+                        
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                                <div class="calendar-title">
+                                    This is a Sample Activity title
+                                </div>
+                            
+                                <div class="calendar-content">
+                                    This is a sample activity description. 
+                                </div>
+                          
+                        </div>
+                
             </div>
-        </div>
-
+        
+        </div>     
     </div>
 </div>
+

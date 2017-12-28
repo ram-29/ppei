@@ -10,12 +10,12 @@ use frontend\helpers\Transform;
 $features = ArrayHelper::getColumn(Feature::find()->asArray()->all(), 'name');
 
 $slugged = array_map(
-	Transform::lowered, 
-		array_map(Transform::wordify,
-			array_map(Transform::hyphenated, $features))
+	[Transform::class, 'lowered'], 
+		array_map([Transform::class, 'wordify'],
+			array_map([Transform::class, 'hyphenated'], $features))
 );
 
-$links = array_map(Transform::build, $features, $slugged);
+$links = array_map([Transform::class, 'build'], $features, $slugged);
 ?>
 <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">

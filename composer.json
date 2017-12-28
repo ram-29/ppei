@@ -19,7 +19,16 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "kartik-v/yii2-social": "dev-master"
+        "kartik-v/yii2-social": "dev-master",
+        
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "kartik-v/yii2-field-range": "*",
+        "yii2assets/yii2-pdfjs": ">=1.0",
+        "2amigos/yii2-ckeditor-widget": "^2.1",
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "dektrium/yii2-rbac": "1.0.0-alpha@dev",
+        "dektrium/yii2-user": "^0.9.12",
+        "himiklab/yii2-easy-thumbnail-image-helper": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

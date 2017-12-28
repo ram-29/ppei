@@ -36,106 +36,70 @@ use yii\helpers\Html;
 			</div>
 		</div>
 		<div class="col-md-5">
-			<div class="card hvr-float">
-				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
-				<div class="card-img-overlay">
-					<div class="card-content">
-						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[1]['date_posted'], 0, -3)) ?>/<?= $headers[1]['slug'] ?>">
-							<?= $headers[1]['title'] ?>
-						</a></h4>
-						<h6 class="card-details">
-							By PPEIV2 &#8226; 
-							<i class="fa fa-clock-o" aria-hidden="true"></i> 
-							<span id="h-time-1"></span> &#8226;
-								<?= $this->registerJs('var ht1 = $("#h-time-1"); ht1.text("Published "+moment("'.$headers[1]['date_posted'].'").fromNow());'); ?>
-							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-							<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-						</h6>
+			<?php if(sizeof($headers) > 1) :?>
+				<div class="card hvr-float">
+					<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
+					<div class="card-img-overlay">
+						<div class="card-content">
+							<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[1]['date_posted'], 0, -3)) ?>/<?= $headers[1]['slug'] ?>">
+								<?= $headers[1]['title'] ?>
+							</a></h4>
+							<h6 class="card-details">
+								By PPEIV2 &#8226; 
+								<i class="fa fa-clock-o" aria-hidden="true"></i> 
+								<span id="h-time-1"></span> &#8226;
+									<?= $this->registerJs('var ht1 = $("#h-time-1"); ht1.text("Published "+moment("'.$headers[1]['date_posted'].'").fromNow());'); ?>
+								<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
+								<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
+							</h6>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="card hvr-float">
-				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
-				<div class="card-img-overlay">
-					<div class="card-content">
-						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[2]['date_posted'], 0, -3)) ?>/<?= $headers[2]['slug'] ?>">
-							<?= $headers[2]['title'] ?>
-						</a></h4>
-						<h6 class="card-details">
-							By PPEIV2 &#8226; 
-							<i class="fa fa-clock-o" aria-hidden="true"></i> 
-							<span id="h-time-2"></span> &#8226;
-								<?= $this->registerJs('var ht2 = $("#h-time-2"); ht2.text("Published "+moment("'.$headers[2]['date_posted'].'").fromNow());'); ?> 
-							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-							<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-						</h6>
+				<div class="card hvr-float">
+					<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
+					<div class="card-img-overlay">
+						<div class="card-content">
+							<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($headers[2]['date_posted'], 0, -3)) ?>/<?= $headers[2]['slug'] ?>">
+								<?= $headers[2]['title'] ?>
+							</a></h4>
+							<h6 class="card-details">
+								By PPEIV2 &#8226; 
+								<i class="fa fa-clock-o" aria-hidden="true"></i> 
+								<span id="h-time-2"></span> &#8226;
+									<?= $this->registerJs('var ht2 = $("#h-time-2"); ht2.text("Published "+moment("'.$headers[2]['date_posted'].'").fromNow());'); ?> 
+								<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
+								<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
+							</h6>
+						</div>
 					</div>
 				</div>
-			</div>
+			<?php endif ?>
 		</div>
 	</div>
 
 	<div id="articles-subhead" class="row">
-		<div class="col-md-4">
-			<div class="card hvr-float">
-				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
-				<div class="card-img-overlay">
-					<div class="card-content">
-						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHeads[0]['date_posted'], 0, -3)) ?>/<?= $subHeads[0]['slug'] ?>">
-							<?= $subHeads[0]['title'] ?>
-						</a></h4>
-						<h6 class="card-details">
-							By PPEIV2 &#8226; 
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<span id="s-time-0"></span> &#8226;
-								<?= $this->registerJs('var st0 = $("#s-time-0"); st0.text("Published "+moment("'.$subHeads[0]['date_posted'].'").fromNow());'); ?>
-							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-							<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-						</h6>
+		<?php foreach($subHeads as $subHead) :?>
+			<div class="col-md-4">
+				<div class="card hvr-float">
+					<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
+					<div class="card-img-overlay">
+						<div class="card-content">
+							<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHead['date_posted'], 0, -3)) ?>/<?= $subHead['slug'] ?>">
+								<?= $subHeads['title'] ?>
+							</a></h4>
+							<h6 class="card-details">
+								By PPEIV2 &#8226; 
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+								<span id="s-time-0"></span> &#8226;
+									<?= $this->registerJs('var st0 = $("#s-time-0"); st0.text("Published "+moment("'.$subHead['date_posted'].'").fromNow());'); ?>
+								<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
+								<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
+							</h6>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card hvr-float">
-				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
-				<div class="card-img-overlay">
-					<div class="card-content">
-						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHeads[1]['date_posted'], 0, -3)) ?>/<?= $subHeads[1]['slug'] ?>">
-							<?= $subHeads[1]['title'] ?>
-						</a></h4>
-						<h6 class="card-details">
-							By PPEIV2 &#8226; 
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<span id="s-time-1"></span> &#8226;
-								<?= $this->registerJs('var st1 = $("#s-time-1"); st1.text("Published "+moment("'.$subHeads[1]['date_posted'].'").fromNow());'); ?>
-							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-							<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-						</h6>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card hvr-float">
-				<img class="card-img" src="http://lorempixel.com/400/350/cats/" alt="Card image">
-				<div class="card-img-overlay">
-					<div class="card-content">
-						<h4><a class="card-title" href="/<?= $slug ?>/<?= str_replace('-', '/', substr($subHeads[2]['date_posted'], 0, -3)) ?>/<?= $subHeads[2]['slug'] ?>">
-							<?= $subHeads[2]['title'] ?>
-						</a></h4>
-						<h6 class="card-details">
-							By PPEIV2 &#8226; 
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<span id="s-time-2"></span> &#8226;
-								<?= $this->registerJs('var st2 = $("#s-time-2"); st2.text("Published "+moment("'.$subHeads[2]['date_posted'].'").fromNow());'); ?>
-							<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
-							<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
-						</h6>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php endforeach ?>
 	</div>
 
 	<div id="articles-list" class="row">

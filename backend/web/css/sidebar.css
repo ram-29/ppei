@@ -1,0 +1,78 @@
+/* Sidebar */ 
+ #sidebar-wrapper { 
+     z-index: 1; 
+     position: absolute; 
+     width: 0; 
+     height: 100%;
+     overflow-y: hidden; 
+     background-color: #eff1f5; 
+     opacity: 0.9;
+     box-shadow: 3px 3px 5px #4f7326;
+}
+
+/* Always take up entire screen */ 
+#page-content-wrapper { 
+     width: 100%;
+     z-index: -100px; 
+     position: relative; 
+     padding-left: 250px;
+     min-height: 100%;
+     height: auto;
+}
+
+.affixsidebar {
+      top:60px;
+      position: relative;
+      width: 100%;
+      z-index: 9999 !important;
+}
+
+/* Change with of sidebar from 250px to 0*/ 
+#wrapper.menuDisplayed #sidebar-wrapper { 
+     width: 250px;
+    
+ } 
+ 
+ 
+/* Since we added left padding, we need to shrink the width by 250px */ 
+ #wrapper.menuDisplayed #page-content-wrapper { 
+     padding-left: 250px;
+} 
+ 
+ 
+/* Sidebar styling - the entire ul list */ 
+.sidebar-nav { 
+     padding: 0; 
+     text-decoration: none;
+
+
+} 
+.sidebar-nav li { 
+     text-indent: 5px; 
+     line-height: 15px;
+     border-bottom: 1px solid #afaf83;
+} 
+ 
+ 
+.sidebar-nav li a { 
+     display: block; 
+     text-decoration: none; 
+     color: #1a0000; 
+ } 
+ .sidebar-text{
+     display: block; 
+     text-decoration: none; 
+     color: #2e3436;
+     font-size: 17px;
+     text-align: left;
+ }
+ 
+.sidebar-nav .sidebar-text:hover{ 
+     color: black;
+     background-color: #ffffff;
+}
+
+.sidebar-nav .sidebar-text:active{
+     color: #f9ffe6;
+     background-color: #77ac39;
+}

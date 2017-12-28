@@ -10,21 +10,48 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
-    'modules' => [],
+    'bootstrap' => ['log', 'thumbnail'],
+    'modules' => [
+        'pdfjs' => ['class' => '\yii2assets\pdfjs\Module',],
+        'rbac' => [
+            'class' => 'dektrium\rbac\RbacWebModule',
+        ],
+        'user' => [
+            'class'  => 'dektrium\user\Module',
+            'admins' => ['admin'],
+            'enableFlashMessages' => false,
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
-        ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
-        ],
+            ],
+
+            'thumbnail' => [
+        'class' => 'himiklab\thumbnail\EasyThumbnail',
+        'cacheAlias' => 'assets/gallery_thumbnails',
+                ],
+    
+        // 'user' => [
+        //     'identityClass' => 'backend\models\User',
+        //     'enableAutoLogin' => true,
+        //     'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+        // ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
         ],
+
+        'authManager'  => [
+                'class' => 'dektrium\rbac\components\DbManager',
+                ],
+
+         'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => '[DIFFERENT UNIQUE KEY]',
+            'csrfParam' => '_backendCSRF',
+        ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -37,14 +64,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
-            'enablePrettyUrl' => true,
+            'enablePrettyUrl' => false,
             'showScriptName' => false,
-            'rules' => [
-            ],
+
+            // 'rules' => [
+            // ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];

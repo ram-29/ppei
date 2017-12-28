@@ -10,26 +10,34 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+<div class="site-login"> 
+    <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-5 col-sm-8 col-sm-offset-5">
+            <div class="panel panel-default" >
+                    <div class="panel-heading">
+                        <div class="panel-title"><?= Html::encode($this->title) ?></div>
+                        <!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
+                    </div> 
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                    <div style="padding-top:30px" class="panel-body" >
+                            
+                        <!--<form id="loginform" class="form-horizontal" role="form"> -->
+                            <?php $form = ActiveForm::begin(['id' => 'login-form', 'class'=>'form-horizontal'] ); ?>
+                                    
+                            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                            <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                            <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                            <div class="form-group">
+                                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                            </div>
+                            
+                            <!--</form> -->    
+                            <?php ActiveForm::end(); ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
-        </div>
+                    </div>                     
+            </div>  
     </div>
 </div>
