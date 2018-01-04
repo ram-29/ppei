@@ -23,7 +23,7 @@ $this->title = $mSlug.' | News & Events';
 								By PPEIV2 &#8226; 
 								<i class="fa fa-clock-o" aria-hidden="true"></i> 
 								<span id="a-time"></span> &#8226;
-									<?= $this->registerJs('var at = $("#a-time"); at.text("Published "+moment("'.$article['date_posted'].'").fromNow());'); ?>
+									<?= $this->registerJs('var at = $("#a-time"); at.text("Published "+moment("'.$article['date'].'").fromNow()); at.tooltip({ placement: "bottom", title: moment("'.$article['date'].'").tz("Asia/Manila").format("dddd, MMMM DD, YYYY") })'); ?>
 								<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Share"></i>
 								<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tweet"></i>
 							</h6>
@@ -38,7 +38,7 @@ $this->title = $mSlug.' | News & Events';
 					<p>Accusantium dolorem consequuntur beatae nihil soluta aut atque vel dolore. Magnam odit expedita ex a blanditiis explicabo pariatur alias vero nemo repellat rerum quidem, quas deserunt tempore optio consequuntur unde animi nostrum. Atque ipsam ex, ratione voluptates sequi, natus doloribus eligendi labore ad ipsa tempore voluptatibus? Magnam aut numquam vitae.</p>
 
 					<b>From DB:</b><br/>
-					<?= $article['content'] ?>
+					<p><?= $article['content'] ?></p>
 				</div>
 
 			</div>

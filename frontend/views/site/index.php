@@ -73,7 +73,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<h2>Odit maxime quibusdam consectetur, velit.</h2>
+					<h2>Happy New Year !!! <i class="fa fa-glass" aria-hidden="true"></i> <i class="fa fa-hand-peace-o" aria-hidden="true"></i></h2>
 				</div>
 				<div class="col-md-4">
 					<h6>Philippine Standard Time:</h6>
@@ -90,7 +90,7 @@ $this->title = 'Welcome to Philippine Poverty-Environment Initiative';
 			'contents' => $contents
 		]) ?>
 		<?php if($contents) :?>
-			<h4 class="events-link">Looking for more? Check out our <a href="/news-and-events">News & Events</a> section.</h4>
+			<h4 class="events-link">Looking for more? Check out our <a href="/news-and-events">News and Events</a> section.</h4>
 		<?php endif ?>
 	</section>
 

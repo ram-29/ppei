@@ -2,7 +2,7 @@
 
 use yii\widgets\LinkPager;
 
-$this->title = 'News & Events';
+$this->title = 'News and Events';
 ?>
 <?= Yii::$app->view->renderFile('@app/views/layouts/navbar.php') ?>
 

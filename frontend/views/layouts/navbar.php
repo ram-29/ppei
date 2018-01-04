@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper;
 
 use frontend\helpers\Transform;
 
-$features = ArrayHelper::getColumn(Feature::find()->asArray()->all(), 'name');
+$features = ArrayHelper::getColumn(Feature::find()->asArray()->all(), 'feature');
 
 $slugged = array_map(
 	[Transform::class, 'lowered'], 
@@ -37,7 +37,7 @@ $links = array_map([Transform::class, 'build'], $features, $slugged);
 			<ul class="navbar-nav ml-auto">
 				<?php foreach($links as $link) :?>
 					<?php switch($link['name']) :
-						case 'News & Events' :?>
+						case 'News and Events' :?>
 							<li id="<?= $link['slug'] ?>" class="nav-item">
 								<a class="nav-link hvr-icon-bob" href="/<?= $link['slug'] ?>"><?= $link['name'] ?></a>
 							</li>
@@ -73,8 +73,8 @@ $links = array_map([Transform::class, 'build'], $features, $slugged);
 								<a class="nav-link hvr-icon-float-away" href="/<?= $link['slug'] ?>"><?= $link['name'] ?></a>
 							</li>
 						<?php break; ?>
-					<?php endswitch ?>
-				<?php endforeach ?>
+					<?php endswitch; ?>
+				<?php endforeach; ?>
 			</ul>
 		</div>
   </div>

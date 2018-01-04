@@ -53,7 +53,7 @@ class SiteController extends Controller
      */
     public function actionNewsAndEvents()
     {
-        return $this->render('events', $this->getArticles('News & Events', 'news-and-events'));
+        return $this->render('events', $this->getArticles('News and Events', 'news-and-events'));
     }
 		
     /**
@@ -73,7 +73,7 @@ class SiteController extends Controller
      */
     public function actionValidator($feature, $year, $month, $slug)
     {
-        $mFeature = ($feature === 'news-and-events') ? 'News & Events' : 
+        $mFeature = ($feature === 'news-and-events') ? 'News and Events' : 
             (($feature === 'stories-of-change') ? 'Stories of Change' : false);
         $mYear = ((date('Y', 0) <= $year) && ($year <= date('Y'))) ? $year : false;
         $mMonth = ((1 <= $month) && ($month <= 12)) ? $month : false;
@@ -122,7 +122,7 @@ class SiteController extends Controller
                 'images' => ArrayHelper::getColumn($album->images, function($element){
                     return [
                         'id' => $element['id'],
-                        'name' => $element['name']
+                        'name' => $element['image_name']
                     ];
                 })
             ]);
@@ -168,7 +168,7 @@ class SiteController extends Controller
                 'title.value as title',
                 'content.value as content',
                 'images.value as images',
-                'date_posted.value as date_posted',
+                'date.value as date',
                 'slug.value as slug',
                 'user.value as user'
             ])
@@ -185,8 +185,8 @@ class SiteController extends Controller
                     function($q){ $q->onCondition(['images.attribute' => 'images']); }
             ])
             ->joinWith([
-                'contents date_posted' => 
-                    function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
+                'contents date' => 
+                    function($q){ $q->onCondition(['date.attribute' => 'date']); }
             ])
             ->joinWith([
                 'contents slug' => 
@@ -197,7 +197,7 @@ class SiteController extends Controller
                     function($q){ $q->onCondition(['user.attribute' => 'user']); }
             ])
             ->asArray()
-            ->orderBy(['date_posted' => SORT_DESC])
+            ->orderBy(['date' => SORT_DESC])
             ->all();
 
         $pagination = new Pagination([
@@ -230,7 +230,7 @@ class SiteController extends Controller
                 'title.value as title',
                 'content.value as content',
                 'images.value as images',
-                'date_posted.value as date_posted',
+                'date.value as date',
                 'slug.value as slug',
                 'user.value as user'
             ])
@@ -247,8 +247,8 @@ class SiteController extends Controller
                     function($q){ $q->onCondition(['images.attribute' => 'images']); }
             ])
             ->joinWith([
-                'contents date_posted' => 
-                    function($q){ $q->onCondition(['date_posted.attribute' => 'date_posted']); }
+                'contents date' => 
+                    function($q){ $q->onCondition(['date.attribute' => 'date']); }
             ])
             ->joinWith([
                 'contents slug' => 
@@ -258,7 +258,7 @@ class SiteController extends Controller
                 'contents user' => 
                     function($q){ $q->onCondition(['user.attribute' => 'user']); }
             ])
-            ->where(['like', 'date_posted.value', $year.'-'.$month])
+            ->where(['like', 'date.value', $year.'-'.$month])
             ->andWhere(['slug.value' => $slug])
             ->asArray()
             ->one();
