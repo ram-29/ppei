@@ -22,21 +22,22 @@
 					</div>
 					<div class="days-list">
 						<% _.each(days, function(day) { %>
-							<div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div>
+							<div class="<%= day.classes %>" data-toggle="tooltip" data-placement="bottom" title="<% _.each(day.events, function(event){ %><%= event.title %><% }) %>">
+								<%= day.day %>
+							</div>
 						<% }); %>
 					</div>
 				</div>
 				<div class="events-container">
 					<div class="headers">
 						<div class="x-button">x</div>
-						<div class="event-header">Activities</div>
+						<div class="event-header">Activity Details</div>
 					</div>
 					<div class="events-list">
-						<% _.each(eventsThisMonth, function(event) { %>
-							<div class="event">
-								<h6><%= moment(event.date).format('MMMM Do') %>: <a href="<%= event.url %>"><%= event.title %></a></h6> 
-							</div>
-						<% }); %>
+						<div id="event" class="event">
+							<h5 id="event-title"></h5>
+							<p id="event-details"></p>
+						</div>
 					</div>
 				</div>
 			</div>

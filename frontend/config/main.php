@@ -9,12 +9,16 @@ $params = array_merge(
 return [
 	'id' => 'app-frontend',
 	'basePath' => dirname(__DIR__),
-	'bootstrap' => ['log'],
+	'bootstrap' => ['log', 'thumbnail'],
 	'controllerNamespace' => 'frontend\controllers',
 	'components' => [
 		'request' => [
 			'csrfParam' => '_csrf-frontend',
 		],
+		'thumbnail' => [
+			'class' => 'himiklab\thumbnail\EasyThumbnail',
+			'cacheAlias' => 'assets/gallery_thumbnails',
+    ],
 		'user' => [
 			'identityClass' => 'common\models\User',
 			'enableAutoLogin' => true,

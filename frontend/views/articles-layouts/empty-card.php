@@ -8,5 +8,6 @@ use yii\helpers\Html;
     <div class="card-content">
       <div class="card-title"></div>
       <div class="card-details"></div>
+    </div>
   </div>
 </div>

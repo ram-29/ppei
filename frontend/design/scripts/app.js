@@ -125,6 +125,23 @@ const mModule = (function (global, $) {
     mTime.html(localTime);
   }
 
+  function initTooltip() {
+    const $toolTip = $('[data-toggle="tooltip"]');
+    $toolTip.tooltip('hide');
+    $toolTip.tooltip();
+  }
+
+  function setEventDetails(event, calendar) {
+    const $eventTitle = calendar.find('#event').children().first();
+    const $eventDetails = $eventTitle.next();
+
+    $eventTitle.text(`${event.title}`);
+    $eventDetails.html(`
+      When: ${moment(event.date).format('MMMM Do')}<br>
+      Where: ${event.location}
+    `);
+  }
+
   function init() {
     // Set PSTime
     if ($('.time').length) {
@@ -143,9 +160,7 @@ const mModule = (function (global, $) {
 
     // Tooltip
     if ($('[data-toggle="tooltip"]').length) {
-      const $toolTip = $('[data-toggle="tooltip"]');
-
-      $toolTip.tooltip();
+      initTooltip();
     }
 
     // Social Media
@@ -223,15 +238,20 @@ const mModule = (function (global, $) {
           click(target) {
             if (target.events.length) $miniClndr.toggleClass('show-events', true);
             $miniClndr.find('.x-button').click({ calendar: $miniClndr }, toggleCalendar);
+            setEventDetails(target.events[0], $miniClndr);
+            initTooltip();
           },
           onMonthChange() {
             $miniClndr.toggleClass('show-events', false);
             $miniClndr.find('.x-button').click({ calendar: $miniClndr }, toggleCalendar);
+            initTooltip();
           },
         },
         adjacentDaysChangeMonth: true,
         forceSixRows: false,
       });
+
+      initTooltip();
     }
 
     // GeoChart : https://www.gstatic.com/charts/loader.js
