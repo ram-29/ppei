@@ -594,16 +594,22 @@ html,body{
 			}
 		}
 
-		#mAlbum{
-			letter-spacing: -1px;
-			color: $secondary;
+		.nGY2NavigationbarItem.nGY2Breadcrumb{
+			background-color: $white !important;
+			border: 1px solid $secondary !important;	
+			transition: $hover-transition;
 
-			&:hover{
-				color: darken($secondary, 5%);
+			.oneItem{
+				color: $secondary !important;
 			}
 
-			&.mDisplay{
-				display: none;
+			&:hover{
+				background-color: $secondary !important;
+				border: 1px solid $white !important;
+
+				.oneItem{
+					color: $white !important;
+				}
 			}
 		}
 	}

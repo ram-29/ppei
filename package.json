@@ -16,22 +16,30 @@
     "url": "https://github.com/ram-29/ppei/issues"
   },
   "homepage": "https://github.com/ram-29/ppei#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.3",
+    "clndr": "^1.4.7",
+    "font-awesome": "^4.7.0",
+    "hover.css": "^2.2.1",
+    "jquery": "^3.2.1",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
+    "nanogallery2": "^2.0.0",
+    "popper.js": "^1.12.9",
+    "underscore": "^1.8.3"
+  },
   "devDependencies": {
-    "eslint": "^4.11.0",
+    "ajv": "^5.5.2",
+    "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
     "gulp-bundle-assets": "^2.29.0",
-    "gulp-clean-css": "^3.9.0",
+    "gulp-clean-css": "^3.9.2",
     "gulp-livereload": "^3.8.1",
-    "gulp-minify": "^1.0.0",
-    "gulp-open": "^2.0.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-open": "^2.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-wait": "0.0.2"
-  },
-  "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
-    "nanogallery2": "^1.5.0"
+    "gulp-sass": "^3.1.0"
   }
 }

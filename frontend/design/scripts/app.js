@@ -106,19 +106,6 @@ const mModule = (function (global, $) {
     global.resize({ data, options }, drawChart);
   }
 
-  function showAlbum(e) {
-    if (e.target.className === 'nGY2GThumbnailCustomLayer') {
-      const mLayer = e.target;
-      const h2 = $('#mAlbum');
-      const albumName = $(mLayer).next().children().text();
-
-      if (albumName.indexOf('image') !== -1) return;
-
-      h2.html(albumName);
-      h2.toggleClass('mDisplay');
-    }
-  }
-
   const mTime = $('.time');
   function initLocalTime() {
     const localTime = moment().tz('Asia/Manila').format('dddd, MMMM Do YYYY, h:mm:ss a');
@@ -267,13 +254,18 @@ const mModule = (function (global, $) {
   // NanoGallery
   if ($('#nano-gallery').length) {
     $('#nano-gallery').nanogallery2({
-      displayBreadcrumb: false,
+      thumbnailLabel: {
+        align: 'left',
+        titleMultiLine: true,
+      },
+      colorScheme: {
+        thumbnail: {
+          borderColor: '#558B2F',
+        },
+      },
       thumbnailDisplayTransition: 'slideLeft',
-      thumbnailDisplayTransitionDuration: 500,
-      thumbnailDisplayInterval: 250,
+      thumbnailDisplayTransitionDuration: 1000,
     });
-
-    $('.nGY2Gallery').one('click', showAlbum);
   }
 
   return {

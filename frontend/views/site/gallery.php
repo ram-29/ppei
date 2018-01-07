@@ -18,15 +18,13 @@ $this->title = 'Gallery';
 					Gallery
 				</h1>
 
-				<a href="/gallery"><h2 id="mAlbum" class="mDisplay hvr-icon-back"></h2></a>
 				<?php $baseUrl = Yii::getAlias('@mBackEnd').'/uploads/images/albums/'; ?>
-
 				<div id="nano-gallery" data-nanogallery2>
 					<?php foreach($albums as $album) :?>
 						<a href="" data-ngkind="album" data-ngid="<?= $album['id'] ?>" data-ngthumb="<?= Transform::extractCacheUrl($baseUrl.$album['name'].'/'.$album['images'][0]['name'], '200', '200') ?>"><?= $album['name'] ?></a>
 						<?php foreach($album['images'] as $image) :?>
 							<a href="<?= $baseUrl.$album['name'].'/'.$image['name'] ?>" data-ngid="<?= $image['id'].'/' ?>" data-ngalbumid="<?= $album['id'] ?>" data-ngthumb="<?= Transform::extractCacheUrl($baseUrl.$album['name'].'/'.$image['name'], '200', '200') ?>">
-								<?= $image['name'] ?> / <?= $album['name'] ?>
+								<?= $image['name'] ?>
 							</a>
 						<?php endforeach ?>
 					<?php endforeach ?>
